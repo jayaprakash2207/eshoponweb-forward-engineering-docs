@@ -4,3 +4,16 @@ Thumbs.db
 *.swp
 .vscode/
 .idea/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
