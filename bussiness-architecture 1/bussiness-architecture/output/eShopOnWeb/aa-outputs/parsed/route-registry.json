@@ -1,0 +1,1405 @@
+{
+  "generated_at": "2026-06-15T07:26:57+00:00",
+  "extractor_version": "0.2.0",
+  "technology_stacks_used_for_parsing": [
+    {
+      "name": ".NET / C#",
+      "detected_from": [
+        "language-summary:csharp",
+        "project-inventory:*.csproj"
+      ],
+      "parser_strategy": "compiler/AST-backed parser when available; otherwise C# source structural parser; project XML parsed structurally",
+      "ast_backends": [
+        {
+          "name": "Roslyn compiler AST",
+          "available": true,
+          "active": false,
+          "detected_from": [
+            "C:\\Program Files\\dotnet\\dotnet.EXE"
+          ],
+          "parser_strategy": "available for future C# semantic extraction; not active until a Roslyn semantic extractor is implemented",
+          "reason_unavailable": null
+        },
+        {
+          "name": "tree-sitter C# AST",
+          "available": false,
+          "active": false,
+          "detected_from": [],
+          "parser_strategy": "C# syntax tree parser for class/interface/record/struct declarations; framework extractors still handle routes, DI, and call candidates",
+          "reason_unavailable": "tree_sitter and tree_sitter_c_sharp Python packages are not both installed"
+        }
+      ],
+      "active_ast_backend": "static_structural_fallback"
+    },
+    {
+      "name": "ASP.NET Core",
+      "detected_from": [
+        "Microsoft.NET.Sdk.Web",
+        "Program.cs",
+        "controllers/endpoints"
+      ],
+      "parser_strategy": "ASP.NET route/DI/framework-call extraction"
+    },
+    {
+      "name": "MinimalApi.Endpoint",
+      "detected_from": [
+        "PackageReference:MinimalApi.Endpoint"
+      ],
+      "parser_strategy": "IEndpoint/AddRoute and app.Map* extraction"
+    },
+    {
+      "name": "Ardalis.ApiEndpoints",
+      "detected_from": [
+        "PackageReference:Ardalis.ApiEndpoints"
+      ],
+      "parser_strategy": "EndpointBaseAsync + HTTP attribute extraction"
+    },
+    {
+      "name": "Entity Framework Core",
+      "detected_from": [
+        "PackageReference:Microsoft.EntityFrameworkCore.*"
+      ],
+      "parser_strategy": "DbContext, IEntityTypeConfiguration, AddDbContext, repository usage extraction"
+    },
+    {
+      "name": "Razor / Blazor",
+      "detected_from": [
+        "language-summary:razor",
+        "Blazor WebAssembly project"
+      ],
+      "parser_strategy": "@page/@inject/@inherits directive extraction"
+    },
+    {
+      "name": "MediatR",
+      "detected_from": [
+        "PackageReference:MediatR"
+      ],
+      "parser_strategy": "IRequest/IRequestHandler and IMediator.Send call extraction"
+    }
+  ],
+  "summary": {
+    "route_count": 52,
+    "by_type": {
+      "HTTP_API": 49,
+      "FrontendRoute": 3
+    },
+    "by_method": {
+      "POST": 13,
+      "GET": 32,
+      "DELETE": 1,
+      "PUT": 1,
+      "unknown": 5
+    },
+    "by_parser_strategy": {
+      "aspnet_attribute_route_parser": 26,
+      "aspnet_minimal_api_parser": 7,
+      "unknown": 19
+    },
+    "routes_with_source_evidence": 52
+  },
+  "routes": [
+    {
+      "route_id": "ROUTE-0001",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/api/authenticate",
+      "component": "AuthenticateEndpoint",
+      "action": "HandleAsync",
+      "file": "src/PublicApi/AuthEndpoints/AuthenticateEndpoint.cs",
+      "line": 36,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "ITokenClaimsService.GetTokenAsync",
+        "SignInManager<ApplicationUser>.PasswordSignInAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/PublicApi/AuthEndpoints/AuthenticateEndpoint.cs",
+          "line": 36,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0002",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/api/catalog-brands",
+      "component": "CatalogBrandListEndpoint",
+      "action": "HandleAsync",
+      "file": "src/PublicApi/CatalogBrandEndpoints/CatalogBrandListEndpoint.cs",
+      "line": 27,
+      "owning_module_guess": "Catalog",
+      "called_services": [
+        "IRepository<CatalogBrand>.ListAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/PublicApi/CatalogBrandEndpoints/CatalogBrandListEndpoint.cs",
+          "line": 27,
+          "reason": "ASP.NET Minimal API Map* call"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_minimal_api_parser"
+    },
+    {
+      "route_id": "ROUTE-0003",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/api/catalog-items/{catalogItemId}",
+      "component": "CatalogItemGetByIdEndpoint",
+      "action": "HandleAsync",
+      "file": "src/PublicApi/CatalogItemEndpoints/CatalogItemGetByIdEndpoint.cs",
+      "line": 25,
+      "owning_module_guess": "Catalog",
+      "called_services": [
+        "GetByIdCatalogItemRequest.CorrelationId",
+        "IRepository<CatalogItem>.GetByIdAsync",
+        "IUriComposer.ComposePicUri"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/PublicApi/CatalogItemEndpoints/CatalogItemGetByIdEndpoint.cs",
+          "line": 25,
+          "reason": "ASP.NET Minimal API Map* call"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_minimal_api_parser"
+    },
+    {
+      "route_id": "ROUTE-0004",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/api/catalog-items",
+      "component": "CatalogItemListPagedEndpoint",
+      "action": "HandleAsync",
+      "file": "src/PublicApi/CatalogItemEndpoints/CatalogItemListPagedEndpoint.cs",
+      "line": 31,
+      "owning_module_guess": "Catalog",
+      "called_services": [
+        "IRepository<CatalogItem>.CountAsync",
+        "IRepository<CatalogItem>.ListAsync",
+        "IUriComposer.ComposePicUri",
+        "ListPagedCatalogItemRequest.CorrelationId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/PublicApi/CatalogItemEndpoints/CatalogItemListPagedEndpoint.cs",
+          "line": 31,
+          "reason": "ASP.NET Minimal API Map* call"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_minimal_api_parser"
+    },
+    {
+      "route_id": "ROUTE-0005",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/api/catalog-items",
+      "component": "CreateCatalogItemEndpoint",
+      "action": "HandleAsync",
+      "file": "src/PublicApi/CatalogItemEndpoints/CreateCatalogItemEndpoint.cs",
+      "line": 29,
+      "owning_module_guess": "Catalog",
+      "called_services": [
+        "CreateCatalogItemRequest.CorrelationId",
+        "IRepository<CatalogItem>.AddAsync",
+        "IRepository<CatalogItem>.CountAsync",
+        "IRepository<CatalogItem>.UpdateAsync",
+        "IUriComposer.ComposePicUri"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/PublicApi/CatalogItemEndpoints/CreateCatalogItemEndpoint.cs",
+          "line": 29,
+          "reason": "ASP.NET Minimal API Map* call"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_minimal_api_parser"
+    },
+    {
+      "route_id": "ROUTE-0006",
+      "type": "HTTP_API",
+      "method": "DELETE",
+      "path": "/api/catalog-items/{catalogItemId}",
+      "component": "DeleteCatalogItemEndpoint",
+      "action": "HandleAsync",
+      "file": "src/PublicApi/CatalogItemEndpoints/DeleteCatalogItemEndpoint.cs",
+      "line": 20,
+      "owning_module_guess": "Catalog",
+      "called_services": [
+        "DeleteCatalogItemRequest.CorrelationId",
+        "IRepository<CatalogItem>.DeleteAsync",
+        "IRepository<CatalogItem>.GetByIdAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/PublicApi/CatalogItemEndpoints/DeleteCatalogItemEndpoint.cs",
+          "line": 20,
+          "reason": "ASP.NET Minimal API Map* call"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_minimal_api_parser"
+    },
+    {
+      "route_id": "ROUTE-0007",
+      "type": "HTTP_API",
+      "method": "PUT",
+      "path": "/api/catalog-items",
+      "component": "UpdateCatalogItemEndpoint",
+      "action": "HandleAsync",
+      "file": "src/PublicApi/CatalogItemEndpoints/UpdateCatalogItemEndpoint.cs",
+      "line": 27,
+      "owning_module_guess": "Catalog",
+      "called_services": [
+        "IRepository<CatalogItem>.GetByIdAsync",
+        "IRepository<CatalogItem>.UpdateAsync",
+        "IUriComposer.ComposePicUri",
+        "UpdateCatalogItemRequest.CorrelationId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/PublicApi/CatalogItemEndpoints/UpdateCatalogItemEndpoint.cs",
+          "line": 27,
+          "reason": "ASP.NET Minimal API Map* call"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_minimal_api_parser"
+    },
+    {
+      "route_id": "ROUTE-0008",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/api/catalog-types",
+      "component": "CatalogTypeListEndpoint",
+      "action": "HandleAsync",
+      "file": "src/PublicApi/CatalogTypeEndpoints/CatalogTypeListEndpoint.cs",
+      "line": 27,
+      "owning_module_guess": "Catalog",
+      "called_services": [
+        "IRepository<CatalogType>.ListAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/PublicApi/CatalogTypeEndpoints/CatalogTypeListEndpoint.cs",
+          "line": 27,
+          "reason": "ASP.NET Minimal API Map* call"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_minimal_api_parser"
+    },
+    {
+      "route_id": "ROUTE-0009",
+      "type": "HTTP_API",
+      "method": "unknown",
+      "path": "/{controller:slugify=Home}/{action:slugify=Index}/{id?}",
+      "component": "Program",
+      "action": "ASP.NET conventional MVC route",
+      "file": "src/Web/Program.cs",
+      "line": 194,
+      "owning_module_guess": "CrossCutting",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Program.cs",
+          "line": 194,
+          "reason": "ASP.NET conventional MVC route"
+        }
+      ],
+      "uncertainty": [
+        "Framework-level route registration; individual endpoints may be in controller/Razor/endpoint files"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0010",
+      "type": "HTTP_API",
+      "method": "unknown",
+      "path": "ASP.NET Razor Pages route registration",
+      "component": "Program",
+      "action": "ASP.NET Razor Pages route registration",
+      "file": "src/Web/Program.cs",
+      "line": 195,
+      "owning_module_guess": "CrossCutting",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Program.cs",
+          "line": 195,
+          "reason": "ASP.NET Razor Pages route registration"
+        }
+      ],
+      "uncertainty": [
+        "Framework-level route registration; individual endpoints may be in controller/Razor/endpoint files"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0011",
+      "type": "FrontendRoute",
+      "method": "unknown",
+      "path": "/index.html",
+      "component": "Program",
+      "action": "SPA fallback route",
+      "file": "src/Web/Program.cs",
+      "line": 199,
+      "owning_module_guess": "CrossCutting",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Program.cs",
+          "line": 199,
+          "reason": "SPA fallback route"
+        }
+      ],
+      "uncertainty": [
+        "Framework-level route registration; individual endpoints may be in controller/Razor/endpoint files"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0012",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/home_page_health_check",
+      "component": "Program",
+      "action": "ASP.NET health check route",
+      "file": "src/Web/Program.cs",
+      "line": 196,
+      "owning_module_guess": "CrossCutting",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Program.cs",
+          "line": 196,
+          "reason": "ASP.NET health check route"
+        }
+      ],
+      "uncertainty": [
+        "Framework-level route registration; individual endpoints may be in controller/Razor/endpoint files"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0013",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/api_health_check",
+      "component": "Program",
+      "action": "ASP.NET health check route",
+      "file": "src/Web/Program.cs",
+      "line": 197,
+      "owning_module_guess": "CrossCutting",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Program.cs",
+          "line": 197,
+          "reason": "ASP.NET health check route"
+        }
+      ],
+      "uncertainty": [
+        "Framework-level route registration; individual endpoints may be in controller/Razor/endpoint files"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0014",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Manage/MyAccount",
+      "component": "ManageController",
+      "action": "MyAccount",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 47,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 47,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0015",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/Manage/MyAccount",
+      "component": "ManageController",
+      "action": "MyAccount",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 69,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId",
+        "UserManager<ApplicationUser>.SetEmailAsync",
+        "UserManager<ApplicationUser>.SetPhoneNumberAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 69,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0016",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/Manage/SendVerificationEmail",
+      "component": "ManageController",
+      "action": "SendVerificationEmail",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 108,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "IEmailSender.SendEmailConfirmationAsync",
+        "UserManager<ApplicationUser>.GenerateEmailConfirmationTokenAsync",
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 108,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0017",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Manage/ChangePassword",
+      "component": "ManageController",
+      "action": "ChangePassword",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 137,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId",
+        "UserManager<ApplicationUser>.HasPasswordAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 137,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0018",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/Manage/ChangePassword",
+      "component": "ManageController",
+      "action": "ChangePassword",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 157,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "IAppLogger<ManageController>.LogInformation",
+        "SignInManager<ApplicationUser>.SignInAsync",
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 157,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0019",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Manage/SetPassword",
+      "component": "ManageController",
+      "action": "SetPassword",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 186,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId",
+        "UserManager<ApplicationUser>.HasPasswordAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 186,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0020",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/Manage/SetPassword",
+      "component": "ManageController",
+      "action": "SetPassword",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 207,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "SignInManager<ApplicationUser>.SignInAsync",
+        "UserManager<ApplicationUser>.AddPasswordAsync",
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 207,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0021",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Manage/ExternalLogins",
+      "component": "ManageController",
+      "action": "ExternalLogins",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 234,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "SignInManager<ApplicationUser>.GetExternalAuthenticationSchemesAsync",
+        "UserManager<ApplicationUser>.GetLoginsAsync",
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId",
+        "UserManager<ApplicationUser>.HasPasswordAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 234,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0022",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/Manage/LinkLogin",
+      "component": "ManageController",
+      "action": "LinkLogin",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 254,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "SignInManager<ApplicationUser>.ConfigureExternalAuthenticationProperties",
+        "UserManager<ApplicationUser>.GetUserId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 254,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0023",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Manage/LinkLoginCallback",
+      "component": "ManageController",
+      "action": "LinkLoginCallback",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 266,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "SignInManager<ApplicationUser>.GetExternalLoginInfoAsync",
+        "UserManager<ApplicationUser>.AddLoginAsync",
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 266,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0024",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/Manage/RemoveLogin",
+      "component": "ManageController",
+      "action": "RemoveLogin",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 295,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "SignInManager<ApplicationUser>.SignInAsync",
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId",
+        "UserManager<ApplicationUser>.RemoveLoginAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 295,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0025",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Manage/TwoFactorAuthentication",
+      "component": "ManageController",
+      "action": "TwoFactorAuthentication",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 319,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "UserManager<ApplicationUser>.CountRecoveryCodesAsync",
+        "UserManager<ApplicationUser>.GetAuthenticatorKeyAsync",
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 319,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0026",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Manage/Disable2faWarning",
+      "component": "ManageController",
+      "action": "Disable2faWarning",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 338,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 338,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0027",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/Manage/Disable2fa",
+      "component": "ManageController",
+      "action": "Disable2fa",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 356,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "IAppLogger<ManageController>.LogInformation",
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId",
+        "UserManager<ApplicationUser>.SetTwoFactorEnabledAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 356,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0028",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Manage/EnableAuthenticator",
+      "component": "ManageController",
+      "action": "EnableAuthenticator",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 375,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 375,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0029",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Manage/ShowRecoveryCodes",
+      "component": "ManageController",
+      "action": "ShowRecoveryCodes",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 390,
+      "owning_module_guess": "Identity",
+      "called_services": [],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 390,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0030",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/Manage/EnableAuthenticator",
+      "component": "ManageController",
+      "action": "EnableAuthenticator",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 405,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "IAppLogger<ManageController>.LogInformation",
+        "UserManager<ApplicationUser>.GenerateNewTwoFactorRecoveryCodesAsync",
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId",
+        "UserManager<ApplicationUser>.SetTwoFactorEnabledAsync",
+        "UserManager<ApplicationUser>.VerifyTwoFactorTokenAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 405,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0031",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Manage/ResetAuthenticatorWarning",
+      "component": "ManageController",
+      "action": "ResetAuthenticatorWarning",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 441,
+      "owning_module_guess": "Identity",
+      "called_services": [],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 441,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0032",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/Manage/ResetAuthenticator",
+      "component": "ManageController",
+      "action": "ResetAuthenticator",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 448,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "IAppLogger<ManageController>.LogInformation",
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId",
+        "UserManager<ApplicationUser>.ResetAuthenticatorKeyAsync",
+        "UserManager<ApplicationUser>.SetTwoFactorEnabledAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 448,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0033",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/Manage/GenerateRecoveryCodes",
+      "component": "ManageController",
+      "action": "GenerateRecoveryCodes",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 465,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "IAppLogger<ManageController>.LogInformation",
+        "UserManager<ApplicationUser>.GenerateNewTwoFactorRecoveryCodesAsync",
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 465,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0034",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Manage/GenerateRecoveryCodesWarning",
+      "component": "ManageController",
+      "action": "GenerateRecoveryCodesWarning",
+      "file": "src/Web/Controllers/ManageController.cs",
+      "line": 487,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "UserManager<ApplicationUser>.GetUserAsync",
+        "UserManager<ApplicationUser>.GetUserId"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/ManageController.cs",
+          "line": 487,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0035",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Order/MyOrders",
+      "component": "OrderController",
+      "action": "MyOrders",
+      "file": "src/Web/Controllers/OrderController.cs",
+      "line": 23,
+      "owning_module_guess": "Order",
+      "called_services": [
+        "IMediator.Send"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/OrderController.cs",
+          "line": 23,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0036",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Order/Detail/{orderId}",
+      "component": "OrderController",
+      "action": "Detail",
+      "file": "src/Web/Controllers/OrderController.cs",
+      "line": 32,
+      "owning_module_guess": "Order",
+      "called_services": [
+        "IMediator.Send"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/OrderController.cs",
+          "line": 32,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0037",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/User",
+      "component": "UserController",
+      "action": "GetCurrentUser",
+      "file": "src/Web/Controllers/UserController.cs",
+      "line": 38,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "ILogger<UserController>.LogInformation",
+        "IMemoryCache.Set",
+        "SignInManager<ApplicationUser>.SignOutAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/UserController.cs",
+          "line": 38,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0038",
+      "type": "HTTP_API",
+      "method": "POST",
+      "path": "/User/Logout",
+      "component": "UserController",
+      "action": "Logout",
+      "file": "src/Web/Controllers/UserController.cs",
+      "line": 45,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "ILogger<UserController>.LogInformation",
+        "IMemoryCache.Set",
+        "SignInManager<ApplicationUser>.SignOutAsync"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "file": "src/Web/Controllers/UserController.cs",
+          "line": 45,
+          "reason": "ASP.NET HTTP method attribute"
+        }
+      ],
+      "uncertainty": [],
+      "parser_strategy": "aspnet_attribute_route_parser"
+    },
+    {
+      "route_id": "ROUTE-0039",
+      "type": "FrontendRoute",
+      "method": "unknown",
+      "path": "/logout",
+      "component": "Logout",
+      "action": "@page",
+      "file": "src/BlazorAdmin/Pages/Logout.razor",
+      "line": 1,
+      "owning_module_guess": "Identity",
+      "called_services": [
+        "IJSRuntime",
+        "HttpClient",
+        "BlazorAdmin.Helpers.BlazorComponent"
+      ],
+      "confidence": 0.84,
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Pages/Logout.razor",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": []
+    },
+    {
+      "route_id": "ROUTE-0040",
+      "type": "FrontendRoute",
+      "method": "unknown",
+      "path": "/admin",
+      "component": "List",
+      "action": "@page",
+      "file": "src/BlazorAdmin/Pages/CatalogItemPage/List.razor",
+      "line": 1,
+      "owning_module_guess": "Catalog",
+      "called_services": [
+        "BlazorAdmin.Helpers.BlazorComponent"
+      ],
+      "confidence": 0.84,
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Pages/CatalogItemPage/List.razor",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": []
+    },
+    {
+      "route_id": "ROUTE-0041",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Account/ConfirmEmail",
+      "component": "ConfirmEmail",
+      "action": "@page",
+      "file": "src/Web/Areas/Identity/Pages/Account/ConfirmEmail.cshtml",
+      "line": 1,
+      "owning_module_guess": "Identity",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Areas/Identity/Pages/Account/ConfirmEmail.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": [
+        "Route path inferred from Razor Pages file location"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0042",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Account/Login",
+      "component": "Login",
+      "action": "@page",
+      "file": "src/Web/Areas/Identity/Pages/Account/Login.cshtml",
+      "line": 1,
+      "owning_module_guess": "Identity",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Areas/Identity/Pages/Account/Login.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": [
+        "Route path inferred from Razor Pages file location"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0043",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Account/Logout",
+      "component": "Logout",
+      "action": "@page",
+      "file": "src/Web/Areas/Identity/Pages/Account/Logout.cshtml",
+      "line": 1,
+      "owning_module_guess": "Identity",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Areas/Identity/Pages/Account/Logout.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": [
+        "Route path inferred from Razor Pages file location"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0044",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Account/Register",
+      "component": "Register",
+      "action": "@page",
+      "file": "src/Web/Areas/Identity/Pages/Account/Register.cshtml",
+      "line": 1,
+      "owning_module_guess": "Identity",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Areas/Identity/Pages/Account/Register.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": [
+        "Route path inferred from Razor Pages file location"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0045",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Error",
+      "component": "Error",
+      "action": "@page",
+      "file": "src/Web/Pages/Error.cshtml",
+      "line": 1,
+      "owning_module_guess": "Web",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Pages/Error.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": [
+        "Route path inferred from Razor Pages file location"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0046",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/",
+      "component": "Index",
+      "action": "@page",
+      "file": "src/Web/Pages/Index.cshtml",
+      "line": 1,
+      "owning_module_guess": "Web",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Pages/Index.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": [
+        "Route path inferred from Razor Pages file location"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0047",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Privacy",
+      "component": "Privacy",
+      "action": "@page",
+      "file": "src/Web/Pages/Privacy.cshtml",
+      "line": 1,
+      "owning_module_guess": "Web",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Pages/Privacy.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": [
+        "Route path inferred from Razor Pages file location"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0048",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Admin/EditCatalogItem",
+      "component": "EditCatalogItem",
+      "action": "@page",
+      "file": "src/Web/Pages/Admin/EditCatalogItem.cshtml",
+      "line": 1,
+      "owning_module_guess": "Catalog",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Pages/Admin/EditCatalogItem.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": [
+        "Route path inferred from Razor Pages file location"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0049",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Admin",
+      "component": "Index",
+      "action": "@page",
+      "file": "src/Web/Pages/Admin/Index.cshtml",
+      "line": 1,
+      "owning_module_guess": "Admin",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Pages/Admin/Index.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": [
+        "Route path inferred from Razor Pages file location"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0050",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Basket/Checkout",
+      "component": "Checkout",
+      "action": "@page",
+      "file": "src/Web/Pages/Basket/Checkout.cshtml",
+      "line": 1,
+      "owning_module_guess": "Basket",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Pages/Basket/Checkout.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": [
+        "Route path inferred from Razor Pages file location"
+      ]
+    },
+    {
+      "route_id": "ROUTE-0051",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/{handler?}",
+      "component": "Index",
+      "action": "@page",
+      "file": "src/Web/Pages/Basket/Index.cshtml",
+      "line": 1,
+      "owning_module_guess": "Basket",
+      "called_services": [],
+      "confidence": 0.84,
+      "evidence": [
+        {
+          "file": "src/Web/Pages/Basket/Index.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": []
+    },
+    {
+      "route_id": "ROUTE-0052",
+      "type": "HTTP_API",
+      "method": "GET",
+      "path": "/Basket/Success",
+      "component": "Success",
+      "action": "@page",
+      "file": "src/Web/Pages/Basket/Success.cshtml",
+      "line": 1,
+      "owning_module_guess": "Basket",
+      "called_services": [],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "file": "src/Web/Pages/Basket/Success.cshtml",
+          "line": 1,
+          "reason": "Razor @page directive"
+        }
+      ],
+      "uncertainty": [
+        "Route path inferred from Razor Pages file location"
+      ]
+    }
+  ],
+  "limitations": [
+    "C# symbol extraction uses static structural/framework parsing unless an optional Roslyn or tree-sitter backend is available.",
+    "Method-call extraction records dependency candidates, not complete call graphs; overload resolution and dynamic dispatch are not resolved.",
+    "Razor/Blazor parsing captures directives and injected services but does not compile generated partial classes.",
+    "Module guesses are evidence-derived domain/project/support candidates for parsed facts only; final module maps still require evidence-pack consolidation and human review.",
+    "Route templates with framework conventions are captured as templates; runtime route token transformers and filters are not fully evaluated.",
+    "Optional AST backends unavailable in this environment: tree-sitter C# AST: tree_sitter and tree_sitter_c_sharp Python packages are not both installed.",
+    "4 generated or migration-pattern source files were skipped for parser safety.",
+    "Detected languages without parser support in this step: svg."
+  ]
+}

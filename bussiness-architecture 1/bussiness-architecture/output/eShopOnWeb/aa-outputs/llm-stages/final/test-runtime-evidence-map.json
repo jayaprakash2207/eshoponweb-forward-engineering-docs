@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "stage": "05-enterprise-forward-engineering",
+  "generated_from": [
+    "final/architecture-pattern-report.md",
+    "final/architecture-violation-register.json"
+  ],
+  "status": "no_test_or_runtime_evidence_in_input_context",
+  "test_evidence": [],
+  "runtime_evidence": [],
+  "coverage_by_capability": [
+    {
+      "capability_id": "CAP-001",
+      "name": "Catalog Management",
+      "test_evidence_found": false,
+      "runtime_evidence_found": false,
+      "confidence": "unknown"
+    },
+    {
+      "capability_id": "CAP-002",
+      "name": "Shopping Basket Management",
+      "test_evidence_found": false,
+      "runtime_evidence_found": false,
+      "confidence": "unknown"
+    },
+    {
+      "capability_id": "CAP-003",
+      "name": "Order Management",
+      "test_evidence_found": false,
+      "runtime_evidence_found": false,
+      "confidence": "unknown"
+    },
+    {
+      "capability_id": "CAP-004",
+      "name": "Buyer / Customer Profile Management",
+      "test_evidence_found": false,
+      "runtime_evidence_found": false,
+      "confidence": "unknown"
+    },
+    {
+      "capability_id": "CAP-005",
+      "name": "Catalog Administration",
+      "test_evidence_found": false,
+      "runtime_evidence_found": false,
+      "confidence": "unknown"
+    },
+    {
+      "capability_id": "CAP-006",
+      "name": "Storefront Web Experience",
+      "test_evidence_found": false,
+      "runtime_evidence_found": false,
+      "confidence": "unknown"
+    },
+    {
+      "capability_id": "CAP-007",
+      "name": "Public API / Integration Layer",
+      "test_evidence_found": false,
+      "runtime_evidence_found": false,
+      "confidence": "unknown"
+    },
+    {
+      "capability_id": "CAP-008",
+      "name": "Admin Application Experience",
+      "test_evidence_found": false,
+      "runtime_evidence_found": false,
+      "confidence": "unknown"
+    }
+  ],
+  "notes": "No test inventory, test result, or runtime/telemetry evidence packs were included in this stage's input context (only architecture-pattern-report.md and architecture-violation-register.json were provided). All retire/redesign decisions in preserve-redesign-retire-map.md were therefore made without usage evidence, per global rules. This file should be regenerated once architecture-output/final/test-evidence-pack.json (or equivalent) is available."
+}

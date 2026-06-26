@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "stage": "05-enterprise-forward-engineering",
+  "generated_from": [
+    "final/architecture-pattern-report.md",
+    "final/architecture-violation-register.json"
+  ],
+  "consolidation_candidates": [
+    {
+      "consolidation_id": "MCC-001",
+      "title": "Unify Catalog Administration UI",
+      "status": "candidate",
+      "description": "src/Web/Pages/Admin (Razor Pages) and src/BlazorAdmin/Pages/CatalogItemPage (Blazor) both implement catalog item administration. Forward engineering should consolidate this into a single Admin module/owner.",
+      "current_modules": [
+        {
+          "name": "Web (Pages/Admin)",
+          "module_ref": "MOD-006 (per architecture-violation-register.json affected_module)"
+        },
+        {
+          "name": "BlazorAdmin (Pages/CatalogItemPage)",
+          "module_ref": "MOD-006 (per architecture-violation-register.json affected_module)"
+        }
+      ],
+      "evidence": [
+        {
+          "file": "src/Web/Pages/Admin/EditCatalogItem.cshtml",
+          "reason": "Razor Pages admin catalog edit surface (ARCH-VIOL-002)"
+        },
+        {
+          "file": "src/BlazorAdmin/Pages/CatalogItemPage/Edit.razor",
+          "reason": "Blazor admin catalog edit surface for the same entity (ARCH-VIOL-002)"
+        }
+      ],
+      "recommendation": "Do not consolidate code until the team confirms which surface (Razor Pages Admin vs BlazorAdmin) is canonical. Treat as a review item, not an automatic merge.",
+      "related_violations": ["ARCH-VIOL-002"],
+      "confidence": 0.5
+    },
+    {
+      "consolidation_id": "MCC-002",
+      "title": "Preserve ApplicationCore as a Single Domain/Application Module",
+      "status": "candidate",
+      "description": "Basket, Order, Buyer, and Catalog entities, specifications, and application services already live in one cohesive ApplicationCore project. This module is a strong candidate to remain a single forward-engineering unit (or split internally along aggregate lines, see service-boundary-options.md) rather than being merged with Infrastructure or presentation projects.",
+      "current_modules": [
+        {
+          "name": "ApplicationCore",
+          "module_ref": "unknown (module ID not present in provided evidence; referenced by project name only)"
+        }
+      ],
+      "evidence": [
+        {
+          "file": "src/ApplicationCore/Entities/BasketAggregate",
+          "reason": "Aggregate root"
+        },
+        {
+          "file": "src/ApplicationCore/Entities/OrderAggregate",
+          "reason": "Aggregate root"
+        },
+        {
+          "file": "src/ApplicationCore/Entities/BuyerAggregate",
+          "reason": "Aggregate root"
+        },
+        {
+          "file": "src/ApplicationCore/Entities/CatalogItem.cs",
+          "reason": "Core catalog entity"
+        }
+      ],
+      "recommendation": "No consolidation action required at this stage; flag as the likely 'core domain' anchor for future service boundary decisions.",
+      "related_violations": [],
+      "confidence": 0.6
+    },
+    {
+      "consolidation_id": "MCC-003",
+      "title": "Review Contract Coupling Between PublicApi CatalogItemEndpoints and BlazorAdmin Catalog Services",
+      "status": "candidate",
+      "description": "BlazorAdmin's CachedCatalogItemServiceDecorator wraps PublicApi's CatalogItemEndpoints request/response shapes directly. This is not a structural consolidation candidate, but a contract-ownership review candidate: either formalize this as a published API contract (preferred) or consider co-locating contract DTOs.",
+      "current_modules": [
+        {
+          "name": "PublicApi (CatalogItemEndpoints)",
+          "module_ref": "MOD-006 (per architecture-violation-register.json affected_module for ARCH-VIOL-003)"
+        },
+        {
+          "name": "BlazorAdmin (Services/CachedCatalogItemServiceDecorator.cs)",
+          "module_ref": "MOD-006 (per architecture-violation-register.json affected_module for ARCH-VIOL-003)"
+        }
+      ],
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/CachedCatalogItemServiceDecorator.cs",
+          "reason": "Decorator service for catalog item operations in the admin frontend"
+        },
+        {
+          "file": "src/PublicApi/CatalogItemEndpoints/CreateCatalogItemEndpoint.cs",
+          "reason": "Corresponding backend endpoint, likely consumed by the above decorator"
+        }
+      ],
+      "recommendation": "Treat as a contract-formalization task (see api-contract-preservation-map.json), not a code consolidation.",
+      "related_violations": ["ARCH-VIOL-003"],
+      "confidence": 0.5
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+All 6 output files have been written to `output/eShopOnWeb/ta-outputs/ta_agent1/`.
+
+## Checklist
+- ✅ technology-stack-inventory.md
+- ✅ component-service-map.md
+- ✅ data-store-registry.md
+- ✅ infrastructure-deployment-blueprint.md
+- ✅ integration-dependency-graph.md
+- ✅ security-configuration-snapshot.md
+
+---
+
+## Agent 1 - Project Scan Summary
+- Language(s): C# / .NET 8.0 (8.0.x SDK, confirmed in CI and Dockerfiles)
+- Framework(s): ASP.NET Core MVC (Web), ASP.NET Core Web API + Swashbuckle (PublicApi), Blazor WebAssembly (BlazorAdmin), EF Core (SqlServer, Npgsql/PostgreSQL, InMemory providers), MediatR, AutoMapper, Ardalis (Specification, ApiEndpoints, GuardClauses, Result, ListStartupServices), FluentValidation
+- Architecture style: Modular Monolith (shared ApplicationCore/Infrastructure/BlazorShared libraries) split into two deployable web apps (Web MVC + PublicApi) - MEDIUM confidence, based on project references and docker-compose service split
+- Deployment target: Docker Compose (local/containerized) + Azure (azd-based, parameters/abbreviations only - no resource templates provided) - LOW confidence on actual Azure topology
+- Total files scanned: 31
+- Technology layers found: 5 - Application, Data, Infrastructure, CI/CD, Security (Observability layer not found)
+- Chunks processed: 5 (Application/Tech Stack, Data, Infrastructure/Deployment, Integrations/CI-CD, Security)
+- External integrations found: 6 (actions/checkout, actions/setup-dotnet, microsoft/RichCodeNavIndexer, Dependabot/NuGet, Azure Key Vault, host.docker.internal cross-container ref)
+- Data stores identified: 4 entries (sqlserver/Azure SQL Edge, PostgreSQL "eShopCatalog", PostgreSQL "eShopIdentity", EF Core InMemory)
+- Services / components found: 11 (eshopwebmvc, eshoppublicapi, sqlserver, BlazorAdmin, ApplicationCore, BlazorShared, Infrastructure, + 4 test projects)
+- CI/CD pipeline files read: 2 (0 reusable workflow files followed - none referenced locally)
+- CI/CD tool invocations found: dotnet build, dotnet test, dotnet build /bl
+
+---
+
+## Validation Queue
+
+1. **VERSION UNKNOWN (47 items)** - Chunk 1 (Application Layer): all NuGet package references across `*.csproj` files have no version pins; `Directory.Packages.props` is referenced in `eShopOnWeb.sln` (central package management) but was not provided in scan input.
+2. **TECHNOLOGY/VERSION CONFLICT** - Chunk 2 (Data Layer): default `appsettings.json` (Web & PublicApi) declares PostgreSQL connection strings for `CatalogConnection`/`IdentityConnection`, while `appsettings.Docker.json` declares SQL Server connection strings for the same keys against the `sqlserver` (Azure SQL Edge) container in `docker-compose.yml`. Agent 2 to determine authoritative engine per environment.
+3. **LOW - no tag declared** - Chunk 3 (Infrastructure Layer): `mcr.microsoft.com/azure-sql-edge` image has no version tag (defaults to `latest`).
+4. **LOW - no IaC declaration** - Chunk 2/3: PostgreSQL instance (`localhost:5432`) has no corresponding container/IaC declaration in provided files - may run externally or in an unprovided compose file.
+5. **LOW - configuration discrepancy** - Chunk 3: `src/PublicApi/Dockerfile` declares `EXPOSE 80` and `EXPOSE 443`, but `docker-compose.yml`/`docker-compose.override.yml` map host port 5200 to container port 8080 (`ASPNETCORE_URLS=http://+:8080`).
+6. **ARCHITECTURE NOTE** - Chunk 3: `infra/main.parameters.json` and `infra/abbreviations.json` present, but no Bicep/Terraform/ARM resource template (`main.bicep` etc.) was provided - actual Azure resource topology is unknown.
+7. **LOW - referenced but unresolved** - Chunk 4/5: Azure Key Vault referenced via `AZURE_KEY_VAULT_NAME` placeholder and `Azure.Identity`/`Azure.Extensions.AspNetCore.Configuration.Secrets` packages, but no vault name, resource, or usage configuration found.
+8. **LOW - no network declaration** - Chunk 4: `host.docker.internal` cross-container reference (BlazorAdmin -> Web) has no corresponding network/DNS declaration in `docker-compose.yml`.
+9. **LOW - missing JWT config** - Chunk 5 (Security Layer): JWT Bearer packages present in PublicApi/Web but no issuer/audience/signing-key configuration keys found in any provided appsettings file.
+10. **LOW - missing CORS/CSP/HSTS** - Chunk 5: No CORS policy, Content-Security-Policy, or HSTS configuration found in any provided file.
+11. **HIGH-RISK FINDING (flagged, value withheld)** - Chunk 5: Plaintext database credentials (`ConnectionStrings:CatalogConnection`, `ConnectionStrings:IdentityConnection`) and `SA_PASSWORD` are committed in source-controlled `appsettings*.json` and `docker-compose.yml` - Agent 2 to assess as a security/configuration risk.
+12. **LAYER NOT FOUND** - Chunk 5/6: No Observability layer artifacts (monitoring, logging config, tracing, alerting) found anywhere in the provided files.
+13. **Referenced but not provided** - `CodeCoverage.runsettings` is listed as a Solution Item under `tests/` in `eShopOnWeb.sln` but its content was not included in scan input.
+
+## Handoff Note to Agent 2
+This is a .NET 8.0 modular-monolith eCommerce reference architecture (eShopOnWeb) split into two deployable ASP.NET Core apps - a Razor/MVC + Blazor Server host (`Web`) and a Swagger-documented REST API (`PublicApi`) - both built on shared `ApplicationCore`/`Infrastructure`/`BlazorShared` libraries, plus a Blazor WebAssembly admin SPA (`BlazorAdmin`). The most significant structural anomaly is a primary-database conflict: default config points at PostgreSQL while the Docker Compose profile points at Azure SQL Edge/SQL Server for the same connection-string keys - this should be Agent 2's first investigation, alongside the plaintext-credential exposure in committed config files. CI/CD is minimal (two GitHub Actions workflows running `dotnet build`/`dotnet test`, plus a manual RichCodeNav indexing job and NuGet Dependabot) with no security scanning, deployment, or smoke-test stages found. Azure deployment intent is signalled only by `infra/main.parameters.json` and `infra/abbreviations.json` (azd convention files) with no actual resource templates provided, and no Observability layer artifacts exist anywhere in the scanned set. Recommended starting layer: **Data Layer** - reason: the PostgreSQL/SQL Server conflict is the highest-impact unresolved ambiguity and affects both deployable services.
+
+---
+Agent 1 Scan Complete.
+Agent 2 may now begin deep analysis using the 6 output files above.
+Recommended starting point: Data Layer - reason: unresolved primary-database engine conflict affects both Web and PublicApi services and downstream security/config findings.

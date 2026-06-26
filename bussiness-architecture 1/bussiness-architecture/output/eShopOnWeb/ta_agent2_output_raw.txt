@@ -1,0 +1,13 @@
+All 9 files written to `output/eShopOnWeb/ta-outputs/`:
+
+1. ✅ technology-stack-assessment.md
+2. ✅ architecture-pattern-catalog.md
+3. ✅ component-interaction-contract-map.md
+4. ✅ data-architecture-assessment.md
+5. ✅ security-architecture-assessment.md
+6. ✅ nfr-registry.md
+7. ✅ technical-debt-risk-register.md
+8. ✅ operational-architecture-assessment.md
+9. ✅ ta-review-summary.md
+
+Key findings worth flagging: two **Critical** hardcoded-credential issues (Postgres `postgres`/`Clarium123` in `appsettings.json`, SQL Server `sa`/`@someThingComplicated1234` in `docker-compose.yml`/`appsettings.Docker.json`), plus Azure SQL Edge being a now-EOL container image with no tag pinned. CI/CD maturity is low — only Build and Unit Tests are evidence-confirmed present (2 of 14 capabilities), with no SAST/dependency/container/secret scanning and no automated deploy. Full detail and a Validation Queue (10 items needing a source-code follow-up pass) are in the summary file.

@@ -1,0 +1,1040 @@
+{
+  "repo_root": "C:\\Users\\BrianRoyS\\Downloads\\eShopOnWeb-main\\eShopOnWeb-main",
+  "generated_at": "2026-06-15T07:26:55+00:00",
+  "scanner_version": "0.1.0",
+  "solutions": [
+    {
+      "name": "eShopOnWeb",
+      "path": "eShopOnWeb.sln",
+      "project_count": 14,
+      "projects": [
+        {
+          "name": "src",
+          "path": "src"
+        },
+        {
+          "name": "Web",
+          "path": "src/Web/Web.csproj"
+        },
+        {
+          "name": "Infrastructure",
+          "path": "src/Infrastructure/Infrastructure.csproj"
+        },
+        {
+          "name": "ApplicationCore",
+          "path": "src/ApplicationCore/ApplicationCore.csproj"
+        },
+        {
+          "name": "tests",
+          "path": "tests"
+        },
+        {
+          "name": "UnitTests",
+          "path": "tests/UnitTests/UnitTests.csproj"
+        },
+        {
+          "name": "IntegrationTests",
+          "path": "tests/IntegrationTests/IntegrationTests.csproj"
+        },
+        {
+          "name": "FunctionalTests",
+          "path": "tests/FunctionalTests/FunctionalTests.csproj"
+        },
+        {
+          "name": "Solution Items",
+          "path": "Solution Items"
+        },
+        {
+          "name": "docker-compose",
+          "path": "docker-compose.dcproj"
+        },
+        {
+          "name": "PublicApi",
+          "path": "src/PublicApi/PublicApi.csproj"
+        },
+        {
+          "name": "BlazorAdmin",
+          "path": "src/BlazorAdmin/BlazorAdmin.csproj"
+        },
+        {
+          "name": "BlazorShared",
+          "path": "src/BlazorShared/BlazorShared.csproj"
+        },
+        {
+          "name": "PublicApiIntegrationTests",
+          "path": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj"
+        }
+      ]
+    },
+    {
+      "name": "Everything",
+      "path": "Everything.sln",
+      "project_count": 13,
+      "projects": [
+        {
+          "name": "src",
+          "path": "src"
+        },
+        {
+          "name": "ApplicationCore",
+          "path": "src/ApplicationCore/ApplicationCore.csproj"
+        },
+        {
+          "name": "BlazorAdmin",
+          "path": "src/BlazorAdmin/BlazorAdmin.csproj"
+        },
+        {
+          "name": "BlazorShared",
+          "path": "src/BlazorShared/BlazorShared.csproj"
+        },
+        {
+          "name": "Infrastructure",
+          "path": "src/Infrastructure/Infrastructure.csproj"
+        },
+        {
+          "name": "PublicApi",
+          "path": "src/PublicApi/PublicApi.csproj"
+        },
+        {
+          "name": "Web",
+          "path": "src/Web/Web.csproj"
+        },
+        {
+          "name": "tests",
+          "path": "tests"
+        },
+        {
+          "name": "FunctionalTests",
+          "path": "tests/FunctionalTests/FunctionalTests.csproj"
+        },
+        {
+          "name": "IntegrationTests",
+          "path": "tests/IntegrationTests/IntegrationTests.csproj"
+        },
+        {
+          "name": "PublicApiIntegrationTests",
+          "path": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj"
+        },
+        {
+          "name": "UnitTests",
+          "path": "tests/UnitTests/UnitTests.csproj"
+        },
+        {
+          "name": "Solution Items",
+          "path": "Solution Items"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "ApplicationCore",
+      "path": "src/ApplicationCore/ApplicationCore.csproj",
+      "project_kind": "dotnet",
+      "type": "library",
+      "category": "support",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "src/ApplicationCore",
+      "framework_indicators": [
+        "sdk:Microsoft.NET.Sdk"
+      ],
+      "package_references": [
+        "Ardalis.GuardClauses",
+        "Ardalis.Result",
+        "Ardalis.Specification",
+        "System.Security.Claims",
+        "System.Text.Json"
+      ],
+      "project_references": [
+        "../BlazorShared/BlazorShared.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/ApplicationCore/ApplicationCore.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "name": "BlazorAdmin",
+      "path": "src/BlazorAdmin/BlazorAdmin.csproj",
+      "project_kind": "dotnet",
+      "type": "frontend_spa",
+      "category": "frontend",
+      "framework": ".NET (Microsoft.NET.Sdk.BlazorWebAssembly; target=unknown)",
+      "deployable": false,
+      "source_path": "src/BlazorAdmin",
+      "framework_indicators": [
+        "entry_point_file:Program.cs",
+        "frontend_indicator:BlazorWebAssembly",
+        "sdk:Microsoft.NET.Sdk.BlazorWebAssembly"
+      ],
+      "package_references": [
+        "BlazorInputFile",
+        "Blazored.LocalStorage",
+        "Microsoft.AspNetCore.Components.Authorization",
+        "Microsoft.AspNetCore.Components.WebAssembly",
+        "Microsoft.AspNetCore.Components.WebAssembly.Authentication",
+        "Microsoft.AspNetCore.Components.WebAssembly.DevServer",
+        "Microsoft.Extensions.Identity.Core",
+        "Microsoft.Extensions.Logging.Configuration",
+        "System.Net.Http.Json"
+      ],
+      "project_references": [
+        "../BlazorShared/BlazorShared.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/BlazorAdmin.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk.BlazorWebAssembly"
+        }
+      ],
+      "confidence": 0.9
+    },
+    {
+      "name": "BlazorShared",
+      "path": "src/BlazorShared/BlazorShared.csproj",
+      "project_kind": "dotnet",
+      "type": "library",
+      "category": "support",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "src/BlazorShared",
+      "framework_indicators": [
+        "sdk:Microsoft.NET.Sdk"
+      ],
+      "package_references": [
+        "BlazorInputFile",
+        "FluentValidation"
+      ],
+      "project_references": [],
+      "evidence": [
+        {
+          "file": "src/BlazorShared/BlazorShared.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "name": "Infrastructure",
+      "path": "src/Infrastructure/Infrastructure.csproj",
+      "project_kind": "dotnet",
+      "type": "database_support_library",
+      "category": "database_support",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "src/Infrastructure",
+      "framework_indicators": [
+        "database_indicator:EntityFrameworkCore",
+        "sdk:Microsoft.NET.Sdk"
+      ],
+      "package_references": [
+        "Ardalis.Specification.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Npgsql.EntityFrameworkCore.PostgreSQL",
+        "System.IdentityModel.Tokens.Jwt"
+      ],
+      "project_references": [
+        "../ApplicationCore/ApplicationCore.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/Infrastructure/Infrastructure.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.78
+    },
+    {
+      "name": "PublicApi",
+      "path": "src/PublicApi/PublicApi.csproj",
+      "project_kind": "dotnet",
+      "type": "backend_web_api",
+      "category": "backend",
+      "framework": ".NET (Microsoft.NET.Sdk.Web; target=unknown)",
+      "deployable": true,
+      "source_path": "src/PublicApi",
+      "framework_indicators": [
+        "backend_indicator:Microsoft.NET.Sdk.Web",
+        "config_file:appsettings.json",
+        "deployment_file:Dockerfile",
+        "entry_point_file:Program.cs",
+        "sdk:Microsoft.NET.Sdk.Web"
+      ],
+      "package_references": [
+        "Ardalis.ApiEndpoints",
+        "AutoMapper.Extensions.Microsoft.DependencyInjection",
+        "Microsoft.AspNetCore.Authentication.JwtBearer",
+        "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.UI",
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Microsoft.EntityFrameworkCore.SqlServer",
+        "Microsoft.EntityFrameworkCore.Tools",
+        "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
+        "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+        "MinimalApi.Endpoint",
+        "Swashbuckle.AspNetCore",
+        "Swashbuckle.AspNetCore.Annotations",
+        "Swashbuckle.AspNetCore.SwaggerUI",
+        "System.IdentityModel.Tokens.Jwt"
+      ],
+      "project_references": [
+        "../ApplicationCore/ApplicationCore.csproj",
+        "../Infrastructure/Infrastructure.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/PublicApi/PublicApi.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk.Web; deployable inferred from web SDK"
+        }
+      ],
+      "confidence": 0.92
+    },
+    {
+      "name": "Web",
+      "path": "src/Web/Web.csproj",
+      "project_kind": "dotnet",
+      "type": "backend_web_app",
+      "category": "backend",
+      "framework": ".NET (Microsoft.NET.Sdk.Web; target=unknown)",
+      "deployable": true,
+      "source_path": "src/Web",
+      "framework_indicators": [
+        "backend_indicator:Microsoft.NET.Sdk.Web",
+        "config_file:appsettings.json",
+        "deployment_file:Dockerfile",
+        "entry_point_file:Program.cs",
+        "sdk:Microsoft.NET.Sdk.Web"
+      ],
+      "package_references": [
+        "Ardalis.ListStartupServices",
+        "Ardalis.Specification",
+        "AutoMapper.Extensions.Microsoft.DependencyInjection",
+        "Azure.Extensions.AspNetCore.Configuration.Secrets",
+        "Azure.Identity",
+        "BuildBundlerMinifier",
+        "MediatR",
+        "Microsoft.AspNetCore.Authentication.JwtBearer",
+        "Microsoft.AspNetCore.Components.WebAssembly.Server",
+        "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.UI",
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Microsoft.EntityFrameworkCore.SqlServer",
+        "Microsoft.EntityFrameworkCore.Tools",
+        "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+        "Microsoft.Web.LibraryManager.Build",
+        "System.IdentityModel.Tokens.Jwt"
+      ],
+      "project_references": [
+        "../ApplicationCore/ApplicationCore.csproj",
+        "../BlazorAdmin/BlazorAdmin.csproj",
+        "../BlazorShared/BlazorShared.csproj",
+        "../Infrastructure/Infrastructure.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/Web/Web.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk.Web; deployable inferred from web SDK"
+        }
+      ],
+      "confidence": 0.92
+    },
+    {
+      "name": "FunctionalTests",
+      "path": "tests/FunctionalTests/FunctionalTests.csproj",
+      "project_kind": "dotnet",
+      "type": "test_project",
+      "category": "test",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "tests/FunctionalTests",
+      "framework_indicators": [
+        "sdk:Microsoft.NET.Sdk",
+        "test_indicator:Microsoft.NET.Test.Sdk_or_tests_path"
+      ],
+      "package_references": [
+        "Microsoft.AspNetCore.Mvc.Testing",
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Microsoft.NET.Test.Sdk",
+        "xunit",
+        "xunit.runner.visualstudio"
+      ],
+      "project_references": [
+        "../../src/ApplicationCore/ApplicationCore.csproj",
+        "../../src/PublicApi/PublicApi.csproj",
+        "../../src/Web/Web.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/FunctionalTests.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "name": "IntegrationTests",
+      "path": "tests/IntegrationTests/IntegrationTests.csproj",
+      "project_kind": "dotnet",
+      "type": "test_project",
+      "category": "test",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "tests/IntegrationTests",
+      "framework_indicators": [
+        "sdk:Microsoft.NET.Sdk",
+        "test_indicator:Microsoft.NET.Test.Sdk_or_tests_path"
+      ],
+      "package_references": [
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Microsoft.NET.Test.Sdk",
+        "NSubstitute",
+        "NSubstitute.Analyzers.CSharp",
+        "xunit",
+        "xunit.runner.visualstudio"
+      ],
+      "project_references": [
+        "../../src/Infrastructure/Infrastructure.csproj",
+        "../UnitTests/UnitTests.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "tests/IntegrationTests/IntegrationTests.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "name": "PublicApiIntegrationTests",
+      "path": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+      "project_kind": "dotnet",
+      "type": "test_project",
+      "category": "test",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "tests/PublicApiIntegrationTests",
+      "framework_indicators": [
+        "config_file:appsettings.json",
+        "sdk:Microsoft.NET.Sdk",
+        "test_indicator:Microsoft.NET.Test.Sdk_or_tests_path"
+      ],
+      "package_references": [
+        "MSTest.TestAdapter",
+        "MSTest.TestFramework",
+        "Microsoft.AspNetCore.Mvc.Testing",
+        "Microsoft.NET.Test.Sdk",
+        "coverlet.collector"
+      ],
+      "project_references": [
+        "../../src/PublicApi/PublicApi.csproj",
+        "../../src/Web/Web.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "name": "UnitTests",
+      "path": "tests/UnitTests/UnitTests.csproj",
+      "project_kind": "dotnet",
+      "type": "test_project",
+      "category": "test",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "tests/UnitTests",
+      "framework_indicators": [
+        "sdk:Microsoft.NET.Sdk",
+        "test_indicator:Microsoft.NET.Test.Sdk_or_tests_path"
+      ],
+      "package_references": [
+        "Microsoft.NET.Test.Sdk",
+        "NSubstitute",
+        "NSubstitute.Analyzers.CSharp",
+        "xunit",
+        "xunit.runner.console",
+        "xunit.runner.visualstudio"
+      ],
+      "project_references": [
+        "../../src/ApplicationCore/ApplicationCore.csproj",
+        "../../src/Web/Web.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "tests/UnitTests/UnitTests.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.95
+    }
+  ],
+  "backend_projects": [
+    {
+      "name": "PublicApi",
+      "path": "src/PublicApi/PublicApi.csproj",
+      "project_kind": "dotnet",
+      "type": "backend_web_api",
+      "category": "backend",
+      "framework": ".NET (Microsoft.NET.Sdk.Web; target=unknown)",
+      "deployable": true,
+      "source_path": "src/PublicApi",
+      "framework_indicators": [
+        "backend_indicator:Microsoft.NET.Sdk.Web",
+        "config_file:appsettings.json",
+        "deployment_file:Dockerfile",
+        "entry_point_file:Program.cs",
+        "sdk:Microsoft.NET.Sdk.Web"
+      ],
+      "package_references": [
+        "Ardalis.ApiEndpoints",
+        "AutoMapper.Extensions.Microsoft.DependencyInjection",
+        "Microsoft.AspNetCore.Authentication.JwtBearer",
+        "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.UI",
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Microsoft.EntityFrameworkCore.SqlServer",
+        "Microsoft.EntityFrameworkCore.Tools",
+        "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
+        "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+        "MinimalApi.Endpoint",
+        "Swashbuckle.AspNetCore",
+        "Swashbuckle.AspNetCore.Annotations",
+        "Swashbuckle.AspNetCore.SwaggerUI",
+        "System.IdentityModel.Tokens.Jwt"
+      ],
+      "project_references": [
+        "../ApplicationCore/ApplicationCore.csproj",
+        "../Infrastructure/Infrastructure.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/PublicApi/PublicApi.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk.Web; deployable inferred from web SDK"
+        }
+      ],
+      "confidence": 0.92
+    },
+    {
+      "name": "Web",
+      "path": "src/Web/Web.csproj",
+      "project_kind": "dotnet",
+      "type": "backend_web_app",
+      "category": "backend",
+      "framework": ".NET (Microsoft.NET.Sdk.Web; target=unknown)",
+      "deployable": true,
+      "source_path": "src/Web",
+      "framework_indicators": [
+        "backend_indicator:Microsoft.NET.Sdk.Web",
+        "config_file:appsettings.json",
+        "deployment_file:Dockerfile",
+        "entry_point_file:Program.cs",
+        "sdk:Microsoft.NET.Sdk.Web"
+      ],
+      "package_references": [
+        "Ardalis.ListStartupServices",
+        "Ardalis.Specification",
+        "AutoMapper.Extensions.Microsoft.DependencyInjection",
+        "Azure.Extensions.AspNetCore.Configuration.Secrets",
+        "Azure.Identity",
+        "BuildBundlerMinifier",
+        "MediatR",
+        "Microsoft.AspNetCore.Authentication.JwtBearer",
+        "Microsoft.AspNetCore.Components.WebAssembly.Server",
+        "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.UI",
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Microsoft.EntityFrameworkCore.SqlServer",
+        "Microsoft.EntityFrameworkCore.Tools",
+        "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+        "Microsoft.Web.LibraryManager.Build",
+        "System.IdentityModel.Tokens.Jwt"
+      ],
+      "project_references": [
+        "../ApplicationCore/ApplicationCore.csproj",
+        "../BlazorAdmin/BlazorAdmin.csproj",
+        "../BlazorShared/BlazorShared.csproj",
+        "../Infrastructure/Infrastructure.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/Web/Web.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk.Web; deployable inferred from web SDK"
+        }
+      ],
+      "confidence": 0.92
+    }
+  ],
+  "frontend_projects": [
+    {
+      "name": "BlazorAdmin",
+      "path": "src/BlazorAdmin/BlazorAdmin.csproj",
+      "project_kind": "dotnet",
+      "type": "frontend_spa",
+      "category": "frontend",
+      "framework": ".NET (Microsoft.NET.Sdk.BlazorWebAssembly; target=unknown)",
+      "deployable": false,
+      "source_path": "src/BlazorAdmin",
+      "framework_indicators": [
+        "entry_point_file:Program.cs",
+        "frontend_indicator:BlazorWebAssembly",
+        "sdk:Microsoft.NET.Sdk.BlazorWebAssembly"
+      ],
+      "package_references": [
+        "BlazorInputFile",
+        "Blazored.LocalStorage",
+        "Microsoft.AspNetCore.Components.Authorization",
+        "Microsoft.AspNetCore.Components.WebAssembly",
+        "Microsoft.AspNetCore.Components.WebAssembly.Authentication",
+        "Microsoft.AspNetCore.Components.WebAssembly.DevServer",
+        "Microsoft.Extensions.Identity.Core",
+        "Microsoft.Extensions.Logging.Configuration",
+        "System.Net.Http.Json"
+      ],
+      "project_references": [
+        "../BlazorShared/BlazorShared.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/BlazorAdmin.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk.BlazorWebAssembly"
+        }
+      ],
+      "confidence": 0.9
+    }
+  ],
+  "database_projects": [
+    {
+      "name": "Infrastructure",
+      "path": "src/Infrastructure/Infrastructure.csproj",
+      "project_kind": "dotnet",
+      "type": "database_support_library",
+      "category": "database_support",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "src/Infrastructure",
+      "framework_indicators": [
+        "database_indicator:EntityFrameworkCore",
+        "sdk:Microsoft.NET.Sdk"
+      ],
+      "package_references": [
+        "Ardalis.Specification.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Npgsql.EntityFrameworkCore.PostgreSQL",
+        "System.IdentityModel.Tokens.Jwt"
+      ],
+      "project_references": [
+        "../ApplicationCore/ApplicationCore.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/Infrastructure/Infrastructure.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.78
+    }
+  ],
+  "supporting_projects": [
+    {
+      "name": "ApplicationCore",
+      "path": "src/ApplicationCore/ApplicationCore.csproj",
+      "project_kind": "dotnet",
+      "type": "library",
+      "category": "support",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "src/ApplicationCore",
+      "framework_indicators": [
+        "sdk:Microsoft.NET.Sdk"
+      ],
+      "package_references": [
+        "Ardalis.GuardClauses",
+        "Ardalis.Result",
+        "Ardalis.Specification",
+        "System.Security.Claims",
+        "System.Text.Json"
+      ],
+      "project_references": [
+        "../BlazorShared/BlazorShared.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/ApplicationCore/ApplicationCore.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "name": "BlazorShared",
+      "path": "src/BlazorShared/BlazorShared.csproj",
+      "project_kind": "dotnet",
+      "type": "library",
+      "category": "support",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "src/BlazorShared",
+      "framework_indicators": [
+        "sdk:Microsoft.NET.Sdk"
+      ],
+      "package_references": [
+        "BlazorInputFile",
+        "FluentValidation"
+      ],
+      "project_references": [],
+      "evidence": [
+        {
+          "file": "src/BlazorShared/BlazorShared.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "name": "Infrastructure",
+      "path": "src/Infrastructure/Infrastructure.csproj",
+      "project_kind": "dotnet",
+      "type": "database_support_library",
+      "category": "database_support",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "src/Infrastructure",
+      "framework_indicators": [
+        "database_indicator:EntityFrameworkCore",
+        "sdk:Microsoft.NET.Sdk"
+      ],
+      "package_references": [
+        "Ardalis.Specification.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Npgsql.EntityFrameworkCore.PostgreSQL",
+        "System.IdentityModel.Tokens.Jwt"
+      ],
+      "project_references": [
+        "../ApplicationCore/ApplicationCore.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/Infrastructure/Infrastructure.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.78
+    }
+  ],
+  "test_projects": [
+    {
+      "name": "FunctionalTests",
+      "path": "tests/FunctionalTests/FunctionalTests.csproj",
+      "project_kind": "dotnet",
+      "type": "test_project",
+      "category": "test",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "tests/FunctionalTests",
+      "framework_indicators": [
+        "sdk:Microsoft.NET.Sdk",
+        "test_indicator:Microsoft.NET.Test.Sdk_or_tests_path"
+      ],
+      "package_references": [
+        "Microsoft.AspNetCore.Mvc.Testing",
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Microsoft.NET.Test.Sdk",
+        "xunit",
+        "xunit.runner.visualstudio"
+      ],
+      "project_references": [
+        "../../src/ApplicationCore/ApplicationCore.csproj",
+        "../../src/PublicApi/PublicApi.csproj",
+        "../../src/Web/Web.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/FunctionalTests.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "name": "IntegrationTests",
+      "path": "tests/IntegrationTests/IntegrationTests.csproj",
+      "project_kind": "dotnet",
+      "type": "test_project",
+      "category": "test",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "tests/IntegrationTests",
+      "framework_indicators": [
+        "sdk:Microsoft.NET.Sdk",
+        "test_indicator:Microsoft.NET.Test.Sdk_or_tests_path"
+      ],
+      "package_references": [
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Microsoft.NET.Test.Sdk",
+        "NSubstitute",
+        "NSubstitute.Analyzers.CSharp",
+        "xunit",
+        "xunit.runner.visualstudio"
+      ],
+      "project_references": [
+        "../../src/Infrastructure/Infrastructure.csproj",
+        "../UnitTests/UnitTests.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "tests/IntegrationTests/IntegrationTests.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "name": "PublicApiIntegrationTests",
+      "path": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+      "project_kind": "dotnet",
+      "type": "test_project",
+      "category": "test",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "tests/PublicApiIntegrationTests",
+      "framework_indicators": [
+        "config_file:appsettings.json",
+        "sdk:Microsoft.NET.Sdk",
+        "test_indicator:Microsoft.NET.Test.Sdk_or_tests_path"
+      ],
+      "package_references": [
+        "MSTest.TestAdapter",
+        "MSTest.TestFramework",
+        "Microsoft.AspNetCore.Mvc.Testing",
+        "Microsoft.NET.Test.Sdk",
+        "coverlet.collector"
+      ],
+      "project_references": [
+        "../../src/PublicApi/PublicApi.csproj",
+        "../../src/Web/Web.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "name": "UnitTests",
+      "path": "tests/UnitTests/UnitTests.csproj",
+      "project_kind": "dotnet",
+      "type": "test_project",
+      "category": "test",
+      "framework": ".NET (Microsoft.NET.Sdk; target=unknown)",
+      "deployable": false,
+      "source_path": "tests/UnitTests",
+      "framework_indicators": [
+        "sdk:Microsoft.NET.Sdk",
+        "test_indicator:Microsoft.NET.Test.Sdk_or_tests_path"
+      ],
+      "package_references": [
+        "Microsoft.NET.Test.Sdk",
+        "NSubstitute",
+        "NSubstitute.Analyzers.CSharp",
+        "xunit",
+        "xunit.runner.console",
+        "xunit.runner.visualstudio"
+      ],
+      "project_references": [
+        "../../src/ApplicationCore/ApplicationCore.csproj",
+        "../../src/Web/Web.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "tests/UnitTests/UnitTests.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk"
+        }
+      ],
+      "confidence": 0.95
+    }
+  ],
+  "deployable_units": [
+    {
+      "name": "PublicApi",
+      "path": "src/PublicApi/PublicApi.csproj",
+      "project_kind": "dotnet",
+      "type": "backend_web_api",
+      "category": "backend",
+      "framework": ".NET (Microsoft.NET.Sdk.Web; target=unknown)",
+      "deployable": true,
+      "source_path": "src/PublicApi",
+      "framework_indicators": [
+        "backend_indicator:Microsoft.NET.Sdk.Web",
+        "config_file:appsettings.json",
+        "deployment_file:Dockerfile",
+        "entry_point_file:Program.cs",
+        "sdk:Microsoft.NET.Sdk.Web"
+      ],
+      "package_references": [
+        "Ardalis.ApiEndpoints",
+        "AutoMapper.Extensions.Microsoft.DependencyInjection",
+        "Microsoft.AspNetCore.Authentication.JwtBearer",
+        "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.UI",
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Microsoft.EntityFrameworkCore.SqlServer",
+        "Microsoft.EntityFrameworkCore.Tools",
+        "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
+        "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+        "MinimalApi.Endpoint",
+        "Swashbuckle.AspNetCore",
+        "Swashbuckle.AspNetCore.Annotations",
+        "Swashbuckle.AspNetCore.SwaggerUI",
+        "System.IdentityModel.Tokens.Jwt"
+      ],
+      "project_references": [
+        "../ApplicationCore/ApplicationCore.csproj",
+        "../Infrastructure/Infrastructure.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/PublicApi/PublicApi.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk.Web; deployable inferred from web SDK"
+        }
+      ],
+      "confidence": 0.92
+    },
+    {
+      "name": "Web",
+      "path": "src/Web/Web.csproj",
+      "project_kind": "dotnet",
+      "type": "backend_web_app",
+      "category": "backend",
+      "framework": ".NET (Microsoft.NET.Sdk.Web; target=unknown)",
+      "deployable": true,
+      "source_path": "src/Web",
+      "framework_indicators": [
+        "backend_indicator:Microsoft.NET.Sdk.Web",
+        "config_file:appsettings.json",
+        "deployment_file:Dockerfile",
+        "entry_point_file:Program.cs",
+        "sdk:Microsoft.NET.Sdk.Web"
+      ],
+      "package_references": [
+        "Ardalis.ListStartupServices",
+        "Ardalis.Specification",
+        "AutoMapper.Extensions.Microsoft.DependencyInjection",
+        "Azure.Extensions.AspNetCore.Configuration.Secrets",
+        "Azure.Identity",
+        "BuildBundlerMinifier",
+        "MediatR",
+        "Microsoft.AspNetCore.Authentication.JwtBearer",
+        "Microsoft.AspNetCore.Components.WebAssembly.Server",
+        "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+        "Microsoft.AspNetCore.Identity.UI",
+        "Microsoft.EntityFrameworkCore.InMemory",
+        "Microsoft.EntityFrameworkCore.SqlServer",
+        "Microsoft.EntityFrameworkCore.Tools",
+        "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+        "Microsoft.Web.LibraryManager.Build",
+        "System.IdentityModel.Tokens.Jwt"
+      ],
+      "project_references": [
+        "../ApplicationCore/ApplicationCore.csproj",
+        "../BlazorAdmin/BlazorAdmin.csproj",
+        "../BlazorShared/BlazorShared.csproj",
+        "../Infrastructure/Infrastructure.csproj"
+      ],
+      "evidence": [
+        {
+          "file": "src/Web/Web.csproj",
+          "reason": ".NET project file using Microsoft.NET.Sdk.Web; deployable inferred from web SDK"
+        }
+      ],
+      "confidence": 0.92
+    }
+  ],
+  "build_files": [
+    "Directory.Packages.props",
+    "Everything.sln",
+    "docker-compose.dcproj",
+    "eShopOnWeb.sln",
+    "global.json",
+    "src/ApplicationCore/ApplicationCore.csproj",
+    "src/BlazorAdmin/BlazorAdmin.csproj",
+    "src/BlazorShared/BlazorShared.csproj",
+    "src/Infrastructure/Infrastructure.csproj",
+    "src/PublicApi/PublicApi.csproj",
+    "src/Web/Web.csproj",
+    "tests/FunctionalTests/FunctionalTests.csproj",
+    "tests/IntegrationTests/IntegrationTests.csproj",
+    "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+    "tests/UnitTests/UnitTests.csproj"
+  ],
+  "deployment_files": [
+    ".github/workflows/dotnetcore.yml",
+    ".github/workflows/richnav.yml",
+    "azure.yaml",
+    "docker-compose.override.yml",
+    "docker-compose.yml",
+    "infra/abbreviations.json",
+    "infra/core/database/sqlserver/sqlserver.bicep",
+    "infra/core/host/appservice.bicep",
+    "infra/core/host/appserviceplan.bicep",
+    "infra/core/security/keyvault-access.bicep",
+    "infra/core/security/keyvault.bicep",
+    "infra/main.bicep",
+    "infra/main.parameters.json",
+    "src/PublicApi/Dockerfile",
+    "src/Web/Dockerfile"
+  ],
+  "docker_compose_services": [
+    {
+      "name": "eshopwebmvc",
+      "file": "docker-compose.yml"
+    },
+    {
+      "name": "eshoppublicapi",
+      "file": "docker-compose.yml"
+    },
+    {
+      "name": "sqlserver",
+      "file": "docker-compose.yml"
+    }
+  ],
+  "framework_indicators": [
+    "backend_indicator:Microsoft.NET.Sdk.Web",
+    "config_file:appsettings.json",
+    "database_indicator:EntityFrameworkCore",
+    "deployment_file:Dockerfile",
+    "entry_point_file:Program.cs",
+    "frontend_indicator:BlazorWebAssembly",
+    "sdk:Microsoft.NET.Sdk",
+    "sdk:Microsoft.NET.Sdk.BlazorWebAssembly",
+    "sdk:Microsoft.NET.Sdk.Web",
+    "test_indicator:Microsoft.NET.Test.Sdk_or_tests_path"
+  ],
+  "summary": {
+    "solution_count": 2,
+    "project_count": 10,
+    "backend_project_count": 2,
+    "frontend_project_count": 1,
+    "database_project_count": 1,
+    "supporting_project_count": 3,
+    "test_project_count": 4,
+    "deployable_unit_count": 2
+  }
+}

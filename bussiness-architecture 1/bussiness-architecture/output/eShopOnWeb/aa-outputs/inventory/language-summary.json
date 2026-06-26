@@ -1,0 +1,269 @@
+{
+  "generated_at": "2026-06-15T07:26:55+00:00",
+  "scanner_version": "0.1.0",
+  "total_files_scanned": 468,
+  "total_files_ignored": 65,
+  "languages": [
+    {
+      "language": "csharp",
+      "file_count": 248,
+      "total_bytes": 319266,
+      "total_lines": 9387
+    },
+    {
+      "language": "razor",
+      "file_count": 61,
+      "total_bytes": 88273,
+      "total_lines": 2275
+    },
+    {
+      "language": "css",
+      "file_count": 27,
+      "total_bytes": 209407,
+      "total_lines": 987
+    },
+    {
+      "language": "json",
+      "file_count": 27,
+      "total_bytes": 70317,
+      "total_lines": 1105
+    },
+    {
+      "language": "unknown",
+      "file_count": 26,
+      "total_bytes": 290702,
+      "total_lines": 848
+    },
+    {
+      "language": "image",
+      "file_count": 22,
+      "total_bytes": 2762719,
+      "total_lines": 0
+    },
+    {
+      "language": "markdown",
+      "file_count": 12,
+      "total_bytes": 106899,
+      "total_lines": 1325
+    },
+    {
+      "language": "msbuild",
+      "file_count": 12,
+      "total_bytes": 19616,
+      "total_lines": 441
+    },
+    {
+      "language": "bicep",
+      "file_count": 6,
+      "total_bytes": 13148,
+      "total_lines": 440
+    },
+    {
+      "language": "svg",
+      "file_count": 6,
+      "total_bytes": 289030,
+      "total_lines": 4270
+    },
+    {
+      "language": "yaml",
+      "file_count": 6,
+      "total_bytes": 2457,
+      "total_lines": 105
+    },
+    {
+      "language": "javascript",
+      "file_count": 5,
+      "total_bytes": 605068,
+      "total_lines": 21984
+    },
+    {
+      "language": "dockerfile",
+      "file_count": 2,
+      "total_bytes": 1410,
+      "total_lines": 52
+    },
+    {
+      "language": "dotnet_solution",
+      "file_count": 2,
+      "total_bytes": 14514,
+      "total_lines": 210
+    },
+    {
+      "language": "xml",
+      "file_count": 2,
+      "total_bytes": 6116,
+      "total_lines": 122
+    },
+    {
+      "language": "docker_ignore",
+      "file_count": 1,
+      "total_bytes": 74,
+      "total_lines": 9
+    },
+    {
+      "language": "editorconfig",
+      "file_count": 1,
+      "total_bytes": 7003,
+      "total_lines": 150
+    },
+    {
+      "language": "git_attributes",
+      "file_count": 1,
+      "total_bytes": 88,
+      "total_lines": 3
+    },
+    {
+      "language": "git_ignore",
+      "file_count": 1,
+      "total_bytes": 4545,
+      "total_lines": 262
+    }
+  ],
+  "extensions": [
+    {
+      "extension": ".cs",
+      "file_count": 248,
+      "total_bytes": 319266
+    },
+    {
+      "extension": ".cshtml",
+      "file_count": 48,
+      "total_bytes": 57694
+    },
+    {
+      "extension": ".css",
+      "file_count": 27,
+      "total_bytes": 209407
+    },
+    {
+      "extension": ".json",
+      "file_count": 27,
+      "total_bytes": 70317
+    },
+    {
+      "extension": ".png",
+      "file_count": 20,
+      "total_bytes": 2703213
+    },
+    {
+      "extension": ".razor",
+      "file_count": 13,
+      "total_bytes": 30579
+    },
+    {
+      "extension": ".md",
+      "file_count": 12,
+      "total_bytes": 106899
+    },
+    {
+      "extension": ".csproj",
+      "file_count": 10,
+      "total_bytes": 13557
+    },
+    {
+      "extension": ".scss",
+      "file_count": 9,
+      "total_bytes": 13298
+    },
+    {
+      "extension": "[no extension]",
+      "file_count": 9,
+      "total_bytes": 19314
+    },
+    {
+      "extension": ".bicep",
+      "file_count": 6,
+      "total_bytes": 13148
+    },
+    {
+      "extension": ".svg",
+      "file_count": 6,
+      "total_bytes": 289030
+    },
+    {
+      "extension": ".js",
+      "file_count": 5,
+      "total_bytes": 605068
+    },
+    {
+      "extension": ".yml",
+      "file_count": 5,
+      "total_bytes": 2241
+    },
+    {
+      "extension": ".eot",
+      "file_count": 3,
+      "total_bytes": 87152
+    },
+    {
+      "extension": ".ttf",
+      "file_count": 3,
+      "total_bytes": 86604
+    },
+    {
+      "extension": ".woff",
+      "file_count": 3,
+      "total_bytes": 49616
+    },
+    {
+      "extension": ".sln",
+      "file_count": 2,
+      "total_bytes": 14514
+    },
+    {
+      "extension": ".woff2",
+      "file_count": 2,
+      "total_bytes": 24192
+    },
+    {
+      "extension": ".cd",
+      "file_count": 1,
+      "total_bytes": 1391
+    },
+    {
+      "extension": ".dcproj",
+      "file_count": 1,
+      "total_bytes": 763
+    },
+    {
+      "extension": ".defaults",
+      "file_count": 1,
+      "total_bytes": 1259
+    },
+    {
+      "extension": ".ico",
+      "file_count": 1,
+      "total_bytes": 32038
+    },
+    {
+      "extension": ".jpg",
+      "file_count": 1,
+      "total_bytes": 27468
+    },
+    {
+      "extension": ".otf",
+      "file_count": 1,
+      "total_bytes": 20996
+    },
+    {
+      "extension": ".props",
+      "file_count": 1,
+      "total_bytes": 5296
+    },
+    {
+      "extension": ".runsettings",
+      "file_count": 1,
+      "total_bytes": 5116
+    },
+    {
+      "extension": ".xml",
+      "file_count": 1,
+      "total_bytes": 1000
+    },
+    {
+      "extension": ".yaml",
+      "file_count": 1,
+      "total_bytes": 216
+    }
+  ]
+}

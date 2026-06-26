@@ -1,0 +1,507 @@
+===DOCUMENT_START:01_capability_map.md===
+# Business Capability Map
+## eShopOnWeb
+
+> Extracted from legacy codebase. Status: Active/Dormant per code evidence.
+
+### L1: Catalog Management
+#### L2: Product Information Management
+- **L3: Catalog Item Details Maintenance** — Maintain product name, description, price, and image for items in the store catalog `[ACTIVE]`
+- **L3: Product Classification** — Assign products to a brand and a type for organization and filtering `[ACTIVE]`
+- **L3: Product Image Management** — Generate and maintain image paths for product pictures `[ACTIVE]`
+
+#### L2: Catalog Reference Data
+- **L3: Brand Management** — Maintain the list of manufacturers/brands available for product classification `[ACTIVE]`
+- **L3: Type Management** — Maintain the list of product categories/types `[ACTIVE]`
+- **L3: Catalog Seeding** — Populate initial catalog data on system startup `[ACTIVE]`
+
+### L1: Basket / Shopping Cart Management
+#### L2: Basket Maintenance
+- **L3: Add Item to Basket** — Add a product to a customer's basket, consolidating quantity if already present `[ACTIVE]`
+- **L3: Quantity Adjustment** — Adjust the quantity of an item in the basket, preventing negative values `[ACTIVE]`
+- **L3: Basket Cleanup** — Remove basket lines that have a zero quantity `[ACTIVE]`
+
+#### L2: Session Continuity
+- **L3: Anonymous-to-Registered Basket Transfer** — Merge an anonymous shopper's basket into their account basket upon login `[ACTIVE]`
+
+### L1: Order Management
+#### L2: Order Creation
+- **L3: Checkout Processing** — Convert a customer's basket into a confirmed order `[ACTIVE]`
+- **L3: Empty Basket Protection** — Prevent checkout when the basket contains no items `[ACTIVE]`
+- **L3: Ordered Item Snapshot** — Capture product name, picture, and price at the time of order `[ACTIVE]`
+
+#### L2: Order Calculation
+- **L3: Order Total Calculation** — Calculate the order total from item prices and quantities `[ACTIVE]`
+
+### L1: Buyer / Customer Profile Management
+#### L2: Buyer Identity
+- **L3: Buyer Record Creation** — Create a buyer record linked to a valid identity account `[ACTIVE]`
+
+#### L2: Payment Information
+- **L3: Payment Method Management** — Associate payment methods with a buyer `[ACTIVE - inferred from data model]`
+
+### L1: Identity & Authentication
+#### L2: Access Control
+- **L3: User Login** — Validate user credentials and report lockout/permission status `[ACTIVE]`
+- **L3: Token Issuance** — Generate signed JWT tokens containing identity and role claims `[ACTIVE]`
+
+#### L2: Identity Seeding
+- **L3: Identity Data Seeding** — Populate initial user accounts and roles on startup `[ACTIVE]`
+
+### L1: Admin Catalog Operations (Blazor)
+#### L2: Administrative Catalog Interface
+- **L3: Catalog Item List View** — Display catalog items, types, and brands to administrators `[ACTIVE]`
+- **L3: Catalog Item Create/Delete** — Allow administrators to create or remove catalog items `[ACTIVE]`
+- **L3: Cached Data Refresh** — Refresh locally cached catalog lists after changes `[ACTIVE]`
+
+---
+**Summary**
+| Level | Count |
+|---|---|
+| L1 Capabilities | 6 |
+| L2 Sub-Capabilities | 12 |
+| L3 Functions | 20 |
+===DOCUMENT_END===
+
+===DOCUMENT_START:02_value_stream.md===
+# Value Stream Map
+## eShopOnWeb
+
+### Value Stream: Customer Browse-to-Order
+
+| Stage | Actor | Description | Value-Add |
+|---|---|---|---|
+| 1. Browse Catalog | Customer | Customer views available catalog items, filtering by brand or type | Yes |
+| 2. Build Basket | Customer | Customer adds desired items to their basket; system consolidates duplicate items | Yes |
+| 3. Authenticate (if needed) | Customer | Customer logs in; anonymous basket is transferred to their account | No |
+| 4. Adjust Basket | Customer | Customer adjusts quantities or removes items before checkout | Yes |
+| 5. Checkout | Customer | Customer initiates checkout; system validates basket is not empty | Yes |
+| 6. Order Creation | System | System snapshots ordered item details and creates the order with shipping address | Yes |
+| 7. Order Total Calculation | System | System calculates the total order value | Yes |
+
+**Handoff Points:**
+- Stage 1 -> Stage 2: Selected catalog item is handed to the basket-building process
+- Stage 2 -> Stage 3: Basket contents (as anonymous session) are handed to the authentication process
+- Stage 3 -> Stage 4: Merged basket is handed back to the customer for review
+- Stage 4 -> Stage 5: Finalized basket is handed to the checkout process
+- Stage 5 -> Stage 6: Validated basket contents are handed to order creation
+- Stage 6 -> Stage 7: Created order is handed to the total calculation step
+
+---
+
+### Value Stream: Catalog Content Management
+
+| Stage | Actor | Description | Value-Add |
+|---|---|---|---|
+| 1. Review Catalog | Administrator | Administrator views current catalog items, brands, and types | Yes |
+| 2. Create/Update Item | Administrator | Administrator creates or updates a catalog item's details, brand, type, and image | Yes |
+| 3. Validate Item Details | System | System rejects updates with missing name, description, invalid price, or invalid brand/type IDs | Yes |
+| 4. Refresh Cache | System | System refreshes the locally cached catalog list so the admin UI reflects changes | No |
+
+**Handoff Points:**
+- Stage 1 -> Stage 2: Administrator selects an item to create or modify
+- Stage 2 -> Stage 3: Submitted item details are handed to validation logic
+- Stage 3 -> Stage 4: Validated changes are handed to the cache refresh process
+===DOCUMENT_END===
+
+===DOCUMENT_START:03_process_models.md===
+# Business Process Models
+## eShopOnWeb
+
+---
+### Process: Add Item to Basket
+**Trigger:** Customer (or anonymous user) selects a catalog item to purchase
+**Actors:** Customer, System
+**End Result:** Basket contains the requested item with correct quantity
+
+**Steps:**
+1. System — Retrieve the customer's existing basket, or create a new one if none exists
+   - Decision: Does a basket already exist for this user?
+     - YES -> Use existing basket
+     - NO  -> Create a new basket for the user
+2. System — Add the item to the basket, consolidating quantity if the item is already present
+   - Decision: Is the catalog item already in the basket?
+     - YES -> Increase quantity of existing basket item
+     - NO  -> Add a new basket line item
+3. System — Persist the updated basket
+
+**Business Rules Applied:** BR005
+
+---
+### Process: Transfer Anonymous Basket to Registered User
+**Trigger:** An anonymous user logs in or registers
+**Actors:** Customer, System
+**End Result:** Registered user's basket contains all items from their anonymous session
+
+**Steps:**
+1. System — Retrieve the anonymous user's basket
+   - Decision: Does the anonymous basket exist?
+     - YES -> Continue transfer
+     - NO  -> End process - nothing to transfer
+2. System — Retrieve or create a basket for the now-registered user
+   - Decision: Does the registered user already have a basket?
+     - YES -> Merge items into existing basket
+     - NO  -> Create a new basket for the user
+3. System — Copy each item from the anonymous basket into the user's basket
+
+**Business Rules Applied:** BR005
+
+---
+### Process: Checkout / Place Order
+**Trigger:** Customer initiates checkout from their basket
+**Actors:** Customer, System
+**End Result:** Order is created from the basket contents with a calculated total and shipping address
+
+**Steps:**
+1. System — Retrieve the customer's basket with items
+2. System — Verify the basket exists and is not empty
+   - Decision: Is the basket empty?
+     - YES -> Block checkout and raise an empty-basket error
+     - NO  -> Continue to order creation
+3. System — Retrieve full catalog item details for each basket item
+4. System — Create a snapshot of each ordered item (name, picture, price) for the order record
+5. System — Create the order with the buyer ID, shipping address, and order items
+6. System — Calculate the order total from item prices and quantities
+
+**Business Rules Applied:** BR009, BR010, BR011, BR012
+
+---
+### Process: Catalog Item Administration
+**Trigger:** Administrator manages catalog items via the admin (Blazor) interface
+**Actors:** Administrator, System
+**End Result:** Catalog item data is updated and reflected in the admin UI
+
+**Steps:**
+1. Administrator — View the list of catalog items, types, and brands
+2. Administrator — Create a new catalog item
+3. Administrator — Delete an existing catalog item
+4. System — Refresh the cached local catalog item list after create/delete
+
+**Business Rules Applied:** BR001, BR002, BR003, BR004
+
+---
+### Process: User Authentication
+**Trigger:** User submits login credentials via the API
+**Actors:** Customer, Administrator, System
+**End Result:** User receives a JWT token containing their identity and role claims for subsequent API access
+
+**Steps:**
+1. Customer — Submit username and password to the authentication endpoint
+2. System — Validate credentials against identity store
+   - Decision: Are the credentials valid and is the account not locked out?
+     - YES -> Issue authentication token with success result
+     - NO  -> Return failed result with lockout/not-allowed status
+3. System — Generate a signed JWT token containing user identity and role claims
+
+**Business Rules Applied:** None identified
+
+---
+===DOCUMENT_END===
+
+===DOCUMENT_START:04_business_rules.md===
+# Business Rules Inventory
+## eShopOnWeb
+
+> Total Rules: 12 | Critical: 5 | High: 2 | Medium: 3 | Low: 1
+
+### Validation Rules
+| Rule ID | Business Statement | Priority | Source |
+|---|---|---|---|
+| BR001 | IF a catalog item's name, description, or price is missing or the price is zero/negative THEN reject the update to catalog item details | High | CatalogItem.cs |
+| BR002 | IF a catalog brand ID of zero is provided THEN reject the brand assignment for the catalog item | Medium | CatalogItem.cs |
+| BR003 | IF a catalog type ID of zero is provided THEN reject the type assignment for the catalog item | Medium | CatalogItem.cs |
+| BR007 | IF a quantity adjustment to a basket item would result in a negative value THEN reject the quantity update | High | BasketItem.cs |
+| BR008 | IF a buyer record is created without a valid identity reference THEN reject buyer creation | Critical | Buyer.cs |
+| BR009 | IF an order line item is created without a valid catalog item ID, product name, or picture URI THEN reject creation of that order line item | Critical | CatalogItemOrdered.cs |
+| BR011 | IF an order is created without a buyer ID THEN reject order creation | Critical | Order.cs |
+
+### Calculation Rules
+| Rule ID | Business Statement | Priority | Source |
+|---|---|---|---|
+| BR004 | IF a picture file name is provided for a catalog item THEN generate a unique image path under images/products; IF no picture name is provided THEN clear the picture URI | Low | CatalogItem.cs |
+| BR005 | IF a customer adds a catalog item already present in their basket THEN increase the quantity of the existing basket line instead of creating a new line; ELSE add a new basket line item | Critical | Basket.cs |
+| BR010 | An order's total is calculated as the sum of each ordered item's unit price multiplied by its quantity | Critical | Order.cs |
+
+### Approval Rules
+| Rule ID | Business Statement | Priority | Source |
+|---|---|---|---|
+| _None identified_ | | | |
+
+### Restriction Rules
+| Rule ID | Business Statement | Priority | Source |
+|---|---|---|---|
+| BR006 | IF a basket line item has a quantity of zero THEN remove it from the basket | Medium | Basket.cs |
+| BR012 | IF a customer attempts checkout with no items in their basket THEN block the checkout and raise an empty-basket error | Critical | GuardExtensions.cs |
+
+---
+### Config-Driven Rules
+Rules whose values come from configuration (can be changed without code deployment):
+| Rule ID | Parameter | Current Value | Effect |
+|---|---|---|---|
+| _None identified_ | All extracted rules are hard-coded in application logic, not driven by configuration | — | — |
+===DOCUMENT_END===
+
+===DOCUMENT_START:05_data_model.md===
+# Information / Data Model
+## eShopOnWeb
+
+### Core Entities
+
+#### Catalog Item
+- **Business Definition:** A product available for purchase in the store catalog, including its name, description, price, image, brand, and type classification
+- **Key Attributes:** Identifier, Name, Description, Price, Picture (image path), Brand reference, Type reference
+- **States/Lifecycle:** No formal lifecycle identified (inferred: items are created, updated, and may be removed by administrators)
+- **Relationships:**
+  - Belongs to Catalog Brand
+  - Belongs to Catalog Type
+  - Referenced by Basket Item
+  - Referenced by Catalog Item Ordered (order-time snapshot)
+- **Business Rules:** BR001, BR002, BR003, BR004
+
+#### Catalog Type
+- **Business Definition:** A classification or category of catalog items, used to organize products (e.g., product category)
+- **Key Attributes:** Identifier, Type Name
+- **States/Lifecycle:** None identified
+- **Relationships:**
+  - Categorizes Catalog Item
+- **Business Rules:** BR003
+
+#### Catalog Brand
+- **Business Definition:** The manufacturer or brand associated with a catalog item
+- **Key Attributes:** Identifier, Brand Name
+- **States/Lifecycle:** None identified
+- **Relationships:**
+  - Provides branding for Catalog Item
+- **Business Rules:** BR002
+
+#### Basket
+- **Business Definition:** A shopping cart that holds items a buyer intends to purchase, either as an anonymous or registered user
+- **Key Attributes:** Identifier, Buyer reference, list of Basket Items
+- **States/Lifecycle:** Anonymous -> Transferred to Registered User -> Converted to Order
+- **Relationships:**
+  - Belongs to Buyer
+  - Contains Basket Items
+  - Converted into an Order
+- **Business Rules:** BR005, BR006, BR012
+
+#### Basket Item
+- **Business Definition:** A single line item in a shopping basket representing a quantity of a catalog item at a given price
+- **Key Attributes:** Identifier, Catalog Item reference, Unit Price, Quantity
+- **States/Lifecycle:** Added -> Quantity Adjusted -> Removed (when quantity reaches zero)
+- **Relationships:**
+  - Belongs to Basket
+  - References Catalog Item
+- **Business Rules:** BR005, BR006, BR007
+
+#### Buyer
+- **Business Definition:** A registered customer who places orders and stores payment methods, identified by their identity provider account
+- **Key Attributes:** Identifier, Identity reference, Payment Methods
+- **States/Lifecycle:** None identified
+- **Relationships:**
+  - Owns Basket
+  - Places Order
+  - Has Payment Method(s)
+- **Business Rules:** BR008
+
+#### Order
+- **Business Definition:** A confirmed purchase placed by a buyer, containing ordered items and a shipping address
+- **Key Attributes:** Identifier, Buyer reference, Shipping Address, Order Items, Total (calculated)
+- **States/Lifecycle:** Created from Basket -> Total Calculated (no further lifecycle states identified)
+- **Relationships:**
+  - Belongs to Buyer
+  - Contains Order Items
+  - Created from Basket
+  - Ships to an Address
+- **Business Rules:** BR010, BR011, BR012
+
+#### Order Item
+- **Business Definition:** A single purchased line within an order, capturing the ordered catalog item, its price at time of purchase, and quantity
+- **Key Attributes:** Identifier, Item Ordered (snapshot reference), Unit Price, Units (quantity)
+- **States/Lifecycle:** None identified
+- **Relationships:**
+  - Belongs to Order
+  - References Catalog Item Ordered (a point-in-time snapshot of the Catalog Item)
+- **Business Rules:** BR009, BR010
+
+---
+### Entity Relationship Summary
+| Entity | Relates To | Relationship Type |
+|---|---|---|
+| Catalog Item | Catalog Brand | Belongs to (many-to-one) |
+| Catalog Item | Catalog Type | Belongs to (many-to-one) |
+| Basket Item | Catalog Item | References (many-to-one) |
+| Basket | Basket Item | Contains (one-to-many) |
+| Basket | Buyer | Belongs to (many-to-one) |
+| Order | Buyer | Belongs to (many-to-one) |
+| Order | Order Item | Contains (one-to-many) |
+| Order Item | Catalog Item (snapshot) | References (many-to-one) |
+| Basket | Order | Converted into (one-to-one, at checkout) |
+===DOCUMENT_END===
+
+===DOCUMENT_START:06_stakeholder_map.md===
+# Stakeholder Map
+## eShopOnWeb
+
+### Internal Stakeholders (System Users)
+
+#### Customer / Buyer
+- **Responsibilities:** Browse catalog items, types, and brands; manage shopping basket (add items, adjust quantities); transfer anonymous basket to account on login; place orders and view order history; manage payment methods and shipping address
+- **System Access:** Catalog browsing endpoints, Basket management, Order management, Authentication
+- **Key Processes:** Add Item to Basket, Transfer Anonymous Basket to Registered User, Checkout / Place Order, User Authentication
+- **Permission Level:** Standard
+
+#### Administrator
+- **Responsibilities:** Create, update, and delete catalog items; manage catalog brands and types; view and manage application data via the admin interface
+- **System Access:** Admin catalog management interface, cached catalog data services, catalog lookup data
+- **Key Processes:** Catalog Item Administration, User Authentication
+- **Permission Level:** Admin
+
+#### System / Service Account
+- **Responsibilities:** Seed initial catalog and identity data on startup; issue authentication tokens; compose image URIs and compute basket/order totals; send notification emails (not yet implemented)
+- **System Access:** Catalog and identity data seeding components, token issuance service, image path composition, email sending component
+- **Key Processes:** Supports all processes via background/system operations (seeding, token issuance, calculations)
+- **Permission Level:** Elevated
+
+### External Stakeholders
+
+- **Customers (public-facing):** End users of the storefront who browse products, build baskets, and place orders — represented in-system by the Customer/Buyer role
+- **Notification Recipients:** Customers expected to receive order/email notifications via the Email Sender component (present in code but not yet implemented, suggesting a planned but incomplete capability)
+
+---
+> Note: Influence levels and org hierarchy require business validation.
+===DOCUMENT_END===
+
+===DOCUMENT_START:07_kpis_metrics.md===
+# KPIs & Metrics
+## eShopOnWeb
+
+### Operational Metrics (extracted from code/config)
+| Metric | Source | Current Threshold | Business Meaning |
+|---|---|---|---|
+| Minimum catalog item price | BR001 | Greater than zero | Ensures no product can be sold or listed at zero/negative price |
+| Minimum basket item quantity | BR007 | Zero (cannot go negative) | Ensures basket quantities never become invalid |
+| Minimum basket size for checkout | BR012 | At least 1 item | Ensures no orders are created from empty baskets |
+
+### Process Metrics
+| Process | Metric | How Measured |
+|---|---|---|
+| Add Item to Basket | Basket consolidation rate | Proportion of "add item" actions that increase an existing line vs. create a new line (BR005) |
+| Checkout / Place Order | Order total accuracy | Sum of unit price x quantity across order items (BR010) |
+| Checkout / Place Order | Empty basket checkout attempts | Count of checkout attempts blocked due to empty basket (BR012) |
+| Catalog Item Administration | Catalog update rejection rate | Count of catalog item updates rejected due to invalid name, description, price, brand, or type (BR001-BR003) |
+
+### Business Health Indicators
+- **Catalog Data Quality:** Frequency of rejected catalog updates (BR001-BR003) indicates how often administrators submit incomplete or invalid product data
+- **Basket Hygiene:** Frequency of empty basket line removals (BR006) indicates how often customers reduce items to zero rather than removing them directly
+- **Checkout Friction:** Frequency of empty-basket checkout blocks (BR012) may indicate UX issues prompting customers to attempt checkout prematurely
+- **Order Integrity:** Rejection rate for incomplete order line items (BR009) and missing buyer references (BR008, BR011) indicates data integrity in the order pipeline
+
+---
+> Note: Target values and benchmarks require business input.
+===DOCUMENT_END===
+
+===DOCUMENT_START:08_motivation_model.md===
+# Business Motivation Model
+## eShopOnWeb
+
+> INFERRED from code analysis — requires business validation
+
+### Mission (inferred)
+eShopOnWeb exists to provide an online storefront where customers can browse a catalog of products organized by brand and type, build a shopping basket (as anonymous or registered users), and complete purchases through a checkout process that produces a confirmed order with an accurate total and shipping destination. The system also provides administrators with tools to maintain the product catalog and supports secure, role-based access for both customers and staff.
+
+### Business Drivers (inferred)
+- **Frictionless Shopping Experience:** Evidence — basket consolidation logic (BR005) and anonymous-to-registered basket transfer process ensure customers don't lose cart contents or end up with duplicate lines
+- **Data Integrity for Transactions:** Evidence — multiple validation rules (BR008, BR009, BR011) prevent orders or buyers from being created with missing critical references
+- **Accurate Order Pricing:** Evidence — order-time snapshot of item details (Catalog Item Ordered) and total calculation (BR010) ensure price changes after purchase don't retroactively affect existing orders
+- **Catalog Quality Control:** Evidence — validation on catalog item name, description, price, brand, and type (BR001-BR003) prevents incomplete product listings
+- **Secure, Role-Based Access:** Evidence — Identity & Authentication capability issues JWT tokens with role claims for differentiated Customer/Administrator access
+
+### Goals (inferred from processes)
+| Goal | Evidence | Process |
+|---|---|---|
+| Ensure customers never lose basket contents when logging in | Anonymous-to-registered basket merge logic | Transfer Anonymous Basket to Registered User |
+| Prevent invalid or empty orders from being created | BR011, BR012 guard checks | Checkout / Place Order |
+| Maintain a clean, accurate product catalog | BR001-BR004 validation on catalog item fields | Catalog Item Administration |
+| Provide secure access differentiated by role | JWT token issuance with role claims | User Authentication |
+
+### Constraints (extracted from rules)
+| Constraint | Source Rule | Business Impact |
+|---|---|---|
+| Catalog items must have a name, description, and positive price | BR001 | Prevents publishing incomplete or free/negative-priced products |
+| Catalog items must reference a valid brand and type | BR002, BR003 | Ensures every product is classifiable for browsing/filtering |
+| Basket item quantities cannot go negative | BR007 | Prevents invalid basket states that could affect order totals |
+| Orders cannot be created without a buyer or with incomplete line items | BR008, BR009, BR011 | Ensures every order is traceable to a valid customer with complete product detail |
+| Checkout is blocked for empty baskets | BR012 | Prevents creation of zero-value or meaningless orders |
+===DOCUMENT_END===
+
+===DOCUMENT_START:09_operating_model.md===
+# Operating Model
+## eShopOnWeb
+
+> INFERRED from code analysis — requires business validation
+
+### Organizational Roles Identified
+- **Customer / Buyer:** Self-service role — browses the catalog, manages their own basket, and places their own orders. No oversight of other users' data.
+- **Administrator:** Back-office role — maintains the product catalog (items, brands, types) through a dedicated admin interface, separate from the customer-facing storefront.
+- **System / Service Account:** Automated role — performs startup data seeding, token issuance, image path composition, and total calculations on behalf of the application itself, with no human operator.
+
+### Decision Authority (inferred)
+| Decision | Who Decides | Rule Reference |
+|---|---|---|
+| Whether a catalog item update is valid (name/description/price) | System (automatic validation) | BR001 |
+| Whether a brand/type assignment is valid | System (automatic validation) | BR002, BR003 |
+| Whether a basket quantity adjustment is allowed | System (automatic validation) | BR007 |
+| Whether a checkout can proceed | System (automatic validation) | BR012 |
+| Whether a buyer/order record can be created | System (automatic validation) | BR008, BR011 |
+| Whether a user is granted access (login) | System / Identity store | User Authentication process |
+
+### Process Ownership (inferred)
+| Process | Owner Role | Supporting Roles |
+|---|---|---|
+| Add Item to Basket | Customer / Buyer | System |
+| Transfer Anonymous Basket to Registered User | System | Customer / Buyer |
+| Checkout / Place Order | Customer / Buyer | System |
+| Catalog Item Administration | Administrator | System |
+| User Authentication | System / Service Account | Customer / Buyer, Administrator |
+
+---
+> Note: Org chart and reporting lines require HR/business input.
+===DOCUMENT_END===
+
+===DOCUMENT_START:10_business_roadmap.md===
+# Business Roadmap
+## eShopOnWeb
+
+> INFERRED from code analysis — requires business strategy input
+
+### Current State Summary
+- **Capabilities working well:** Basket / Shopping Cart Management (consolidation, cleanup, and session transfer logic are well-defined with clear rules); Order Management (strong validation and total calculation logic ensures order integrity)
+- **Capabilities needing improvement:** Catalog Management (validation exists but is limited to basic field presence and price positivity — no rules around inventory levels, stock availability, or pricing tiers); Identity & Authentication (no business rules identified, suggesting authorization/role logic may be under-specified)
+- **Missing capabilities (gaps):**
+  - Inventory/stock management — no entity or rule tracks product availability or stock levels
+  - Order fulfillment/shipping status tracking — Order entity has no lifecycle states (e.g., Pending, Shipped, Delivered)
+  - Customer notifications — Email Sender component exists but is "not yet implemented"
+  - Payment processing — Payment Methods are stored on Buyer, but no rules govern payment validation or processing
+  - Discounts/promotions — no rules or entities related to pricing adjustments at checkout
+
+### Recommended Upgrade Priorities
+| Priority | Capability | Reason | Complexity |
+|---|---|---|---|
+| 1 | Order Fulfillment & Status Tracking | Orders currently have no lifecycle states, limiting visibility into fulfillment for customers and staff | High |
+| 2 | Inventory / Stock Management | No stock-level rules exist; customers could order out-of-stock items | High |
+| 3 | Customer Notifications | Email Sender exists but is incomplete — completing this closes a known gap | Medium |
+| 4 | Payment Processing Validation | Payment Methods exist on Buyer but lack associated business rules | Medium |
+| 5 | Catalog Management Enhancements | Add rules for stock-aware catalog display and richer pricing rules (e.g., discounts) | Medium |
+
+### Quick Wins (Low effort, high value)
+- No config-driven rules were identified in this codebase, so there are no "flip a setting" quick wins at this time
+- Completing the existing Email Sender implementation (referenced but not implemented) would close a known functional gap with relatively low new-design effort
+
+### Technical Debt Identified
+- Entities lack defined lifecycle/state fields (e.g., Order has no status field), which limits process visibility and may require schema changes to address
+- No business rules exist for the Identity & Authentication and Admin Catalog Operations capabilities, suggesting either under-documentation or under-developed business logic in these areas
+- Email notification capability is referenced in code but not implemented, indicating incomplete feature delivery
+
+---
+> Note: Timeline and investment decisions require business leadership input.
+===DOCUMENT_END===

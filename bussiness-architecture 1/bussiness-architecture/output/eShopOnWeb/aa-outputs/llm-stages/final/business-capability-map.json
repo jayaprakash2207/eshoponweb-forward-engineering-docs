@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0",
+  "stage": "05-enterprise-forward-engineering",
+  "generated_from": [
+    "final/architecture-pattern-report.md",
+    "final/architecture-violation-register.json"
+  ],
+  "notes": "Capability candidates derived from the architecture pattern report and violation register only. The full module/component inventory packs were not present in this stage's input context, so several supporting_modules entries reference project/folder names rather than MOD-xxx IDs. Treat all entries as CANDIDATES pending architect review.",
+  "capabilities": [
+    {
+      "capability_id": "CAP-001",
+      "name": "Catalog Management",
+      "type": "business",
+      "status": "candidate",
+      "description": "Maintains the product catalog: items, brands, and types, including specifications used to query catalog data.",
+      "supporting_modules": [
+        "ApplicationCore (Entities/CatalogItem.cs, Specifications/*)",
+        "PublicApi (CatalogItemEndpoints/*)"
+      ],
+      "evidence": [
+        {
+          "file": "src/ApplicationCore/Entities/CatalogItem.cs",
+          "reason": "Core catalog entity referenced in architecture-pattern-report.md"
+        },
+        {
+          "file": "src/PublicApi/CatalogItemEndpoints/CreateCatalogItemEndpoint.cs",
+          "reason": "API endpoint surface for catalog item management, referenced in ARCH-VIOL-003"
+        }
+      ],
+      "confidence": 0.6,
+      "open_questions": [
+        "Full set of catalog endpoints (list/update/delete) and Brand/Type entities were not enumerated in the provided evidence packs; confirm against component inventory."
+      ]
+    },
+    {
+      "capability_id": "CAP-002",
+      "name": "Shopping Basket Management",
+      "type": "business",
+      "status": "candidate",
+      "description": "Manages a buyer's in-progress basket/cart, including basket items and basket-related queries (e.g. basket with items).",
+      "supporting_modules": [
+        "ApplicationCore (Entities/BasketAggregate, Services/BasketService.cs, Specifications/BasketWithItemsSpecification)"
+      ],
+      "evidence": [
+        {
+          "file": "src/ApplicationCore/Entities/BasketAggregate",
+          "reason": "Aggregate root referenced in architecture-pattern-report.md as implementing IAggregateRoot"
+        },
+        {
+          "file": "src/ApplicationCore/Services/BasketService.cs",
+          "reason": "Application service for basket operations"
+        }
+      ],
+      "confidence": 0.6,
+      "open_questions": [
+        "Whether BasketService contains business rules (rich domain) or is a thin pass-through is unresolved per architecture-pattern-report.md competing pattern #1."
+      ]
+    },
+    {
+      "capability_id": "CAP-003",
+      "name": "Order Management",
+      "type": "business",
+      "status": "candidate",
+      "description": "Manages order placement and order history, including a denormalized snapshot of catalog item details at the time of order.",
+      "supporting_modules": [
+        "ApplicationCore (Entities/OrderAggregate, Services/OrderService.cs, Specifications/CustomerOrdersWithItemsSpecification, OrderWithItemsByIdSpec)"
+      ],
+      "evidence": [
+        {
+          "file": "src/ApplicationCore/Entities/OrderAggregate/CatalogItemOrdered.cs",
+          "reason": "Value object capturing catalog item snapshot at order time (ARCH-VIOL-001)"
+        },
+        {
+          "file": "src/ApplicationCore/Services/OrderService.cs",
+          "reason": "Application service referenced in architecture-pattern-report.md"
+        }
+      ],
+      "confidence": 0.6,
+      "open_questions": [
+        "Confirm whether the CatalogItemOrdered snapshot is an intentional anti-corruption boundary or accidental coupling (see ARCH-VIOL-001)."
+      ]
+    },
+    {
+      "capability_id": "CAP-004",
+      "name": "Buyer / Customer Profile Management",
+      "type": "business",
+      "status": "candidate",
+      "description": "Represents the buyer/customer placing orders, including address information used during checkout.",
+      "supporting_modules": [
+        "ApplicationCore (Entities/BuyerAggregate)"
+      ],
+      "evidence": [
+        {
+          "file": "src/ApplicationCore/Entities/BuyerAggregate",
+          "reason": "Aggregate root referenced in architecture-pattern-report.md"
+        }
+      ],
+      "confidence": 0.55,
+      "open_questions": [
+        "No direct evidence of Buyer-related endpoints or services was included in this stage's input; confirm against component inventory."
+      ]
+    },
+    {
+      "capability_id": "CAP-005",
+      "name": "Catalog Administration",
+      "type": "application",
+      "status": "candidate",
+      "description": "Administrative create/edit/manage operations for catalog items. Currently appears to be implemented twice across two separate front-ends.",
+      "supporting_modules": [
+        "Web (Pages/Admin/EditCatalogItem.cshtml)",
+        "BlazorAdmin (Pages/CatalogItemPage/Edit.razor)"
+      ],
+      "evidence": [
+        {
+          "file": "src/Web/Pages/Admin/EditCatalogItem.cshtml",
+          "reason": "Razor Pages admin catalog edit surface (ARCH-VIOL-002)"
+        },
+        {
+          "file": "src/BlazorAdmin/Pages/CatalogItemPage/Edit.razor",
+          "reason": "Blazor admin catalog edit surface for the same entity (ARCH-VIOL-002)"
+        }
+      ],
+      "confidence": 0.5,
+      "open_questions": [
+        "Determine canonical Admin surface (Razor Pages vs Blazor) before forward engineering an 'Admin' module/service. See ARCH-VIOL-002."
+      ]
+    },
+    {
+      "capability_id": "CAP-006",
+      "name": "Storefront Web Experience",
+      "type": "application",
+      "status": "candidate",
+      "description": "Customer-facing MVC/Razor Pages presentation layer over the shared ApplicationCore domain.",
+      "supporting_modules": [
+        "Web"
+      ],
+      "evidence": [
+        {
+          "file": "src/Web (project reference)",
+          "reason": "Referenced as one of two presentation/API projects depending on ApplicationCore and Infrastructure, per architecture-pattern-report.md"
+        }
+      ],
+      "confidence": 0.5,
+      "open_questions": [
+        "No component-level evidence for Web pages beyond the Admin pages cited in ARCH-VIOL-002 was provided in this stage's input."
+      ]
+    },
+    {
+      "capability_id": "CAP-007",
+      "name": "Public API / Integration Layer",
+      "type": "application",
+      "status": "candidate",
+      "description": "Ardalis.ApiEndpoints-based minimal API surface exposing catalog (and likely other) operations to external/admin clients.",
+      "supporting_modules": [
+        "PublicApi"
+      ],
+      "evidence": [
+        {
+          "file": "src/PublicApi/PublicApi.csproj",
+          "reason": "Project dependency on Infrastructure, per system-inventory-pack reference in architecture-pattern-report.md"
+        },
+        {
+          "file": "src/PublicApi/CatalogItemEndpoints/CreateCatalogItemEndpoint.cs",
+          "reason": "Concrete endpoint evidence"
+        }
+      ],
+      "confidence": 0.55,
+      "open_questions": [
+        "Full endpoint inventory for PublicApi (orders, baskets, buyers) not present in provided evidence."
+      ]
+    },
+    {
+      "capability_id": "CAP-008",
+      "name": "Admin Application Experience",
+      "type": "application",
+      "status": "candidate",
+      "description": "Blazor WASM/Server admin application that consumes PublicApi endpoints rather than ApplicationCore directly.",
+      "supporting_modules": [
+        "BlazorAdmin"
+      ],
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/CachedCatalogItemServiceDecorator.cs",
+          "reason": "Decorator service wrapping PublicApi CatalogItemEndpoints calls (ARCH-VIOL-003)"
+        }
+      ],
+      "confidence": 0.55,
+      "open_questions": [
+        "Coupling to PublicApi contract shapes is a forward-engineering risk; see ARCH-VIOL-003 and api-contract-preservation-map.json."
+      ]
+    }
+  ]
+}

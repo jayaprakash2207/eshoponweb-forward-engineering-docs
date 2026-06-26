@@ -1,0 +1,17 @@
+The previous file output was cut mid-stream. Below is the continuation starting from FLOW-004's `external_systems_touched` field — append this to complete `final/call-flow-map.json`.
+
+```
+      "external_systems_touched": ["PublicApi HTTP service (cross-app boundary)"],
+      "data_access_components": ["IRepository<CatalogItem> (implementation unknown)"],
+      "risk_flags": [
+        "Frontend-Backend Tight Coupling - BlazorAdmin client service must mirror PublicApi DTO/request contracts for CreateCatalogItemEndpoint",
+        "Partial flow - the exact BlazorAdmin service class that issues the HTTP call to PublicApi was not individually confirmed in evidence"
+      ],
+      "confidence": 0.45,
+      "open_questions": [
+        "Confirm the BlazorAdmin service class responsible for issuing HTTP calls to PublicApi CatalogItemEndpoints (CachedCatalogItemServiceDecorator wraps an inner service whose name is not visible in evidence)."
+      ]
+    }
+  ]
+}
+```

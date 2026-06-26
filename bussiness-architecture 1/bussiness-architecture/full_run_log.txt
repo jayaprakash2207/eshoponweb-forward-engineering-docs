@@ -1,0 +1,572 @@
+
+============================================================
+BA PIPELINE — LAYER 1: EXTRACTION
+============================================================
+Source   : C:\Users\BrianRoyS\Downloads\eShopOnWeb-main\eShopOnWeb-main
+Output   : output/eShopOnWeb
+Full run : yes
+============================================================
+
+[Step 0] Resolving input source...
+         source_type : local
+         local_path  : C:\Users\BrianRoyS\Downloads\eShopOnWeb-main\eShopOnWeb-main
+
+[Step 1] Detecting language(s)...
+         primary     : dotnet
+         all found   : {'dotnet': 96.0, 'javascript': 4.0}
+         extractors  : ['dotnet']
+
+[Step 2] Filtering files...
+         files kept  : 368
+
+[Step 3] Extracting source code...
+         dotnet: 191 files to parse
+         dotnet: 470 artifacts (192 business)
+
+[Step 4] Extracting database objects...
+         tables      : 0
+         procedures  : 0
+         triggers    : 0
+         views       : 0
+         EF entities : 7
+
+[Step 5] Extracting configuration parameters...
+         all params       : 756
+         business params  : 109
+         feature flags    : 1
+         conn strings     : 6
+
+[Step 6] Extracting logs & reports...
+         log files        : 0
+         business events  : 0
+         process sequences: 0
+
+[Step 7] Cleaning and normalizing...
+         artifacts after clean : 421
+
+[Step 8] Saving to output/eShopOnWeb/...
+  source_code.json                      318.3 KB
+  database.json                           1.6 KB
+  config.json                           301.7 KB
+  logs.json                               0.2 KB
+  extraction_summary.json                 1.1 KB
+
+============================================================
+LAYER 1 COMPLETE
+============================================================
+  Language detected  : dotnet
+  Methods extracted  : 203
+  Classes extracted  : 164
+  Interfaces found   : 16
+  Enums found        : 1
+  Business artifacts : 165
+  DB objects found   : 7
+  Config params      : 756
+  Business params    : 109
+  Log events found   : 0
+  Output saved to    : output/eShopOnWeb
+============================================================
+
+
+============================================================
+FULL RUN — SEQUENTIAL (one agent at a time)
+============================================================
+
+
+============================================================
+Layer 2 (BA Analysis) — COMPLETE
+============================================================
+
+============================================================
+BA PIPELINE - LAYER 2: PROCESSING
+============================================================
+  Input  : output/eShopOnWeb
+  Prompt : C:\Users\BrianRoyS\Downloads\bussiness-architecture 1\bussiness-architecture\layer2\layer2_prompt.md
+============================================================
+
+[1/3] Loading Layer 1 outputs...
+      business artifacts : 165
+      db objects         : 7
+      config params      : 756
+      mode               : single-call (< 500)
+
+[2/3] Building agent context (trimming to fit)...
+      business methods   : 80
+      structural types   : 40
+      ef entities        : 7
+      business params    : 60
+
+[3/3] Writing agent task file...
+      saved: output\eShopOnWeb\layer2_agent_task.md (87.0 KB)
+
+  Running claude agent...
+  [warn] claude CLI returned code 1
+  stderr: 'claude' is not recognized as an internal or external command,
+operable program or batch file.
+
+
+============================================================
+LAYER 2 TASK FILE READY
+============================================================
+
+  Task file : output\eShopOnWeb\layer2_agent_task.md
+
+  To run via claude CLI:
+    claude -p "$(cat 'output\eShopOnWeb\layer2_agent_task.md')"
+
+  To run in Claude Code (this session):
+    Say: 'process layer2_agent_task.md and save output to output/eShopOnWeb/layer2_output.json'
+
+  Expected output: output/eShopOnWeb/layer2_output.json
+============================================================
+
+============================================================
+Layer 3 (BA Documents) — FAILED (see below)
+============================================================
+
+============================================================
+BA PIPELINE - LAYER 3: BA DOCUMENT GENERATION
+============================================================
+  Input  : output/eShopOnWeb
+  Prompt : C:\Users\BrianRoyS\Downloads\bussiness-architecture 1\bussiness-architecture\layer3\layer3_prompt.md
+============================================================
+
+[1/3] Loading Layer 2 output...
+ERROR: layer2_output.json not found in output/eShopOnWeb
+Run layer2_runner.py first.
+
+============================================================
+DA Agent 1 (Data Architecture) — COMPLETE
+============================================================
+
+============================================================
+BA PIPELINE � DA AGENT 1: DATA ARCHITECTURE EXTRACTION
+============================================================
+  Input  : output/eShopOnWeb
+  Prompt : C:\Users\BrianRoyS\Downloads\bussiness-architecture 1\bussiness-architecture\data-architecture\DA_REVERSE_ENGINEERING_PROMPT_GENERIC.md
+============================================================
+
+[1/4] Loading Layer 1 outputs...
+      Tables found       : 0
+      EF entities        : 7
+      Connection strings : 6
+
+[2/4] Attempting database connections...
+      No connection strings found � will proceed CODE-ONLY
+
+[3/4] Building DA Agent 1 task file...
+      saved: output\eShopOnWeb\da_agent1_task.md (62.5 KB)
+
+[4/4] Agent invocation...
+
+  Running DA Agent 1 (claude)...
+  [warn] claude CLI returned code 1
+  stderr: 'claude' is not recognized as an internal or external command,
+operable program or batch file.
+
+
+============================================================
+DA AGENT 1 TASK FILE READY
+============================================================
+
+  Task file : output\eShopOnWeb\da_agent1_task.md
+
+  To run via claude CLI:
+    claude -p "$(cat 'output\eShopOnWeb\da_agent1_task.md')"
+
+  To run in Claude Code (this session):
+    Say: 'process da_agent1_task.md and save all 13 DA
+          output files to output\eShopOnWeb\da-outputs'
+
+  Expected output: output\eShopOnWeb\da-outputs/
+    - schema-catalogue.json
+    - erd.md
+    - data-source-inventory.json
+    - data-flow-map.md
+    - pii-inventory.json
+    - data-quality-report.md
+    - migration-complexity.json
+    - hidden-business-rules.json
+    - storage-pattern-analysis.md
+    - redundancy-analysis.json
+    - data-dictionary.md
+    - conceptual-data-model.md
+    - access-control-matrix.md
+============================================================
+
+============================================================
+DA Agent 2 (DA Review) — FAILED (see below)
+============================================================
+
+============================================================
+BA PIPELINE � DA AGENT 2: DATA ARCHITECTURE REVIEW
+============================================================
+  Input  : output/eShopOnWeb
+  Prompt : C:\Users\BrianRoyS\Downloads\bussiness-architecture 1\bussiness-architecture\data-architecture\DA_REVIEW_PROMPT.md
+============================================================
+
+[1/3] Loading DA Agent 1 outputs...
+ERROR: da-outputs/ not found in output/eShopOnWeb
+Run da_agent1_runner.py first.
+
+============================================================
+AA Pipeline (Application Architecture) — COMPLETE
+============================================================
+
+============================================================
+BA PIPELINE — APPLICATION ARCHITECTURE EXTRACTION
+============================================================
+  Repo root : C:\Users\BrianRoyS\Downloads\eShopOnWeb-main\eShopOnWeb-main
+  Input     : output/eShopOnWeb
+  Output    : output\eShopOnWeb\aa-outputs
+  Claude    : stages 04→07 after Python analyzer
+============================================================
+
+
+  Running AA pipeline (pure Python — no LLM)...
+==> inventory: scan_inventory.py
+{
+  "file_inventory": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\inventory\\file-inventory.json",
+  "project_inventory": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\inventory\\project-inventory.json",
+  "language_summary": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\inventory\\language-summary.json",
+  "ignored_report": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\inventory\\ignored-files-report.json",
+  "total_files_scanned": 468,
+  "total_files_ignored": 65,
+  "languages": [
+    "csharp",
+    "razor",
+    "css",
+    "json",
+    "unknown",
+    "image",
+    "markdown",
+    "msbuild",
+    "bicep",
+    "svg",
+    "yaml",
+    "javascript",
+    "dockerfile",
+    "dotnet_solution",
+    "xml",
+    "docker_ignore",
+    "editorconfig",
+    "git_attributes",
+    "git_ignore"
+  ]
+}
+==> source-chunks: generate_source_chunks.py
+{
+  "source_chunk_index": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\parsed\\source-chunk-index.json",
+  "summary": {
+    "chunk_count": 762,
+    "chunked_file_count": 381,
+    "skipped_file_count": 87,
+    "chunks_by_language": {
+      "xml": 3,
+      "msbuild": 13,
+      "markdown": 24,
+      "yaml": 6,
+      "json": 31,
+      "bicep": 9,
+      "csharp": 289,
+      "razor": 69,
+      "dockerfile": 2,
+      "javascript": 316
+    },
+    "chunks_by_project": {
+      "unknown": 54,
+      "ApplicationCore": 42,
+      "BlazorAdmin": 51,
+      "BlazorShared": 22,
+      "Infrastructure": 38,
+      "PublicApi": 44,
+      "Web": 458,
+      "FunctionalTests": 15,
+      "IntegrationTests": 4,
+      "PublicApiIntegrationTests": 9,
+      "UnitTests": 25
+    },
+    "entry_point_hint_chunks": 27,
+    "dependency_hint_chunks": 280
+  }
+}
+==> parsed: extract_parsed_facts.py
+{
+  "symbol_registry": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\parsed\\symbol-registry.json",
+  "route_registry": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\parsed\\route-registry.json",
+  "dependency_candidates": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\parsed\\dependency-candidates.json",
+  "entry_point_candidates": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\parsed\\entry-point-candidates.json",
+  "summary": {
+    "component_count": 310,
+    "entry_point_count": 55,
+    "route_count": 52,
+    "dependency_count": 1843,
+    "frontend_artifact_count": 76,
+    "backend_artifact_count": 192,
+    "jobs_consumers_count": 2,
+    "components_by_type": {
+      "Configuration": 27,
+      "Entity": 19,
+      "Unknown": 40,
+      "Service": 34,
+      "ExternalClient": 2,
+      "Repository": 13,
+      "FrontendComponent": 68,
+      "FrontendService": 8,
+      "DTO": 58,
+      "BatchJob": 2,
+      "Validator": 1,
+      "Mapper": 1,
+      "Controller": 32,
+      "Middleware": 1,
+      "Handler": 4
+    },
+    "components_by_layer": {
+      "CrossCutting": 62,
+      "Domain": 18,
+      "Application": 69,
+      "Integration": 2,
+      "DataAccess": 15,
+      "Presentation/UI": 115,
+      "Unknown": 3,
+      "Infrastructure": 9,
+      "API": 17
+    },
+    "components_by_parser_backend": {
+      "static_structural": 249,
+      "unknown": 61
+    },
+    "entry_points_by_type": {
+      "HTTP_API": 49,
+      "FrontendRoute": 3,
+      "CLI": 3
+    },
+    "dependencies_by_kind": {
+      "constructor": 178,
+      "import": 664,
+      "component_call": 699,
+      "method_parameter": 42,
+      "di_registration": 28,
+      "property_injection": 3,
+      "db_context_registration": 6,
+      "mediatr_send": 2,
+      "razor_inject": 19,
+      "razor_inherits": 10,
+      "http_client_call": 42,
+      "frontend_api_call": 11,
+      "project_reference": 18,
+      "di_resolution_candidate": 60,
+      "mediatr_handler_candidate": 2,
+      "module_dependency_candidate": 59
+    }
+  },
+  "technology_stacks_used_for_parsing": [
+    ".NET / C#",
+    "ASP.NET Core",
+    "MinimalApi.Endpoint",
+    "Ardalis.ApiEndpoints",
+    "Entity Framework Core",
+    "Razor / Blazor",
+    "MediatR"
+  ]
+}
+==> semantic: extract_roslyn_semantic_facts.py
+{
+  "status": "active",
+  "summary": {
+    "source_file_count": 244,
+    "project_count": 10,
+    "semantic_component_count": 247,
+    "semantic_dependency_count": 271,
+    "semantic_component_call_count": 240,
+    "semantic_di_registration_count": 31,
+    "route_hint_count": 18,
+    "unresolved_invocation_count": 1110,
+    "compilation_error_count_sampled": 182
+  }
+}
+==> evidence: generate_evidence_packs.py
+{
+  "output_directory": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\evidence-packs",
+  "files_generated": [
+    "call-flow-pack.json",
+    "component-registry-pack.json",
+    "dependency-pack.json",
+    "entry-point-pack.json",
+    "external-boundary-pack.json",
+    "frontend-application-pack.json",
+    "layering-pattern-pack.json",
+    "module-boundary-pack.json",
+    "system-inventory-pack.json"
+  ],
+  "system_apps_detected": 10,
+  "module_candidates": 13,
+  "components_grouped": 310,
+  "dependencies": 2114,
+  "entry_points": 55,
+  "call_flows": 55,
+  "potential_architecture_violations": 25
+}
+==> final: generate_final_architecture.py
+{
+  "output_directory": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\final",
+  "files_created": [
+    "application-architecture-summary.md",
+    "system-inventory.json",
+    "module-boundary-map.json",
+    "component-registry.json",
+    "dependency-graph.json",
+    "application-interface-catalogue.json",
+    "call-flow-map.json",
+    "architecture-pattern-report.md",
+    "architecture-violation-register.json",
+    "application-risk-register.json",
+    "strangler-candidate-report.md",
+    "forward-engineering-input-map.md",
+    "open-questions.md",
+    "diagrams/system-context.mmd",
+    "diagrams/container-view.mmd",
+    "diagrams/component-view.mmd",
+    "diagrams/dependency-view.mmd",
+    "diagrams/call-flow-view.mmd"
+  ],
+  "detected_architecture_pattern": "Layered Monolith",
+  "module_count": 13,
+  "open_question_count": 13,
+  "risk_count": 9
+}
+==> enterprise-forward: generate_enterprise_forward_engineering.py
+{
+  "output_directory": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\final",
+  "files_created": [
+    "business-capability-map.json",
+    "business-capability-map.md",
+    "module-consolidation-map.json",
+    "module-consolidation-map.md",
+    "service-boundary-options.md",
+    "migration-wave-plan.md",
+    "preserve-redesign-retire-map.md",
+    "api-contract-preservation-map.json",
+    "data-ownership-map.md",
+    "test-runtime-evidence-map.json",
+    "test-runtime-evidence-map.md",
+    "confidence-report.md",
+    "architecture-decision-inputs.md",
+    "forward-engineering-backlog.md"
+  ],
+  "summary": {
+    "capability_count": 13,
+    "consolidated_module_candidate_count": 13,
+    "api_contract_count": 55,
+    "preserve_contract_count": 46,
+    "review_contract_count": 9,
+    "test_component_count": 45
+  }
+}
+==> application-blueprint: generate_enterprise_application_architecture_blueprint.py
+{
+  "enterprise_application_architecture_blueprint": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\final\\enterprise-application-architecture-blueprint.md",
+  "machine_readable_blueprint": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\final\\enterprise-application-architecture-blueprint.json",
+  "module_count": 13,
+  "entry_point_count": 55,
+  "scenario_count": 5,
+  "human_review_question_count": 16
+}
+==> review: generate_review_artifacts.py
+{
+  "output_directory": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\final",
+  "files_created": [
+    "quality-review.md",
+    "executive-summary-for-review.md",
+    "final-sanity-check.md"
+  ],
+  "quality": {
+    "open_questions": 13,
+    "partial_flows": 0,
+    "unknown_module_components": 0,
+    "dependency_edges_with_unknown_nodes": 0
+  }
+}
+{
+  "success": true,
+  "phases_run": [
+    "inventory",
+    "source-chunks",
+    "parsed",
+    "semantic",
+    "evidence",
+    "final",
+    "runtime-evidence",
+    "enterprise-forward",
+    "application-blueprint",
+    "review"
+  ],
+  "invalid_json_count": 0,
+  "quality_gate_violations": [],
+  "source_guard_changed": false,
+  "run_summary": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\logs\\pipeline-run-summary-20260611-070518.json",
+  "latest_run_summary": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs\\logs\\latest-pipeline-run-summary.json"
+}
+
+============================================================
+AA PIPELINE COMPLETE — APPLICATION ARCHITECTURE EXTRACTED
+============================================================
+  final/application-architecture-summary.md               4.5 KB
+  final/system-inventory.json                             19.8 KB
+  final/component-registry.json                           664.2 KB
+  final/dependency-graph.json                             271.0 KB
+  final/architecture-pattern-report.md                    4.3 KB
+  final/architecture-violation-register.json              13.9 KB
+  final/application-risk-register.json                    7.7 KB
+  final/enterprise-application-architecture-blueprint.md  57.4 KB
+  final/enterprise-application-architecture-blueprint.json 575.8 KB
+  final/quality-review.md                                 7.6 KB
+  final/executive-summary-for-review.md                   6.1 KB
+
+  11/11 outputs present
+  Location : output\eShopOnWeb\aa-outputs
+============================================================
+
+
+============================================================
+AA CLAUDE CHAIN — STAGES 04→07 (sequential, evidence-driven)
+============================================================
+
+  [stage 04-final-architecture] calling claude... (task: aa_stage_04-final-architecture_task.md, 61.0 KB)
+  [warn] stage 04-final-architecture — claude returned code 1
+  stderr: 'claude' is not recognized as an internal or external command,
+operable program or batch file.
+
+  [stage 05-enterprise-forward-engineering] calling claude... (task: aa_stage_05-enterprise-forward-engineering_task.md, 114.0 KB)
+  [warn] stage 05-enterprise-forward-engineering — claude returned code 1
+  stderr: 'claude' is not recognized as an internal or external command,
+operable program or batch file.
+
+  [stage 06-quality-review] calling claude... (task: aa_stage_06-quality-review_task.md, 113.2 KB)
+  [warn] stage 06-quality-review — claude returned code 1
+  stderr: 'claude' is not recognized as an internal or external command,
+operable program or batch file.
+
+  [stage 07-workflow-audit] calling claude... (task: aa_stage_07-workflow-audit_task.md, 113.5 KB)
+  [warn] stage 07-workflow-audit — claude returned code 1
+  stderr: 'claude' is not recognized as an internal or external command,
+operable program or batch file.
+
+============================================================
+AA CLAUDE CHAIN COMPLETE — 0/4 stages produced output
+============================================================
+  [--] 04-final-architecture              0 file(s)
+  [--] 05-enterprise-forward-engineering  0 file(s)
+  [--] 06-quality-review                  0 file(s)
+  [--] 07-workflow-audit                  0 file(s)
+  Location : output\eShopOnWeb\aa-outputs\llm-stages
+============================================================
+
+============================================================
+FULL PIPELINE COMPLETE
+============================================================
+  BA documents  : output/eShopOnWeb/ba_documents/
+  DA outputs    : output/eShopOnWeb/da-outputs/
+  AA outputs    : output/eShopOnWeb/aa-outputs/
+============================================================
+

@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "stage": "05-enterprise-forward-engineering",
+  "generated_from": [
+    "final/architecture-pattern-report.md",
+    "final/architecture-violation-register.json"
+  ],
+  "notes": "Only contracts with direct evidence in this stage's input context are listed. The full PublicApi endpoint inventory was not provided; additional endpoints likely exist and should be appended once the component inventory is available.",
+  "contracts": [
+    {
+      "contract_id": "API-001",
+      "endpoint_name": "CreateCatalogItemEndpoint",
+      "module": "PublicApi (CatalogItemEndpoints)",
+      "file": "src/PublicApi/CatalogItemEndpoints/CreateCatalogItemEndpoint.cs",
+      "known_consumers": [
+        {
+          "consumer": "BlazorAdmin",
+          "via": "src/BlazorAdmin/Services/CachedCatalogItemServiceDecorator.cs",
+          "confidence": 0.5,
+          "evidence_note": "Violation register states this decorator 'appears to wrap calls into PublicApi's CatalogItemEndpoints' — relationship is inferred, not confirmed by direct call-site evidence in this stage's input."
+        }
+      ],
+      "preservation_recommendation": "preserve",
+      "rationale": "BlazorAdmin's catalog services are coupled to this endpoint's request/response shape (ARCH-VIOL-003). Breaking changes to this contract would require coordinated BlazorAdmin changes.",
+      "related_violations": ["ARCH-VIOL-003"],
+      "confidence": 0.5
+    },
+    {
+      "contract_id": "API-002",
+      "endpoint_name": "CatalogItemEndpoints (full set: list/update/delete)",
+      "module": "PublicApi (CatalogItemEndpoints)",
+      "file": "unknown",
+      "known_consumers": [
+        {
+          "consumer": "BlazorAdmin (CatalogItemPage)",
+          "via": "src/BlazorAdmin/Pages/CatalogItemPage/Edit.razor and related services",
+          "confidence": 0.4,
+          "evidence_note": "Referenced generically in architecture-pattern-report.md as 'src/PublicApi/CatalogItemEndpoints/*'; specific endpoint files beyond Create were not enumerated in provided evidence."
+        }
+      ],
+      "preservation_recommendation": "review",
+      "rationale": "Likely subject to the same coupling as API-001, but individual endpoint files were not confirmed in this stage's input. Recommend full enumeration before finalizing preservation scope.",
+      "related_violations": ["ARCH-VIOL-003"],
+      "confidence": 0.4
+    }
+  ]
+}

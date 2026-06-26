@@ -1,0 +1,480 @@
+{
+  "repo_root": "C:\\Users\\BrianRoyS\\Downloads\\eShopOnWeb-main\\eShopOnWeb-main",
+  "generated_at": "2026-06-15T07:26:55+00:00",
+  "scanner_version": "0.1.0",
+  "ignored_rules": {
+    "directories": {
+      ".git": "ignored_directory:.git",
+      ".idea": "ignored_directory:.idea",
+      ".vscode": "ignored_directory:.vscode",
+      "bin": "ignored_directory:bin",
+      "build": "ignored_directory:build",
+      "coverage": "ignored_directory:coverage",
+      "dist": "ignored_directory:dist",
+      "generated": "ignored_directory:generated",
+      "logs": "ignored_directory:logs",
+      "node_modules": "ignored_directory:node_modules",
+      "obj": "ignored_directory:obj",
+      "target": "ignored_directory:target"
+    },
+    "files": [
+      "*.min.js",
+      "*.map",
+      "*.log",
+      "*.g.cs",
+      "*.g.i.cs",
+      "*.designer.cs",
+      "*.generated.*"
+    ],
+    "additional_non_legacy_artifacts": [
+      "architecture-output/",
+      "tools/application_architecture_analyzer/"
+    ]
+  },
+  "total_files_ignored": 65,
+  "total_directories_ignored": 23,
+  "ignored_directories": [
+    {
+      "path": ".vscode",
+      "ignore_reason": "ignored_directory:.vscode",
+      "ignored_file_count": 3
+    },
+    {
+      "path": "src/ApplicationCore/bin",
+      "ignore_reason": "ignored_directory:bin",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "src/ApplicationCore/obj",
+      "ignore_reason": "ignored_directory:obj",
+      "ignored_file_count": 5
+    },
+    {
+      "path": "src/BlazorAdmin/bin",
+      "ignore_reason": "ignored_directory:bin",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "src/BlazorAdmin/obj",
+      "ignore_reason": "ignored_directory:obj",
+      "ignored_file_count": 5
+    },
+    {
+      "path": "src/BlazorShared/bin",
+      "ignore_reason": "ignored_directory:bin",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "src/BlazorShared/obj",
+      "ignore_reason": "ignored_directory:obj",
+      "ignored_file_count": 5
+    },
+    {
+      "path": "src/Infrastructure/bin",
+      "ignore_reason": "ignored_directory:bin",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "src/Infrastructure/obj",
+      "ignore_reason": "ignored_directory:obj",
+      "ignored_file_count": 5
+    },
+    {
+      "path": "src/PublicApi/bin",
+      "ignore_reason": "ignored_directory:bin",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "src/PublicApi/obj",
+      "ignore_reason": "ignored_directory:obj",
+      "ignored_file_count": 5
+    },
+    {
+      "path": "src/Web/bin",
+      "ignore_reason": "ignored_directory:bin",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "src/Web/obj",
+      "ignore_reason": "ignored_directory:obj",
+      "ignored_file_count": 5
+    },
+    {
+      "path": "src/Web/wwwroot/lib/@aspnet/signalr/dist",
+      "ignore_reason": "ignored_directory:dist",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "src/Web/wwwroot/lib/bootstrap/dist",
+      "ignore_reason": "ignored_directory:dist",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "tests/FunctionalTests/bin",
+      "ignore_reason": "ignored_directory:bin",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "tests/FunctionalTests/obj",
+      "ignore_reason": "ignored_directory:obj",
+      "ignored_file_count": 5
+    },
+    {
+      "path": "tests/IntegrationTests/bin",
+      "ignore_reason": "ignored_directory:bin",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "tests/IntegrationTests/obj",
+      "ignore_reason": "ignored_directory:obj",
+      "ignored_file_count": 5
+    },
+    {
+      "path": "tests/PublicApiIntegrationTests/bin",
+      "ignore_reason": "ignored_directory:bin",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "tests/PublicApiIntegrationTests/obj",
+      "ignore_reason": "ignored_directory:obj",
+      "ignored_file_count": 5
+    },
+    {
+      "path": "tests/UnitTests/bin",
+      "ignore_reason": "ignored_directory:bin",
+      "ignored_file_count": 0
+    },
+    {
+      "path": "tests/UnitTests/obj",
+      "ignore_reason": "ignored_directory:obj",
+      "ignored_file_count": 5
+    }
+  ],
+  "ignored_files": [
+    {
+      "path": ".vscode/extensions.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:.vscode"
+    },
+    {
+      "path": ".vscode/launch.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:.vscode"
+    },
+    {
+      "path": ".vscode/tasks.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:.vscode"
+    },
+    {
+      "path": "src/ApplicationCore/obj/ApplicationCore.csproj.nuget.dgspec.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/ApplicationCore/obj/ApplicationCore.csproj.nuget.g.props",
+      "extension": ".props",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/ApplicationCore/obj/ApplicationCore.csproj.nuget.g.targets",
+      "extension": ".targets",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/ApplicationCore/obj/project.assets.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/ApplicationCore/obj/project.nuget.cache",
+      "extension": ".cache",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/BlazorAdmin/obj/BlazorAdmin.csproj.nuget.dgspec.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/BlazorAdmin/obj/BlazorAdmin.csproj.nuget.g.props",
+      "extension": ".props",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/BlazorAdmin/obj/BlazorAdmin.csproj.nuget.g.targets",
+      "extension": ".targets",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/BlazorAdmin/obj/project.assets.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/BlazorAdmin/obj/project.nuget.cache",
+      "extension": ".cache",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/BlazorAdmin/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "extension": ".map",
+      "ignore_reason": "ignored_file:source_map"
+    },
+    {
+      "path": "src/BlazorShared/obj/BlazorShared.csproj.nuget.dgspec.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/BlazorShared/obj/BlazorShared.csproj.nuget.g.props",
+      "extension": ".props",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/BlazorShared/obj/BlazorShared.csproj.nuget.g.targets",
+      "extension": ".targets",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/BlazorShared/obj/project.assets.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/BlazorShared/obj/project.nuget.cache",
+      "extension": ".cache",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Infrastructure/obj/Infrastructure.csproj.nuget.g.props",
+      "extension": ".props",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Infrastructure/obj/Infrastructure.csproj.nuget.g.targets",
+      "extension": ".targets",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Infrastructure/obj/project.assets.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Infrastructure/obj/project.nuget.cache",
+      "extension": ".cache",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Infrastructure/Data/Migrations/20260526102924_InitialPostgres.Designer.cs",
+      "extension": ".cs",
+      "ignore_reason": "ignored_file:generated_designer_csharp"
+    },
+    {
+      "path": "src/Infrastructure/Identity/Migrations/20260526102952_InitialPostgres.Designer.cs",
+      "extension": ".cs",
+      "ignore_reason": "ignored_file:generated_designer_csharp"
+    },
+    {
+      "path": "src/PublicApi/obj/PublicApi.csproj.nuget.dgspec.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/PublicApi/obj/PublicApi.csproj.nuget.g.props",
+      "extension": ".props",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/PublicApi/obj/PublicApi.csproj.nuget.g.targets",
+      "extension": ".targets",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/PublicApi/obj/project.assets.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/PublicApi/obj/project.nuget.cache",
+      "extension": ".cache",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Web/obj/Web.csproj.nuget.dgspec.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Web/obj/Web.csproj.nuget.g.props",
+      "extension": ".props",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Web/obj/Web.csproj.nuget.g.targets",
+      "extension": ".targets",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Web/obj/project.assets.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Web/obj/project.nuget.cache",
+      "extension": ".cache",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "src/Web/wwwroot/js/site.min.js",
+      "extension": ".js",
+      "ignore_reason": "ignored_file:minified_js"
+    },
+    {
+      "path": "src/Web/wwwroot/lib/jquery/jquery.min.js",
+      "extension": ".js",
+      "ignore_reason": "ignored_file:minified_js"
+    },
+    {
+      "path": "src/Web/wwwroot/lib/jquery/jquery.min.map",
+      "extension": ".map",
+      "ignore_reason": "ignored_file:source_map"
+    },
+    {
+      "path": "src/Web/wwwroot/lib/jquery/jquery.slim.min.js",
+      "extension": ".js",
+      "ignore_reason": "ignored_file:minified_js"
+    },
+    {
+      "path": "src/Web/wwwroot/lib/jquery/jquery.slim.min.map",
+      "extension": ".map",
+      "ignore_reason": "ignored_file:source_map"
+    },
+    {
+      "path": "src/Web/wwwroot/lib/jquery-validate/jquery.validate.min.js",
+      "extension": ".js",
+      "ignore_reason": "ignored_file:minified_js"
+    },
+    {
+      "path": "src/Web/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "extension": ".js",
+      "ignore_reason": "ignored_file:minified_js"
+    },
+    {
+      "path": "src/Web/wwwroot/lib/toastr/toastr.js.map",
+      "extension": ".map",
+      "ignore_reason": "ignored_file:source_map"
+    },
+    {
+      "path": "src/Web/wwwroot/lib/toastr/toastr.min.js",
+      "extension": ".js",
+      "ignore_reason": "ignored_file:minified_js"
+    },
+    {
+      "path": "tests/FunctionalTests/obj/FunctionalTests.csproj.nuget.dgspec.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/FunctionalTests/obj/FunctionalTests.csproj.nuget.g.props",
+      "extension": ".props",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/FunctionalTests/obj/FunctionalTests.csproj.nuget.g.targets",
+      "extension": ".targets",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/FunctionalTests/obj/project.assets.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/FunctionalTests/obj/project.nuget.cache",
+      "extension": ".cache",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/IntegrationTests/obj/IntegrationTests.csproj.nuget.dgspec.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/IntegrationTests/obj/IntegrationTests.csproj.nuget.g.props",
+      "extension": ".props",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/IntegrationTests/obj/IntegrationTests.csproj.nuget.g.targets",
+      "extension": ".targets",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/IntegrationTests/obj/project.assets.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/IntegrationTests/obj/project.nuget.cache",
+      "extension": ".cache",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/PublicApiIntegrationTests/obj/PublicApiIntegrationTests.csproj.nuget.dgspec.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/PublicApiIntegrationTests/obj/PublicApiIntegrationTests.csproj.nuget.g.props",
+      "extension": ".props",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/PublicApiIntegrationTests/obj/PublicApiIntegrationTests.csproj.nuget.g.targets",
+      "extension": ".targets",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/PublicApiIntegrationTests/obj/project.assets.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/PublicApiIntegrationTests/obj/project.nuget.cache",
+      "extension": ".cache",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/UnitTests/obj/UnitTests.csproj.nuget.dgspec.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/UnitTests/obj/UnitTests.csproj.nuget.g.props",
+      "extension": ".props",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/UnitTests/obj/UnitTests.csproj.nuget.g.targets",
+      "extension": ".targets",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/UnitTests/obj/project.assets.json",
+      "extension": ".json",
+      "ignore_reason": "ignored_directory:obj"
+    },
+    {
+      "path": "tests/UnitTests/obj/project.nuget.cache",
+      "extension": ".cache",
+      "ignore_reason": "ignored_directory:obj"
+    }
+  ]
+}

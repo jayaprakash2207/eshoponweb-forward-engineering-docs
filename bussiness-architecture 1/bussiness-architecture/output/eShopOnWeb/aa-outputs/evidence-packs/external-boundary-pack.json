@@ -1,0 +1,1129 @@
+{
+  "evidence_pack_type": "external_boundary",
+  "generated_at": "2026-06-15T07:27:15+00:00",
+  "generator_version": "0.1.0",
+  "source_artifacts_used": [
+    "architecture-output/inventory/file-inventory.json",
+    "architecture-output/inventory/project-inventory.json",
+    "architecture-output/inventory/language-summary.json",
+    "architecture-output/inventory/ignored-files-report.json",
+    "architecture-output/parsed/symbol-registry.json",
+    "architecture-output/parsed/route-registry.json",
+    "architecture-output/parsed/dependency-candidates.json",
+    "architecture-output/parsed/entry-point-candidates.json",
+    "architecture-output/parsed/roslyn-semantic-facts.json"
+  ],
+  "source_files_used": [
+    "src/ApplicationCore/ApplicationCore.csproj",
+    "src/ApplicationCore/Entities/BasketAggregate/Basket.cs",
+    "src/ApplicationCore/Entities/BasketAggregate/BasketItem.cs",
+    "src/ApplicationCore/Entities/BuyerAggregate/Buyer.cs",
+    "src/ApplicationCore/Entities/CatalogBrand.cs",
+    "src/ApplicationCore/Entities/CatalogItem.cs",
+    "src/ApplicationCore/Entities/CatalogType.cs",
+    "src/ApplicationCore/Entities/OrderAggregate/Address.cs",
+    "src/ApplicationCore/Entities/OrderAggregate/CatalogItemOrdered.cs",
+    "src/ApplicationCore/Entities/OrderAggregate/Order.cs",
+    "src/ApplicationCore/Entities/OrderAggregate/OrderItem.cs",
+    "src/ApplicationCore/Exceptions/BasketNotFoundException.cs",
+    "src/ApplicationCore/Exceptions/DuplicateException.cs",
+    "src/ApplicationCore/Exceptions/EmptyBasketOnCheckoutException.cs",
+    "src/ApplicationCore/Extensions/GuardExtensions.cs",
+    "src/ApplicationCore/Interfaces/IBasketService.cs",
+    "src/ApplicationCore/Interfaces/IOrderService.cs",
+    "src/ApplicationCore/Services/BasketService.cs",
+    "src/ApplicationCore/Services/OrderService.cs",
+    "src/ApplicationCore/Services/UriComposer.cs",
+    "src/ApplicationCore/Specifications/BasketWithItemsSpecification.cs",
+    "src/ApplicationCore/Specifications/CatalogFilterPaginatedSpecification.cs",
+    "src/ApplicationCore/Specifications/CatalogFilterSpecification.cs",
+    "src/ApplicationCore/Specifications/CatalogItemNameSpecification.cs",
+    "src/ApplicationCore/Specifications/CatalogItemsSpecification.cs",
+    "src/ApplicationCore/Specifications/CustomerOrdersSpecification.cs",
+    "src/ApplicationCore/Specifications/CustomerOrdersWithItemsSpecification.cs",
+    "src/ApplicationCore/Specifications/OrderWithItemsByIdSpec.cs",
+    "src/BlazorAdmin/BlazorAdmin.csproj",
+    "src/BlazorAdmin/CustomAuthStateProvider.cs",
+    "src/BlazorAdmin/Helpers/BlazorComponent.cs",
+    "src/BlazorAdmin/Helpers/BlazorLayoutComponent.cs",
+    "src/BlazorAdmin/Helpers/ToastComponent.cs",
+    "src/BlazorAdmin/JavaScript/Cookies.cs",
+    "src/BlazorAdmin/JavaScript/Css.cs",
+    "src/BlazorAdmin/JavaScript/Route.cs",
+    "src/BlazorAdmin/Pages/CatalogItemPage/Create.razor",
+    "src/BlazorAdmin/Pages/CatalogItemPage/Delete.razor",
+    "src/BlazorAdmin/Pages/CatalogItemPage/Details.razor",
+    "src/BlazorAdmin/Pages/CatalogItemPage/Edit.razor",
+    "src/BlazorAdmin/Pages/CatalogItemPage/List.razor",
+    "src/BlazorAdmin/Pages/CatalogItemPage/List.razor.cs",
+    "src/BlazorAdmin/Pages/Logout.razor",
+    "src/BlazorAdmin/Program.cs",
+    "src/BlazorAdmin/Services/CacheEntry.cs",
+    "src/BlazorAdmin/Services/CachedCatalogItemServiceDecorator.cs",
+    "src/BlazorAdmin/Services/CachedCatalogLookupDataServiceDecorator .cs",
+    "src/BlazorAdmin/Services/CatalogItemService.cs",
+    "src/BlazorAdmin/Services/CatalogLookupDataService.cs",
+    "src/BlazorAdmin/Services/HttpService.cs",
+    "src/BlazorAdmin/Services/ToastService.cs",
+    "src/BlazorAdmin/ServicesConfiguration.cs",
+    "src/BlazorAdmin/Shared/MainLayout.razor",
+    "src/BlazorAdmin/Shared/NavMenu.razor",
+    "src/BlazorAdmin/Shared/RedirectToLogin.razor",
+    "src/BlazorAdmin/Shared/Spinner.razor",
+    "src/BlazorAdmin/Shared/Toast.razor",
+    "src/BlazorShared/Authorization/ClaimValue.cs",
+    "src/BlazorShared/Interfaces/ICatalogItemService.cs",
+    "src/BlazorShared/Interfaces/ICatalogLookupDataService.cs",
+    "src/BlazorShared/Interfaces/ILookupDataResponse.cs",
+    "src/BlazorShared/Models/CatalogBrandResponse.cs",
+    "src/BlazorShared/Models/CatalogItem.cs",
+    "src/BlazorShared/Models/CatalogTypeResponse.cs",
+    "src/Infrastructure/Data/CatalogContext.cs",
+    "src/Infrastructure/Data/CatalogContextSeed.cs",
+    "src/Infrastructure/Data/Config/BasketConfiguration.cs",
+    "src/Infrastructure/Data/Config/BasketItemConfiguration.cs",
+    "src/Infrastructure/Data/Config/CatalogBrandConfiguration.cs",
+    "src/Infrastructure/Data/Config/CatalogItemConfiguration.cs",
+    "src/Infrastructure/Data/Config/CatalogTypeConfiguration.cs",
+    "src/Infrastructure/Data/Config/OrderConfiguration.cs",
+    "src/Infrastructure/Data/Config/OrderItemConfiguration.cs",
+    "src/Infrastructure/Data/EfRepository.cs",
+    "src/Infrastructure/Data/Queries/BasketQueryService.cs",
+    "src/Infrastructure/Dependencies.cs",
+    "src/Infrastructure/Identity/AppIdentityDbContext.cs",
+    "src/Infrastructure/Identity/AppIdentityDbContextSeed.cs",
+    "src/Infrastructure/Identity/IdentityTokenClaimService.cs",
+    "src/Infrastructure/Identity/UserNotFoundException.cs",
+    "src/Infrastructure/Infrastructure.csproj",
+    "src/Infrastructure/Logging/LoggerAdapter.cs",
+    "src/Infrastructure/Services/EmailSender.cs",
+    "src/PublicApi/AuthEndpoints/AuthenticateEndpoint.AuthenticateResponse.cs",
+    "src/PublicApi/AuthEndpoints/AuthenticateEndpoint.ClaimValue.cs",
+    "src/PublicApi/AuthEndpoints/AuthenticateEndpoint.cs",
+    "src/PublicApi/BaseResponse.cs",
+    "src/PublicApi/CatalogBrandEndpoints/CatalogBrandListEndpoint.ListCatalogBrandsResponse.cs",
+    "src/PublicApi/CatalogBrandEndpoints/CatalogBrandListEndpoint.cs",
+    "src/PublicApi/CatalogItemEndpoints/CatalogItemGetByIdEndpoint.GetByIdCatalogItemRequest.cs",
+    "src/PublicApi/CatalogItemEndpoints/CatalogItemGetByIdEndpoint.GetByIdCatalogItemResponse.cs",
+    "src/PublicApi/CatalogItemEndpoints/CatalogItemGetByIdEndpoint.cs",
+    "src/PublicApi/CatalogItemEndpoints/CatalogItemListPagedEndpoint.ListPagedCatalogItemRequest.cs",
+    "src/PublicApi/CatalogItemEndpoints/CatalogItemListPagedEndpoint.ListPagedCatalogItemResponse.cs",
+    "src/PublicApi/CatalogItemEndpoints/CatalogItemListPagedEndpoint.cs",
+    "src/PublicApi/CatalogItemEndpoints/CreateCatalogItemEndpoint.CreateCatalogItemResponse.cs",
+    "src/PublicApi/CatalogItemEndpoints/CreateCatalogItemEndpoint.cs",
+    "src/PublicApi/CatalogItemEndpoints/DeleteCatalogItemEndpoint.DeleteCatalogItemRequest.cs",
+    "src/PublicApi/CatalogItemEndpoints/DeleteCatalogItemEndpoint.DeleteCatalogItemResponse.cs",
+    "src/PublicApi/CatalogItemEndpoints/DeleteCatalogItemEndpoint.cs",
+    "src/PublicApi/CatalogItemEndpoints/UpdateCatalogItemEndpoint.UpdateCatalogItemResponse.cs",
+    "src/PublicApi/CatalogItemEndpoints/UpdateCatalogItemEndpoint.cs",
+    "src/PublicApi/CatalogTypeEndpoints/CatalogTypeListEndpoint.ListCatalogTypesResponse.cs",
+    "src/PublicApi/CatalogTypeEndpoints/CatalogTypeListEndpoint.cs",
+    "src/PublicApi/CustomSchemaFilters.cs",
+    "src/PublicApi/ImageValidators.cs",
+    "src/PublicApi/MappingProfile.cs",
+    "src/PublicApi/Middleware/ExceptionMiddleware.cs",
+    "src/PublicApi/Program.cs",
+    "src/PublicApi/PublicApi.csproj",
+    "src/Web/Areas/Identity/IdentityHostingStartup.cs",
+    "src/Web/Areas/Identity/Pages/Account/ConfirmEmail.cshtml.cs",
+    "src/Web/Areas/Identity/Pages/Account/Login.cshtml.cs",
+    "src/Web/Areas/Identity/Pages/Account/Logout.cshtml.cs",
+    "src/Web/Areas/Identity/Pages/Account/Register.cshtml.cs",
+    "src/Web/Configuration/ConfigureCookieSettings.cs",
+    "src/Web/Configuration/ConfigureCoreServices.cs",
+    "src/Web/Configuration/ConfigureWebServices.cs",
+    "src/Web/Configuration/RevokeAuthenticationEvents.cs",
+    "src/Web/Controllers/ManageController.cs",
+    "src/Web/Controllers/OrderController.cs",
+    "src/Web/Controllers/UserController.cs",
+    "src/Web/Extensions/CacheHelpers.cs",
+    "src/Web/Extensions/EmailSenderExtensions.cs",
+    "src/Web/Extensions/UrlHelperExtensions.cs",
+    "src/Web/Features/MyOrders/GetMyOrders.cs",
+    "src/Web/Features/MyOrders/GetMyOrdersHandler.cs",
+    "src/Web/Features/OrderDetails/GetOrderDetails.cs",
+    "src/Web/Features/OrderDetails/GetOrderDetailsHandler.cs",
+    "src/Web/HealthChecks/ApiHealthCheck.cs",
+    "src/Web/HealthChecks/HomePageHealthCheck.cs",
+    "src/Web/Interfaces/IBasketViewModelService.cs",
+    "src/Web/Interfaces/ICatalogItemViewModelService.cs",
+    "src/Web/Interfaces/ICatalogViewModelService.cs",
+    "src/Web/Pages/Admin/EditCatalogItem.cshtml.cs",
+    "src/Web/Pages/Admin/Index.cshtml.cs",
+    "src/Web/Pages/Basket/BasketViewModel.cs",
+    "src/Web/Pages/Basket/Checkout.cshtml.cs",
+    "src/Web/Pages/Basket/Index.cshtml.cs",
+    "src/Web/Pages/Basket/Success.cshtml.cs",
+    "src/Web/Pages/Error.cshtml.cs",
+    "src/Web/Pages/Index.cshtml.cs",
+    "src/Web/Pages/Shared/Components/BasketComponent/Basket.cs",
+    "src/Web/Program.cs",
+    "src/Web/Services/BasketViewModelService.cs",
+    "src/Web/Services/CachedCatalogViewModelService.cs",
+    "src/Web/Services/CatalogItemViewModelService.cs",
+    "src/Web/Services/CatalogViewModelService.cs",
+    "src/Web/SlugifyParameterTransformer.cs",
+    "src/Web/ViewModels/Manage/EnableAuthenticatorViewModel.cs",
+    "src/Web/ViewModels/Manage/ExternalLoginsViewModel.cs",
+    "src/Web/Views/Manage/ManageNavPages.cs",
+    "src/Web/Views/Manage/_ManageNav.cshtml",
+    "src/Web/Web.csproj",
+    "tests/FunctionalTests/FunctionalTests.csproj",
+    "tests/FunctionalTests/PublicApi/ApiTestFixture.cs",
+    "tests/FunctionalTests/PublicApi/ApiTokenHelper.cs",
+    "tests/FunctionalTests/Web/Controllers/AccountControllerSignIn.cs",
+    "tests/FunctionalTests/Web/Controllers/CatalogControllerIndex.cs",
+    "tests/FunctionalTests/Web/Controllers/OrderControllerIndex.cs",
+    "tests/FunctionalTests/Web/Pages/Basket/BasketPageCheckout.cs",
+    "tests/FunctionalTests/Web/Pages/Basket/CheckoutTest.cs",
+    "tests/FunctionalTests/Web/Pages/Basket/IndexTest.cs",
+    "tests/FunctionalTests/Web/Pages/HomePageOnGet.cs",
+    "tests/FunctionalTests/Web/WebPageHelpers.cs",
+    "tests/FunctionalTests/Web/WebTestFixture.cs",
+    "tests/IntegrationTests/IntegrationTests.csproj",
+    "tests/IntegrationTests/Repositories/BasketRepositoryTests/SetQuantities.cs",
+    "tests/IntegrationTests/Repositories/OrderRepositoryTests/GetById.cs",
+    "tests/IntegrationTests/Repositories/OrderRepositoryTests/GetByIdWithItemsAsync.cs",
+    "tests/PublicApiIntegrationTests/ApiTokenHelper.cs",
+    "tests/PublicApiIntegrationTests/AuthEndpoints/AuthenticateEndpointTest.cs",
+    "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CatalogItemGetByIdEndpointTest.cs",
+    "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CatalogItemListPagedEndpoint.cs",
+    "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CreateCatalogItemEndpointTest.cs",
+    "tests/PublicApiIntegrationTests/CatalogItemEndpoints/DeleteCatalogItemEndpointTest.cs",
+    "tests/PublicApiIntegrationTests/ProgramTest.cs",
+    "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+    "tests/UnitTests/ApplicationCore/Entities/BasketTests/BasketAddItem.cs",
+    "tests/UnitTests/ApplicationCore/Entities/BasketTests/BasketRemoveEmptyItems.cs",
+    "tests/UnitTests/ApplicationCore/Entities/BasketTests/BasketTotalItems.cs",
+    "tests/UnitTests/ApplicationCore/Entities/OrderTests/OrderTotal.cs",
+    "tests/UnitTests/ApplicationCore/Extensions/JsonExtensions.cs",
+    "tests/UnitTests/ApplicationCore/Extensions/TestChild.cs",
+    "tests/UnitTests/ApplicationCore/Services/BasketServiceTests/AddItemToBasket.cs",
+    "tests/UnitTests/ApplicationCore/Services/BasketServiceTests/DeleteBasket.cs",
+    "tests/UnitTests/ApplicationCore/Services/BasketServiceTests/TransferBasket.cs",
+    "tests/UnitTests/ApplicationCore/Specifications/BasketWithItemsSpecification.cs",
+    "tests/UnitTests/ApplicationCore/Specifications/CatalogFilterPaginatedSpecification.cs",
+    "tests/UnitTests/ApplicationCore/Specifications/CatalogFilterSpecification.cs",
+    "tests/UnitTests/ApplicationCore/Specifications/CatalogItemsSpecification.cs",
+    "tests/UnitTests/ApplicationCore/Specifications/CustomerOrdersWithItemsSpecification.cs",
+    "tests/UnitTests/Builders/AddressBuilder.cs",
+    "tests/UnitTests/Builders/BasketBuilder.cs",
+    "tests/UnitTests/Builders/OrderBuilder.cs",
+    "tests/UnitTests/MediatorHandlers/OrdersTests/GetMyOrders.cs",
+    "tests/UnitTests/MediatorHandlers/OrdersTests/GetOrderDetails.cs",
+    "tests/UnitTests/UnitTests.csproj",
+    "tests/UnitTests/Web/Extensions/CacheHelpersTests/GenerateBrandsCacheKey.cs",
+    "tests/UnitTests/Web/Extensions/CacheHelpersTests/GenerateCatalogItemCacheKey.cs",
+    "tests/UnitTests/Web/Extensions/CacheHelpersTests/GenerateTypesCacheKey.cs",
+    ".github/workflows/dotnetcore.yml",
+    ".github/workflows/richnav.yml",
+    "azure.yaml",
+    "docker-compose.override.yml",
+    "docker-compose.yml",
+    "infra/abbreviations.json",
+    "infra/core/database/sqlserver/sqlserver.bicep",
+    "infra/core/host/appservice.bicep",
+    "infra/core/host/appserviceplan.bicep",
+    "infra/core/security/keyvault-access.bicep",
+    "infra/core/security/keyvault.bicep",
+    "infra/main.bicep",
+    "infra/main.parameters.json",
+    "src/PublicApi/Dockerfile",
+    "src/Web/Dockerfile"
+  ],
+  "confidence": 0.741,
+  "extracted_facts": {
+    "external_dependency_count": 49,
+    "http_call_candidate_count": 47,
+    "docker_compose_service_count": 3
+  },
+  "external_dependencies": [
+    {
+      "target_system": "sqlserver",
+      "type": "database_or_infrastructure_service",
+      "protocol": "unknown",
+      "called_from": "deployable units in docker-compose",
+      "module_guess": "Infrastructure",
+      "evidence": [
+        {
+          "file": "docker-compose.yml",
+          "reason": "docker compose service detected in inventory"
+        }
+      ],
+      "confidence": 0.82,
+      "unknowns": [
+        "Runtime connection details are not resolved in evidence-pack generation."
+      ]
+    },
+    {
+      "target_system": "catalog-items",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CatalogItemService",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/CatalogItemService.cs",
+          "line": 31,
+          "reason": "POST HTTP call to catalog-items"
+        }
+      ],
+      "confidence": 0.78,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "catalog-items",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CatalogItemService",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/CatalogItemService.cs",
+          "line": 37,
+          "reason": "PUT HTTP call to catalog-items"
+        }
+      ],
+      "confidence": 0.78,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "catalog-items",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CatalogItemService",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/CatalogItemService.cs",
+          "line": 42,
+          "reason": "DELETE HTTP call to catalog-items"
+        }
+      ],
+      "confidence": 0.78,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "catalog-items/{id}",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CatalogItemService",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/CatalogItemService.cs",
+          "line": 49,
+          "reason": "GET HTTP call to catalog-items/{id}"
+        }
+      ],
+      "confidence": 0.78,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "catalog-items?PageSize=10",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CatalogItemService",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/CatalogItemService.cs",
+          "line": 65,
+          "reason": "GET HTTP call to catalog-items?PageSize=10"
+        }
+      ],
+      "confidence": 0.78,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "catalog-items",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CatalogItemService",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/CatalogItemService.cs",
+          "line": 84,
+          "reason": "GET HTTP call to catalog-items"
+        }
+      ],
+      "confidence": 0.78,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "{_apiUrl}{uri}",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "HttpService",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/HttpService.cs",
+          "line": 28,
+          "reason": "GET HTTP call to {_apiUrl}{uri}"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "{_apiUrl}{uri}/{id}",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "HttpService",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/HttpService.cs",
+          "line": 40,
+          "reason": "DELETE HTTP call to {_apiUrl}{uri}/{id}"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "{_apiUrl}{uri}",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "HttpService",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/HttpService.cs",
+          "line": 54,
+          "reason": "POST HTTP call to {_apiUrl}{uri}"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "{_apiUrl}{uri}",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "HttpService",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Services/HttpService.cs",
+          "line": 74,
+          "reason": "PUT HTTP call to {_apiUrl}{uri}"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "myUrl",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "ApiHealthCheck",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/Web/HealthChecks/ApiHealthCheck.cs",
+          "line": 25,
+          "reason": "GET HTTP call to myUrl"
+        }
+      ],
+      "confidence": 0.5,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "myUrl",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "HomePageHealthCheck",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/Web/HealthChecks/HomePageHealthCheck.cs",
+          "line": 26,
+          "reason": "GET HTTP call to myUrl"
+        }
+      ],
+      "confidence": 0.5,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/identity/account/login",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "AccountControllerSignIn",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Controllers/AccountControllerSignIn.cs",
+          "line": 24,
+          "reason": "GET HTTP call to /identity/account/login"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/identity/account/login",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "AccountControllerSignIn",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Controllers/AccountControllerSignIn.cs",
+          "line": 48,
+          "reason": "GET HTTP call to /identity/account/login"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/identity/account/login",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "AccountControllerSignIn",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Controllers/AccountControllerSignIn.cs",
+          "line": 59,
+          "reason": "GET HTTP call to /identity/account/login"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/identity/account/login",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "AccountControllerSignIn",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Controllers/AccountControllerSignIn.cs",
+          "line": 71,
+          "reason": "POST HTTP call to /identity/account/login"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/identity/account/login",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "AccountControllerSignIn",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Controllers/AccountControllerSignIn.cs",
+          "line": 80,
+          "reason": "GET HTTP call to /identity/account/login"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/identity/account/login",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "AccountControllerSignIn",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Controllers/AccountControllerSignIn.cs",
+          "line": 90,
+          "reason": "POST HTTP call to /identity/account/login"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/manage/my-account",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "AccountControllerSignIn",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Controllers/AccountControllerSignIn.cs",
+          "line": 93,
+          "reason": "GET HTTP call to /manage/my-account"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/manage/my-account",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "AccountControllerSignIn",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Controllers/AccountControllerSignIn.cs",
+          "line": 105,
+          "reason": "POST HTTP call to /manage/my-account"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/manage/my-account",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "AccountControllerSignIn",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Controllers/AccountControllerSignIn.cs",
+          "line": 108,
+          "reason": "GET HTTP call to /manage/my-account"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CatalogControllerIndex",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Controllers/CatalogControllerIndex.cs",
+          "line": 21,
+          "reason": "GET HTTP call to /"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/order/my-orders",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "OrderIndexOnGet",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Controllers/OrderControllerIndex.cs",
+          "line": 25,
+          "reason": "GET HTTP call to /order/my-orders"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "HomePageOnGet",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/HomePageOnGet.cs",
+          "line": 20,
+          "reason": "GET HTTP call to /"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "BasketPageCheckout",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/BasketPageCheckout.cs",
+          "line": 24,
+          "reason": "GET HTTP call to /"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/basket/index",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "BasketPageCheckout",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/BasketPageCheckout.cs",
+          "line": 39,
+          "reason": "POST HTTP call to /basket/index"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/Basket/Checkout",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "BasketPageCheckout",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/BasketPageCheckout.cs",
+          "line": 47,
+          "reason": "POST HTTP call to /Basket/Checkout"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CheckoutTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/CheckoutTest.cs",
+          "line": 24,
+          "reason": "GET HTTP call to /"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/basket/index",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CheckoutTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/CheckoutTest.cs",
+          "line": 37,
+          "reason": "POST HTTP call to /basket/index"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/Identity/Account/Login",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CheckoutTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/CheckoutTest.cs",
+          "line": 43,
+          "reason": "GET HTTP call to /Identity/Account/Login"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/Identity/Account/Login?ReturnUrl=%2FBasket%2FCheckout",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CheckoutTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/CheckoutTest.cs",
+          "line": 51,
+          "reason": "POST HTTP call to /Identity/Account/Login?ReturnUrl=%2FBasket%2FCheckout"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/basket/checkout",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CheckoutTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/CheckoutTest.cs",
+          "line": 62,
+          "reason": "POST HTTP call to /basket/checkout"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "IndexTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/IndexTest.cs",
+          "line": 24,
+          "reason": "GET HTTP call to /"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/basket/index",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "IndexTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/IndexTest.cs",
+          "line": 38,
+          "reason": "POST HTTP call to /basket/index"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/basket/update",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "IndexTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/IndexTest.cs",
+          "line": 51,
+          "reason": "POST HTTP call to /basket/update"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "IndexTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/IndexTest.cs",
+          "line": 64,
+          "reason": "GET HTTP call to /"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/basket/index",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "IndexTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/IndexTest.cs",
+          "line": 78,
+          "reason": "POST HTTP call to /basket/index"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/basket/update",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "IndexTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/FunctionalTests/Web/Pages/Basket/IndexTest.cs",
+          "line": 91,
+          "reason": "POST HTTP call to /basket/update"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/api/catalog-items?pageSize=10",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CatalogItemListPagedEndpoint",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CatalogItemListPagedEndpoint.cs",
+          "line": 20,
+          "reason": "GET HTTP call to /api/catalog-items?pageSize=10"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/api/catalog-items",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CatalogItemListPagedEndpoint",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CatalogItemListPagedEndpoint.cs",
+          "line": 36,
+          "reason": "GET HTTP call to /api/catalog-items"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/api/catalog-items?pageSize={pageSize}&pageIndex={pageIndex}",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CatalogItemListPagedEndpoint",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CatalogItemListPagedEndpoint.cs",
+          "line": 42,
+          "reason": "GET HTTP call to /api/catalog-items?pageSize={pageSize}&pageIndex={pageIndex}"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "/api/{endpointName}",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CatalogItemListPagedEndpoint",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CatalogItemListPagedEndpoint.cs",
+          "line": 64,
+          "reason": "GET HTTP call to /api/{endpointName}"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "api/catalog-items",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CreateCatalogItemEndpointTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CreateCatalogItemEndpointTest.cs",
+          "line": 30,
+          "reason": "POST HTTP call to api/catalog-items"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "api/catalog-items",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "CreateCatalogItemEndpointTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CreateCatalogItemEndpointTest.cs",
+          "line": 42,
+          "reason": "POST HTTP call to api/catalog-items"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "api/catalog-items/12",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "DeleteCatalogItemEndpointTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/DeleteCatalogItemEndpointTest.cs",
+          "line": 19,
+          "reason": "DELETE HTTP call to api/catalog-items/12"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "api/catalog-items/0",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "DeleteCatalogItemEndpointTest",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/DeleteCatalogItemEndpointTest.cs",
+          "line": 33,
+          "reason": "DELETE HTTP call to api/catalog-items/0"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "User/Logout",
+      "type": "HTTP_endpoint_or_configured_base_url",
+      "protocol": "HTTP",
+      "called_from": "Logout",
+      "module_guess": "unknown",
+      "evidence": [
+        {
+          "file": "src/BlazorAdmin/Pages/Logout.razor",
+          "line": 10,
+          "reason": "POST HTTP call to User/Logout"
+        }
+      ],
+      "confidence": 0.75,
+      "unknowns": [
+        "Target system purpose/base URL is not fully known from parsed facts alone."
+      ]
+    },
+    {
+      "target_system": "Azure configuration/identity service",
+      "type": "possible_external_cloud_dependency",
+      "protocol": "SDK",
+      "called_from": "project package references",
+      "module_guess": "CrossCutting",
+      "evidence": [
+        {
+          "file": "src/Web/Web.csproj",
+          "reason": "Azure package reference detected"
+        }
+      ],
+      "confidence": 0.55,
+      "unknowns": [
+        "Package references indicate capability, but actual runtime usage/purpose must be confirmed."
+      ]
+    }
+  ],
+  "unknowns": [
+    "External system names/purposes are unknown where evidence only shows configured HTTP paths or package references."
+  ],
+  "open_questions": [
+    "Confirm the real target system behind configured API base URLs used by frontend HTTP calls.",
+    "Confirm whether database or infrastructure services found in deployment files are development-only or production-relevant boundaries."
+  ]
+}

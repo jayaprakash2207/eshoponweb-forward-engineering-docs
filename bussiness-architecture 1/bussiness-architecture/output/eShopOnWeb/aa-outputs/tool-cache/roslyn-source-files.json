@@ -1,0 +1,2686 @@
+[
+  {
+    "path": "src/ApplicationCore/CatalogSettings.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Constants/AuthorizationConstants.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/BaseEntity.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/CatalogBrand.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/CatalogItem.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/CatalogType.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/BasketAggregate/Basket.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/BasketAggregate/BasketItem.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/BuyerAggregate/Buyer.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/BuyerAggregate/PaymentMethod.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/OrderAggregate/Address.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/OrderAggregate/CatalogItemOrdered.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/OrderAggregate/Order.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Entities/OrderAggregate/OrderItem.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Exceptions/BasketNotFoundException.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Exceptions/DuplicateException.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Exceptions/EmptyBasketOnCheckoutException.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Extensions/GuardExtensions.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Extensions/JsonExtensions.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Interfaces/IAggregateRoot.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Interfaces/IAppLogger.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Interfaces/IBasketQueryService.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Interfaces/IBasketService.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Interfaces/IEmailSender.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Interfaces/IOrderService.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Interfaces/IReadRepository.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Interfaces/IRepository.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Interfaces/ITokenClaimsService.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Interfaces/IUriComposer.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Services/BasketService.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Services/OrderService.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Services/UriComposer.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Specifications/BasketWithItemsSpecification.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Specifications/CatalogFilterPaginatedSpecification.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Specifications/CatalogFilterSpecification.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Specifications/CatalogItemNameSpecification.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Specifications/CatalogItemsSpecification.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Specifications/CustomerOrdersSpecification.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Specifications/CustomerOrdersWithItemsSpecification.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/ApplicationCore/Specifications/OrderWithItemsByIdSpec.cs",
+    "project": "ApplicationCore",
+    "projectPath": "src/ApplicationCore/ApplicationCore.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/CustomAuthStateProvider.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Program.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/ServicesConfiguration.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Helpers/BlazorComponent.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Helpers/BlazorLayoutComponent.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Helpers/RefreshBroadcast.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Helpers/ToastComponent.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/JavaScript/Cookies.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/JavaScript/Css.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/JavaScript/JSInteropConstants.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/JavaScript/Route.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Pages/CatalogItemPage/List.razor.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Services/CacheEntry.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Services/CachedCatalogItemServiceDecorator.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Services/CachedCatalogLookupDataServiceDecorator .cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Services/CatalogItemService.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Services/CatalogLookupDataService.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Services/HttpService.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Services/ToastService.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorAdmin/Shared/CustomInputSelect.cs",
+    "project": "BlazorAdmin",
+    "projectPath": "src/BlazorAdmin/BlazorAdmin.csproj",
+    "projectType": "frontend_spa",
+    "projectCategory": "frontend",
+    "projectReferences": [
+      "BlazorShared"
+    ]
+  },
+  {
+    "path": "src/BlazorShared/BaseUrlConfiguration.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Attributes/EndpointAttribute.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Authorization/ClaimValue.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Authorization/Constants.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Authorization/UserInfo.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Interfaces/ICatalogItemService.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Interfaces/ICatalogLookupDataService.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Interfaces/ILookupDataResponse.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/CatalogBrand.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/CatalogBrandResponse.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/CatalogItem.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/CatalogType.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/CatalogTypeResponse.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/CreateCatalogItemRequest.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/CreateCatalogItemResponse.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/DeleteCatalogItemResponse.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/EditCatalogItemResponse.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/ErrorDetails.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/LookupData.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/BlazorShared/Models/PagedCatalogItemResponse.cs",
+    "project": "BlazorShared",
+    "projectPath": "src/BlazorShared/BlazorShared.csproj",
+    "projectType": "library",
+    "projectCategory": "support",
+    "projectReferences": []
+  },
+  {
+    "path": "src/Infrastructure/Dependencies.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/CatalogContext.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/CatalogContextSeed.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/EfRepository.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/FileItem.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/Config/BasketConfiguration.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/Config/BasketItemConfiguration.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/Config/CatalogBrandConfiguration.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/Config/CatalogItemConfiguration.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/Config/CatalogTypeConfiguration.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/Config/OrderConfiguration.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/Config/OrderItemConfiguration.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Data/Queries/BasketQueryService.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Identity/AppIdentityDbContext.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Identity/AppIdentityDbContextSeed.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Identity/ApplicationUser.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Identity/IdentityTokenClaimService.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Identity/UserNotFoundException.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Logging/LoggerAdapter.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/Infrastructure/Services/EmailSender.cs",
+    "project": "Infrastructure",
+    "projectPath": "src/Infrastructure/Infrastructure.csproj",
+    "projectType": "database_support_library",
+    "projectCategory": "database_support",
+    "projectReferences": [
+      "ApplicationCore"
+    ]
+  },
+  {
+    "path": "src/PublicApi/BaseMessage.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/BaseRequest.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/BaseResponse.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CustomSchemaFilters.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/ImageValidators.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/MappingProfile.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/Program.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/AuthEndpoints/AuthenticateEndpoint.AuthenticateRequest.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/AuthEndpoints/AuthenticateEndpoint.AuthenticateResponse.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/AuthEndpoints/AuthenticateEndpoint.ClaimValue.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/AuthEndpoints/AuthenticateEndpoint.UserInfo.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/AuthEndpoints/AuthenticateEndpoint.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogBrandEndpoints/CatalogBrandDto.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogBrandEndpoints/CatalogBrandListEndpoint.ListCatalogBrandsResponse.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogBrandEndpoints/CatalogBrandListEndpoint.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/CatalogItemDto.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/CatalogItemGetByIdEndpoint.GetByIdCatalogItemRequest.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/CatalogItemGetByIdEndpoint.GetByIdCatalogItemResponse.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/CatalogItemGetByIdEndpoint.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/CatalogItemListPagedEndpoint.ListPagedCatalogItemRequest.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/CatalogItemListPagedEndpoint.ListPagedCatalogItemResponse.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/CatalogItemListPagedEndpoint.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/CreateCatalogItemEndpoint.CreateCatalogItemRequest.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/CreateCatalogItemEndpoint.CreateCatalogItemResponse.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/CreateCatalogItemEndpoint.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/DeleteCatalogItemEndpoint.DeleteCatalogItemRequest.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/DeleteCatalogItemEndpoint.DeleteCatalogItemResponse.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/DeleteCatalogItemEndpoint.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/UpdateCatalogItemEndpoint.UpdateCatalogItemRequest.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/UpdateCatalogItemEndpoint.UpdateCatalogItemResponse.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogItemEndpoints/UpdateCatalogItemEndpoint.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogTypeEndpoints/CatalogTypeDto.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogTypeEndpoints/CatalogTypeListEndpoint.ListCatalogTypesResponse.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/CatalogTypeEndpoints/CatalogTypeListEndpoint.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/PublicApi/Middleware/ExceptionMiddleware.cs",
+    "project": "PublicApi",
+    "projectPath": "src/PublicApi/PublicApi.csproj",
+    "projectType": "backend_web_api",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Constants.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Program.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/SlugifyParameterTransformer.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Areas/Identity/IdentityHostingStartup.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Areas/Identity/Pages/Account/ConfirmEmail.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Areas/Identity/Pages/Account/Login.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Areas/Identity/Pages/Account/Logout.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Areas/Identity/Pages/Account/Register.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Configuration/ConfigureCookieSettings.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Configuration/ConfigureCoreServices.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Configuration/ConfigureWebServices.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Configuration/RevokeAuthenticationEvents.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Controllers/ManageController.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Controllers/OrderController.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Controllers/UserController.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Controllers/Api/BaseApiController.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Extensions/CacheHelpers.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Extensions/EmailSenderExtensions.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Extensions/UrlHelperExtensions.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Features/MyOrders/GetMyOrders.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Features/MyOrders/GetMyOrdersHandler.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Features/OrderDetails/GetOrderDetails.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Features/OrderDetails/GetOrderDetailsHandler.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/HealthChecks/ApiHealthCheck.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/HealthChecks/HomePageHealthCheck.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Interfaces/IBasketViewModelService.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Interfaces/ICatalogItemViewModelService.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Interfaces/ICatalogViewModelService.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Pages/Error.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Pages/Index.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Pages/Privacy.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Pages/Admin/EditCatalogItem.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Pages/Admin/Index.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Pages/Basket/BasketItemViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Pages/Basket/BasketViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Pages/Basket/Checkout.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Pages/Basket/Index.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Pages/Basket/Success.cshtml.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Pages/Shared/Components/BasketComponent/Basket.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Services/BasketViewModelService.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Services/CachedCatalogViewModelService.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Services/CatalogItemViewModelService.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Services/CatalogViewModelService.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/BasketComponentViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/CatalogIndexViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/CatalogItemViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/OrderDetailViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/OrderItemViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/OrderViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/PaginationInfoViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Account/LoginViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Account/LoginWith2faViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Account/RegisterViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Account/ResetPasswordViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/File/FileViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Manage/ChangePasswordViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Manage/EnableAuthenticatorViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Manage/ExternalLoginsViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Manage/IndexViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Manage/RemoveLoginViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Manage/SetPasswordViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Manage/ShowRecoveryCodesViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/ViewModels/Manage/TwoFactorAuthenticationViewModel.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "src/Web/Views/Manage/ManageNavPages.cs",
+    "project": "Web",
+    "projectPath": "src/Web/Web.csproj",
+    "projectType": "backend_web_app",
+    "projectCategory": "backend",
+    "projectReferences": [
+      "ApplicationCore",
+      "BlazorAdmin",
+      "BlazorShared",
+      "Infrastructure"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/PublicApi/ApiTestFixture.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/PublicApi/ApiTokenHelper.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/PublicApi/AuthEndpoints/AuthenticateEndpoint.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/Web/WebPageHelpers.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/Web/WebTestFixture.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/Web/Controllers/AccountControllerSignIn.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/Web/Controllers/CatalogControllerIndex.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/Web/Controllers/OrderControllerIndex.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/Web/Pages/HomePageOnGet.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/Web/Pages/Basket/BasketPageCheckout.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/Web/Pages/Basket/CheckoutTest.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/FunctionalTests/Web/Pages/Basket/IndexTest.cs",
+    "project": "FunctionalTests",
+    "projectPath": "tests/FunctionalTests/FunctionalTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/IntegrationTests/Repositories/BasketRepositoryTests/SetQuantities.cs",
+    "project": "IntegrationTests",
+    "projectPath": "tests/IntegrationTests/IntegrationTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "Infrastructure",
+      "UnitTests"
+    ]
+  },
+  {
+    "path": "tests/IntegrationTests/Repositories/OrderRepositoryTests/GetById.cs",
+    "project": "IntegrationTests",
+    "projectPath": "tests/IntegrationTests/IntegrationTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "Infrastructure",
+      "UnitTests"
+    ]
+  },
+  {
+    "path": "tests/IntegrationTests/Repositories/OrderRepositoryTests/GetByIdWithItemsAsync.cs",
+    "project": "IntegrationTests",
+    "projectPath": "tests/IntegrationTests/IntegrationTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "Infrastructure",
+      "UnitTests"
+    ]
+  },
+  {
+    "path": "tests/PublicApiIntegrationTests/ApiTokenHelper.cs",
+    "project": "PublicApiIntegrationTests",
+    "projectPath": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/PublicApiIntegrationTests/ProgramTest.cs",
+    "project": "PublicApiIntegrationTests",
+    "projectPath": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/PublicApiIntegrationTests/AuthEndpoints/AuthenticateEndpointTest.cs",
+    "project": "PublicApiIntegrationTests",
+    "projectPath": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CatalogItemGetByIdEndpointTest.cs",
+    "project": "PublicApiIntegrationTests",
+    "projectPath": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CatalogItemListPagedEndpoint.cs",
+    "project": "PublicApiIntegrationTests",
+    "projectPath": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/CreateCatalogItemEndpointTest.cs",
+    "project": "PublicApiIntegrationTests",
+    "projectPath": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/PublicApiIntegrationTests/CatalogItemEndpoints/DeleteCatalogItemEndpointTest.cs",
+    "project": "PublicApiIntegrationTests",
+    "projectPath": "tests/PublicApiIntegrationTests/PublicApiIntegrationTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "PublicApi",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Entities/BasketTests/BasketAddItem.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Entities/BasketTests/BasketRemoveEmptyItems.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Entities/BasketTests/BasketTotalItems.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Entities/OrderTests/OrderTotal.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Extensions/JsonExtensions.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Extensions/TestChild.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Extensions/TestParent.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Services/BasketServiceTests/AddItemToBasket.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Services/BasketServiceTests/DeleteBasket.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Services/BasketServiceTests/TransferBasket.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Specifications/BasketWithItemsSpecification.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Specifications/CatalogFilterPaginatedSpecification.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Specifications/CatalogFilterSpecification.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Specifications/CatalogItemsSpecification.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/ApplicationCore/Specifications/CustomerOrdersWithItemsSpecification.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/Builders/AddressBuilder.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/Builders/BasketBuilder.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/Builders/OrderBuilder.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/MediatorHandlers/OrdersTests/GetMyOrders.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/MediatorHandlers/OrdersTests/GetOrderDetails.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/Web/Extensions/CacheHelpersTests/GenerateBrandsCacheKey.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/Web/Extensions/CacheHelpersTests/GenerateCatalogItemCacheKey.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  },
+  {
+    "path": "tests/UnitTests/Web/Extensions/CacheHelpersTests/GenerateTypesCacheKey.cs",
+    "project": "UnitTests",
+    "projectPath": "tests/UnitTests/UnitTests.csproj",
+    "projectType": "test_project",
+    "projectCategory": "test",
+    "projectReferences": [
+      "ApplicationCore",
+      "Web"
+    ]
+  }
+]

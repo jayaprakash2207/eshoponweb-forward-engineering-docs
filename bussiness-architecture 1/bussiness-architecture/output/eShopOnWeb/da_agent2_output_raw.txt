@@ -1,0 +1,22 @@
+## Review Complete
+
+Files updated (10 of 13):
+- ✅ schema-catalogue.json
+- ✅ data-source-inventory.json
+- ✅ migration-complexity.json
+- ✅ redundancy-analysis.json
+- ✅ pii-inventory.json
+- ✅ hidden-business-rules.json
+- ✅ data-flow-map.md
+- ✅ data-quality-report.md
+- ✅ storage-pattern-analysis.md
+- ✅ access-control-matrix.md
+- ✅ erd.md
+- ✅ data-dictionary.md
+- ✅ conceptual-data-model.md
+
+(All 13 files were touched in this pass — every file had at least one cross-file consistency fix tied to the engine correction or the Buyer/PaymentMethod resolution.)
+
+✅ review-summary.md written
+
+Key findings: the DB engine is actually **PostgreSQL via Npgsql** (not SQL Server, as originally documented), Buyer/PaymentMethod are confirmed dead code (not shadow entities), health checks ARE present, BlazorAdmin caching uses browser localStorage, basket is NOT cleared after checkout, the "Administrators" role string is confirmed, and a new security finding surfaced: hardcoded JWT/auth secrets and a default password in `AuthorizationConstants.cs`.

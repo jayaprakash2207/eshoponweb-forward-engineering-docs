@@ -1,0 +1,843 @@
+{
+  "generated_at": "2026-06-15T07:27:17+00:00",
+  "repo_root": "C:\\Users\\BrianRoyS\\Downloads\\eShopOnWeb-main\\eShopOnWeb-main",
+  "output_root": "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs",
+  "phases": [
+    {
+      "phase": "inventory",
+      "script": "scan_inventory.py",
+      "command": [
+        "C:\\Python312\\python.exe",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\application-architecture\\tools\\application_architecture_analyzer\\scan_inventory.py",
+        "--output-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs",
+        "--repo-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\eShopOnWeb-main\\eShopOnWeb-main"
+      ],
+      "started_at": "2026-06-15T07:26:54+00:00",
+      "completed_at": "2026-06-15T07:26:55+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"file_inventory\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\inventory\\\\file-inventory.json\",\n  \"project_inventory\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\inventory\\\\project-inventory.json\",\n  \"language_summary\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\inventory\\\\language-summary.json\",\n  \"ignored_report\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\inventory\\\\ignored-files-report.json\",\n  \"total_files_scanned\": 468,\n  \"total_files_ignored\": 65,\n  \"languages\": [\n    \"csharp\",\n    \"razor\",\n    \"css\",\n    \"json\",\n    \"unknown\",\n    \"image\",\n    \"markdown\",\n    \"msbuild\",\n    \"bicep\",\n    \"svg\",\n    \"yaml\",\n    \"javascript\",\n    \"dockerfile\",\n    \"dotnet_solution\",\n    \"xml\",\n    \"docker_ignore\",\n    \"editorconfig\",\n    \"git_attributes\",\n    \"git_ignore\"\n  ]\n}\n",
+      "stderr": "",
+      "outputs": [
+        {
+          "path": "inventory/file-inventory.json",
+          "exists": true,
+          "size_bytes": 174034
+        },
+        {
+          "path": "inventory/project-inventory.json",
+          "exists": true,
+          "size_bytes": 34959
+        },
+        {
+          "path": "inventory/language-summary.json",
+          "exists": true,
+          "size_bytes": 5366
+        },
+        {
+          "path": "inventory/ignored-files-report.json",
+          "exists": true,
+          "size_bytes": 14929
+        }
+      ],
+      "post_stage_validation": [
+        {
+          "path": "inventory/file-inventory.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "inventory/project-inventory.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "inventory/language-summary.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "inventory/ignored-files-report.json",
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "phase": "source-chunks",
+      "script": "generate_source_chunks.py",
+      "command": [
+        "C:\\Python312\\python.exe",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\application-architecture\\tools\\application_architecture_analyzer\\generate_source_chunks.py",
+        "--output-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs",
+        "--repo-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\eShopOnWeb-main\\eShopOnWeb-main"
+      ],
+      "started_at": "2026-06-15T07:26:55+00:00",
+      "completed_at": "2026-06-15T07:26:56+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"source_chunk_index\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\parsed\\\\source-chunk-index.json\",\n  \"summary\": {\n    \"chunk_count\": 762,\n    \"chunked_file_count\": 381,\n    \"skipped_file_count\": 87,\n    \"chunks_by_language\": {\n      \"xml\": 3,\n      \"msbuild\": 13,\n      \"markdown\": 24,\n      \"yaml\": 6,\n      \"json\": 31,\n      \"bicep\": 9,\n      \"csharp\": 289,\n      \"razor\": 69,\n      \"dockerfile\": 2,\n      \"javascript\": 316\n    },\n    \"chunks_by_project\": {\n      \"unknown\": 54,\n      \"ApplicationCore\": 42,\n      \"BlazorAdmin\": 51,\n      \"BlazorShared\": 22,\n      \"Infrastructure\": 38,\n      \"PublicApi\": 44,\n      \"Web\": 458,\n      \"FunctionalTests\": 15,\n      \"IntegrationTests\": 4,\n      \"PublicApiIntegrationTests\": 9,\n      \"UnitTests\": 25\n    },\n    \"entry_point_hint_chunks\": 27,\n    \"dependency_hint_chunks\": 280\n  }\n}\n",
+      "stderr": "",
+      "outputs": [
+        {
+          "path": "parsed/source-chunk-index.json",
+          "exists": true,
+          "size_bytes": 923140
+        }
+      ],
+      "post_stage_validation": []
+    },
+    {
+      "phase": "parsed",
+      "script": "extract_parsed_facts.py",
+      "command": [
+        "C:\\Python312\\python.exe",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\application-architecture\\tools\\application_architecture_analyzer\\extract_parsed_facts.py",
+        "--output-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs",
+        "--repo-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\eShopOnWeb-main\\eShopOnWeb-main"
+      ],
+      "started_at": "2026-06-15T07:26:56+00:00",
+      "completed_at": "2026-06-15T07:26:57+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"symbol_registry\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\parsed\\\\symbol-registry.json\",\n  \"route_registry\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\parsed\\\\route-registry.json\",\n  \"dependency_candidates\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\parsed\\\\dependency-candidates.json\",\n  \"entry_point_candidates\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\parsed\\\\entry-point-candidates.json\",\n  \"summary\": {\n    \"component_count\": 310,\n    \"entry_point_count\": 55,\n    \"route_count\": 52,\n    \"dependency_count\": 1843,\n    \"frontend_artifact_count\": 76,\n    \"backend_artifact_count\": 192,\n    \"jobs_consumers_count\": 2,\n    \"components_by_type\": {\n      \"Configuration\": 27,\n      \"Entity\": 19,\n      \"Unknown\": 40,\n      \"Service\": 34,\n      \"ExternalClient\": 2,\n      \"Repository\": 13,\n      \"FrontendComponent\": 68,\n      \"FrontendService\": 8,\n      \"DTO\": 58,\n      \"BatchJob\": 2,\n      \"Validator\": 1,\n      \"Mapper\": 1,\n      \"Controller\": 32,\n      \"Middleware\": 1,\n      \"Handler\": 4\n    },\n    \"components_by_layer\": {\n      \"CrossCutting\": 62,\n      \"Domain\": 18,\n      \"Application\": 69,\n      \"Integration\": 2,\n      \"DataAccess\": 15,\n      \"Presentation/UI\": 115,\n      \"Unknown\": 3,\n      \"Infrastructure\": 9,\n      \"API\": 17\n    },\n    \"components_by_parser_backend\": {\n      \"static_structural\": 249,\n      \"unknown\": 61\n    },\n    \"entry_points_by_type\": {\n      \"HTTP_API\": 49,\n      \"FrontendRoute\": 3,\n      \"CLI\": 3\n    },\n    \"dependencies_by_kind\": {\n      \"constructor\": 178,\n      \"import\": 664,\n      \"component_call\": 699,\n      \"method_parameter\": 42,\n      \"di_registration\": 28,\n      \"property_injection\": 3,\n      \"db_context_registration\": 6,\n      \"mediatr_send\": 2,\n      \"razor_inject\": 19,\n      \"razor_inherits\": 10,\n      \"http_client_call\": 42,\n      \"frontend_api_call\": 11,\n      \"project_reference\": 18,\n      \"di_resolution_candidate\": 60,\n      \"mediatr_handler_candidate\": 2,\n      \"module_dependency_candidate\": 59\n    }\n  },\n  \"technology_stacks_used_for_parsing\": [\n    \".NET / C#\",\n    \"ASP.NET Core\",\n    \"MinimalApi.Endpoint\",\n    \"Ardalis.ApiEndpoints\",\n    \"Entity Framework Core\",\n    \"Razor / Blazor\",\n    \"MediatR\"\n  ]\n}\n",
+      "stderr": "",
+      "outputs": [
+        {
+          "path": "parsed/symbol-registry.json",
+          "exists": true,
+          "size_bytes": 709298
+        },
+        {
+          "path": "parsed/route-registry.json",
+          "exists": true,
+          "size_bytes": 44526
+        },
+        {
+          "path": "parsed/dependency-candidates.json",
+          "exists": true,
+          "size_bytes": 1246776
+        },
+        {
+          "path": "parsed/entry-point-candidates.json",
+          "exists": true,
+          "size_bytes": 49383
+        }
+      ],
+      "post_stage_validation": [
+        {
+          "path": "parsed/source-chunk-index.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "parsed/symbol-registry.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "parsed/route-registry.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "parsed/dependency-candidates.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "parsed/entry-point-candidates.json",
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "phase": "semantic",
+      "script": "extract_roslyn_semantic_facts.py",
+      "command": [
+        "C:\\Python312\\python.exe",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\application-architecture\\tools\\application_architecture_analyzer\\extract_roslyn_semantic_facts.py",
+        "--output-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs",
+        "--repo-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\eShopOnWeb-main\\eShopOnWeb-main"
+      ],
+      "started_at": "2026-06-15T07:26:57+00:00",
+      "completed_at": "2026-06-15T07:27:15+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"active\",\n  \"summary\": {\n    \"source_file_count\": 244,\n    \"project_count\": 10,\n    \"semantic_component_count\": 247,\n    \"semantic_dependency_count\": 271,\n    \"semantic_component_call_count\": 240,\n    \"semantic_di_registration_count\": 31,\n    \"route_hint_count\": 18,\n    \"unresolved_invocation_count\": 1110,\n    \"compilation_error_count_sampled\": 182\n  }\n}\n",
+      "stderr": "",
+      "outputs": [
+        {
+          "path": "parsed/roslyn-semantic-facts.json",
+          "exists": true,
+          "size_bytes": 666406
+        }
+      ],
+      "post_stage_validation": [
+        {
+          "path": "parsed/roslyn-semantic-facts.json",
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "phase": "evidence",
+      "script": "generate_evidence_packs.py",
+      "command": [
+        "C:\\Python312\\python.exe",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\application-architecture\\tools\\application_architecture_analyzer\\generate_evidence_packs.py",
+        "--output-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs"
+      ],
+      "started_at": "2026-06-15T07:27:15+00:00",
+      "completed_at": "2026-06-15T07:27:15+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"output_directory\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\evidence-packs\",\n  \"files_generated\": [\n    \"call-flow-pack.json\",\n    \"component-registry-pack.json\",\n    \"dependency-pack.json\",\n    \"entry-point-pack.json\",\n    \"external-boundary-pack.json\",\n    \"frontend-application-pack.json\",\n    \"layering-pattern-pack.json\",\n    \"module-boundary-pack.json\",\n    \"system-inventory-pack.json\"\n  ],\n  \"system_apps_detected\": 10,\n  \"module_candidates\": 13,\n  \"components_grouped\": 310,\n  \"dependencies\": 2114,\n  \"entry_points\": 55,\n  \"call_flows\": 55,\n  \"potential_architecture_violations\": 25\n}\n",
+      "stderr": "",
+      "outputs": [
+        {
+          "path": "evidence-packs/system-inventory-pack.json",
+          "exists": true,
+          "size_bytes": 22105
+        },
+        {
+          "path": "evidence-packs/module-boundary-pack.json",
+          "exists": true,
+          "size_bytes": 349895
+        },
+        {
+          "path": "evidence-packs/component-registry-pack.json",
+          "exists": true,
+          "size_bytes": 836098
+        },
+        {
+          "path": "evidence-packs/dependency-pack.json",
+          "exists": true,
+          "size_bytes": 1900874
+        },
+        {
+          "path": "evidence-packs/entry-point-pack.json",
+          "exists": true,
+          "size_bytes": 65802
+        },
+        {
+          "path": "evidence-packs/call-flow-pack.json",
+          "exists": true,
+          "size_bytes": 275258
+        },
+        {
+          "path": "evidence-packs/layering-pattern-pack.json",
+          "exists": true,
+          "size_bytes": 51431
+        },
+        {
+          "path": "evidence-packs/external-boundary-pack.json",
+          "exists": true,
+          "size_bytes": 42674
+        },
+        {
+          "path": "evidence-packs/frontend-application-pack.json",
+          "exists": true,
+          "size_bytes": 57780
+        }
+      ],
+      "post_stage_validation": [
+        {
+          "path": "evidence-packs/system-inventory-pack.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "evidence-packs/module-boundary-pack.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "evidence-packs/component-registry-pack.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "evidence-packs/dependency-pack.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "evidence-packs/entry-point-pack.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "evidence-packs/call-flow-pack.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "evidence-packs/layering-pattern-pack.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "evidence-packs/external-boundary-pack.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "evidence-packs/frontend-application-pack.json",
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "phase": "final",
+      "script": "generate_final_architecture.py",
+      "command": [
+        "C:\\Python312\\python.exe",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\application-architecture\\tools\\application_architecture_analyzer\\generate_final_architecture.py",
+        "--output-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs"
+      ],
+      "started_at": "2026-06-15T07:27:16+00:00",
+      "completed_at": "2026-06-15T07:27:16+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"output_directory\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\final\",\n  \"files_created\": [\n    \"application-architecture-summary.md\",\n    \"system-inventory.json\",\n    \"module-boundary-map.json\",\n    \"component-registry.json\",\n    \"dependency-graph.json\",\n    \"application-interface-catalogue.json\",\n    \"call-flow-map.json\",\n    \"architecture-pattern-report.md\",\n    \"architecture-violation-register.json\",\n    \"application-risk-register.json\",\n    \"strangler-candidate-report.md\",\n    \"forward-engineering-input-map.md\",\n    \"open-questions.md\",\n    \"diagrams/system-context.mmd\",\n    \"diagrams/container-view.mmd\",\n    \"diagrams/component-view.mmd\",\n    \"diagrams/dependency-view.mmd\",\n    \"diagrams/call-flow-view.mmd\"\n  ],\n  \"detected_architecture_pattern\": \"Layered Monolith\",\n  \"module_count\": 13,\n  \"open_question_count\": 13,\n  \"risk_count\": 9\n}\n",
+      "stderr": "",
+      "outputs": [
+        {
+          "path": "final/application-architecture-summary.md",
+          "exists": true,
+          "size_bytes": 4584
+        },
+        {
+          "path": "final/system-inventory.json",
+          "exists": true,
+          "size_bytes": 20259
+        },
+        {
+          "path": "final/module-boundary-map.json",
+          "exists": true,
+          "size_bytes": 204929
+        },
+        {
+          "path": "final/component-registry.json",
+          "exists": true,
+          "size_bytes": 680091
+        },
+        {
+          "path": "final/dependency-graph.json",
+          "exists": true,
+          "size_bytes": 277534
+        },
+        {
+          "path": "final/application-interface-catalogue.json",
+          "exists": true,
+          "size_bytes": 64565
+        },
+        {
+          "path": "final/call-flow-map.json",
+          "exists": true,
+          "size_bytes": 265479
+        },
+        {
+          "path": "final/architecture-pattern-report.md",
+          "exists": true,
+          "size_bytes": 4369
+        },
+        {
+          "path": "final/architecture-violation-register.json",
+          "exists": true,
+          "size_bytes": 14267
+        },
+        {
+          "path": "final/application-risk-register.json",
+          "exists": true,
+          "size_bytes": 7929
+        },
+        {
+          "path": "final/strangler-candidate-report.md",
+          "exists": true,
+          "size_bytes": 6729
+        },
+        {
+          "path": "final/forward-engineering-input-map.md",
+          "exists": true,
+          "size_bytes": 8357
+        },
+        {
+          "path": "final/open-questions.md",
+          "exists": true,
+          "size_bytes": 1758
+        },
+        {
+          "path": "final/diagrams/system-context.mmd",
+          "exists": true,
+          "size_bytes": 499
+        },
+        {
+          "path": "final/diagrams/container-view.mmd",
+          "exists": true,
+          "size_bytes": 1048
+        },
+        {
+          "path": "final/diagrams/component-view.mmd",
+          "exists": true,
+          "size_bytes": 2930
+        },
+        {
+          "path": "final/diagrams/dependency-view.mmd",
+          "exists": true,
+          "size_bytes": 1432
+        },
+        {
+          "path": "final/diagrams/call-flow-view.mmd",
+          "exists": true,
+          "size_bytes": 1195
+        }
+      ],
+      "post_stage_validation": [
+        {
+          "path": "final/system-inventory.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "final/module-boundary-map.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "final/component-registry.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "final/dependency-graph.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "final/application-interface-catalogue.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "final/call-flow-map.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "final/architecture-violation-register.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "final/application-risk-register.json",
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "phase": "runtime-evidence",
+      "script": "run_runtime_evidence.py",
+      "optional": true,
+      "skipped": true,
+      "reason": "runtime tests are disabled by default; pass --run-runtime-tests to collect no-build/no-restore evidence"
+    },
+    {
+      "phase": "enterprise-forward",
+      "script": "generate_enterprise_forward_engineering.py",
+      "command": [
+        "C:\\Python312\\python.exe",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\application-architecture\\tools\\application_architecture_analyzer\\generate_enterprise_forward_engineering.py",
+        "--output-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs"
+      ],
+      "started_at": "2026-06-15T07:27:16+00:00",
+      "completed_at": "2026-06-15T07:27:16+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"output_directory\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\final\",\n  \"files_created\": [\n    \"business-capability-map.json\",\n    \"business-capability-map.md\",\n    \"module-consolidation-map.json\",\n    \"module-consolidation-map.md\",\n    \"service-boundary-options.md\",\n    \"migration-wave-plan.md\",\n    \"preserve-redesign-retire-map.md\",\n    \"api-contract-preservation-map.json\",\n    \"data-ownership-map.md\",\n    \"test-runtime-evidence-map.json\",\n    \"test-runtime-evidence-map.md\",\n    \"confidence-report.md\",\n    \"architecture-decision-inputs.md\",\n    \"forward-engineering-backlog.md\"\n  ],\n  \"summary\": {\n    \"capability_count\": 13,\n    \"consolidated_module_candidate_count\": 13,\n    \"api_contract_count\": 55,\n    \"preserve_contract_count\": 46,\n    \"review_contract_count\": 9,\n    \"test_component_count\": 45\n  }\n}\n",
+      "stderr": "",
+      "outputs": [
+        {
+          "path": "final/business-capability-map.json",
+          "exists": true,
+          "size_bytes": 119814
+        },
+        {
+          "path": "final/business-capability-map.md",
+          "exists": true,
+          "size_bytes": 4076
+        },
+        {
+          "path": "final/module-consolidation-map.json",
+          "exists": true,
+          "size_bytes": 26906
+        },
+        {
+          "path": "final/module-consolidation-map.md",
+          "exists": true,
+          "size_bytes": 4299
+        },
+        {
+          "path": "final/service-boundary-options.md",
+          "exists": true,
+          "size_bytes": 1989
+        },
+        {
+          "path": "final/migration-wave-plan.md",
+          "exists": true,
+          "size_bytes": 2982
+        },
+        {
+          "path": "final/preserve-redesign-retire-map.md",
+          "exists": true,
+          "size_bytes": 5837
+        },
+        {
+          "path": "final/api-contract-preservation-map.json",
+          "exists": true,
+          "size_bytes": 59423
+        },
+        {
+          "path": "final/data-ownership-map.md",
+          "exists": true,
+          "size_bytes": 7338
+        },
+        {
+          "path": "final/test-runtime-evidence-map.json",
+          "exists": true,
+          "size_bytes": 17753
+        },
+        {
+          "path": "final/test-runtime-evidence-map.md",
+          "exists": true,
+          "size_bytes": 1111
+        },
+        {
+          "path": "final/confidence-report.md",
+          "exists": true,
+          "size_bytes": 1906
+        },
+        {
+          "path": "final/architecture-decision-inputs.md",
+          "exists": true,
+          "size_bytes": 8038
+        },
+        {
+          "path": "final/forward-engineering-backlog.md",
+          "exists": true,
+          "size_bytes": 7657
+        }
+      ],
+      "post_stage_validation": [
+        {
+          "path": "final/business-capability-map.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "final/module-consolidation-map.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "final/api-contract-preservation-map.json",
+          "valid": true,
+          "error": null
+        },
+        {
+          "path": "final/test-runtime-evidence-map.json",
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "phase": "application-blueprint",
+      "script": "generate_enterprise_application_architecture_blueprint.py",
+      "command": [
+        "C:\\Python312\\python.exe",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\application-architecture\\tools\\application_architecture_analyzer\\generate_enterprise_application_architecture_blueprint.py",
+        "--output-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs"
+      ],
+      "started_at": "2026-06-15T07:27:16+00:00",
+      "completed_at": "2026-06-15T07:27:16+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"enterprise_application_architecture_blueprint\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\final\\\\enterprise-application-architecture-blueprint.md\",\n  \"machine_readable_blueprint\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\final\\\\enterprise-application-architecture-blueprint.json\",\n  \"module_count\": 13,\n  \"entry_point_count\": 55,\n  \"scenario_count\": 5,\n  \"human_review_question_count\": 16\n}\n",
+      "stderr": "",
+      "outputs": [
+        {
+          "path": "final/enterprise-application-architecture-blueprint.md",
+          "exists": true,
+          "size_bytes": 58732
+        },
+        {
+          "path": "final/enterprise-application-architecture-blueprint.json",
+          "exists": true,
+          "size_bytes": 589651
+        }
+      ],
+      "post_stage_validation": [
+        {
+          "path": "final/enterprise-application-architecture-blueprint.json",
+          "valid": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "phase": "review",
+      "script": "generate_review_artifacts.py",
+      "command": [
+        "C:\\Python312\\python.exe",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\application-architecture\\tools\\application_architecture_analyzer\\generate_review_artifacts.py",
+        "--output-root",
+        "C:\\Users\\BrianRoyS\\Downloads\\bussiness-architecture 1\\bussiness-architecture\\output\\eShopOnWeb\\aa-outputs"
+      ],
+      "started_at": "2026-06-15T07:27:16+00:00",
+      "completed_at": "2026-06-15T07:27:17+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"output_directory\": \"C:\\\\Users\\\\BrianRoyS\\\\Downloads\\\\bussiness-architecture 1\\\\bussiness-architecture\\\\output\\\\eShopOnWeb\\\\aa-outputs\\\\final\",\n  \"files_created\": [\n    \"quality-review.md\",\n    \"executive-summary-for-review.md\",\n    \"final-sanity-check.md\"\n  ],\n  \"quality\": {\n    \"open_questions\": 13,\n    \"partial_flows\": 0,\n    \"unknown_module_components\": 0,\n    \"dependency_edges_with_unknown_nodes\": 0\n  }\n}\n",
+      "stderr": "",
+      "outputs": [
+        {
+          "path": "final/quality-review.md",
+          "exists": true,
+          "size_bytes": 7775
+        },
+        {
+          "path": "final/executive-summary-for-review.md",
+          "exists": true,
+          "size_bytes": 6297
+        },
+        {
+          "path": "final/final-sanity-check.md",
+          "exists": true,
+          "size_bytes": 2660
+        }
+      ],
+      "post_stage_validation": []
+    }
+  ],
+  "json_validation": [
+    {
+      "path": "evidence-packs\\call-flow-pack.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "evidence-packs\\component-registry-pack.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "evidence-packs\\dependency-pack.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "evidence-packs\\entry-point-pack.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "evidence-packs\\external-boundary-pack.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "evidence-packs\\frontend-application-pack.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "evidence-packs\\layering-pattern-pack.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "evidence-packs\\module-boundary-pack.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "evidence-packs\\system-inventory-pack.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\api-contract-preservation-map.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\application-interface-catalogue.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\application-risk-register.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\architecture-violation-register.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\business-capability-map.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\call-flow-map.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\component-registry.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\dependency-graph.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\enterprise-application-architecture-blueprint.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\module-boundary-map.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\module-consolidation-map.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\system-inventory.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "final\\test-runtime-evidence-map.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "inventory\\file-inventory.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "inventory\\ignored-files-report.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "inventory\\language-summary.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "inventory\\project-inventory.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "parsed\\dependency-candidates.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "parsed\\entry-point-candidates.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "parsed\\roslyn-semantic-facts.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "parsed\\route-registry.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "parsed\\source-chunk-index.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "parsed\\symbol-registry.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "tool-cache\\roslyn-semantic-extractor\\bin\\Debug\\net8.0\\RoslynSemanticExtractor.deps.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "tool-cache\\roslyn-semantic-extractor\\bin\\Debug\\net8.0\\RoslynSemanticExtractor.runtimeconfig.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "tool-cache\\roslyn-semantic-extractor\\obj\\project.assets.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "tool-cache\\roslyn-semantic-extractor\\obj\\RoslynSemanticExtractor.csproj.nuget.dgspec.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "tool-cache\\roslyn-source-files.json",
+      "valid": true,
+      "error": null
+    }
+  ],
+  "quality_gates": {
+    "mode": "warning",
+    "thresholds": {
+      "max_fail": null,
+      "max_partial": null,
+      "max_invalid_graph_edges": null,
+      "max_unknown_components": null
+    },
+    "quality_counts": {
+      "pass": 32,
+      "partial": 0,
+      "fail": 0
+    },
+    "graph": {
+      "invalid_edge_count": 0,
+      "invalid_edges": []
+    },
+    "unknown_component_count": 40,
+    "violations": [],
+    "passed": true
+  },
+  "source_guard": {
+    "enabled": false
+  },
+  "success": true
+}
