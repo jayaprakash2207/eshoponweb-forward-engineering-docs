@@ -119,14 +119,37 @@ Completion documents produced during the EARB audit cycle. All content has been 
 
 ---
 
-### Prompt Architecture
+### `prompts-ready-to-use/` — Run These
 
-| Folder | Contents |
-|---|---|
-| `prompt-governance/` | Governed prompt system — GOV-01..10 rules, 22 prompts |
-| `prompt-v2/` | Optimized prompts — 10 prompts (2 per architecture layer) |
-| `prompt-refactored/` | Intermediate refactored prompts |
-| `prompt-resolved/` | Resolved prompt generation |
+**8 complete, fully assembled prompts. Paste directly into Claude. No setup needed.**
+
+| # | File | What it does |
+|---|---|---|
+| 01 | `01_BA_Agent1_StructuralScout.md` | Business layer — scan codebase structure |
+| 02 | `02_BA_Agent2_DeepAnalyst.md` | Business layer — deep analysis, rules, processes |
+| 03 | `03_DA_Agent1_DataExtractor.md` | Data layer — extract schema, entities, migrations |
+| 04 | `04_DA_Agent2_DataReviewer.md` | Data layer — review and validate findings |
+| 05 | `05_TA_Agent1_StackScout.md` | Technology layer — scan stack, infra, CI/CD |
+| 06 | `06_TA_Agent2_DeepAnalyst.md` | Technology layer — deep analysis, risks, NFRs |
+| 07 | `07_AA_Agent1_AppExtractor.md` | Application layer — services, APIs, dependencies |
+| 08 | `08_AA_Agent2_QualityReview.md` | Application layer — quality review, PASS/FAIL verdict |
+
+**Run order:** 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08
+**Each pair:** Agent 1 scans → Agent 2 deep-analyses Agent 1's output
+**Works on any codebase** — not just .NET
+
+> See `prompts-ready-to-use/00_README.md` for the full step-by-step run guide.
+
+---
+
+### Prompt Architecture — Historical (Do Not Use for New Runs)
+
+| Folder | Contents | Status |
+|---|---|---|
+| `prompt-governance/` | GOV-01..10 rules, 22 governed prompts | Superseded by prompts-ready-to-use |
+| `prompt-v2/` | 10 spec stubs (2 per layer) — not fully assembled | Superseded by prompts-ready-to-use |
+| `prompt-refactored/` | Intermediate refactored prompts | Historical |
+| `prompt-resolved/` | Resolved prompt generation | Historical |
 
 ---
 
