@@ -22,7 +22,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-PROMPT_FILE = Path(__file__).parent / "layer2_prompt.md"
+PROMPT_FILE = Path(__file__).parent.parent.parent.parent / "prompts-ready-to-use" / "01_BA_Agent1_StructuralScout.md"
 MAX_METHODS       = 80
 MAX_CONFIG_PARAMS = 60
 

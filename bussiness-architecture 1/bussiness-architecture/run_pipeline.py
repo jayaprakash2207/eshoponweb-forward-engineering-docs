@@ -125,6 +125,10 @@ def run_full_pipeline(input_dir: str, repo_root: str = None) -> None:
                            [py, "application-architecture/aa_runner.py",
                             "--input", input_dir, "--run", "--repo-root", repo_root])
 
+    # ── Foundation : synthesize all 4 layers → Enterprise Knowledge Graph ──────
+    _run_step_or_exit("Foundation (Knowledge Graph Synthesis)",
+                       [py, "foundation_runner.py", "--input", input_dir, "--run"])
+
     print("\n" + "=" * 60)
     print("FULL PIPELINE COMPLETE")
     print("=" * 60)
@@ -133,6 +137,7 @@ def run_full_pipeline(input_dir: str, repo_root: str = None) -> None:
     if repo_root:
         print(f"  TA outputs    : {input_dir}/ta-outputs/")
         print(f"  AA outputs    : {input_dir}/aa-outputs/")
+    print(f"  Knowledge Graph: {input_dir}/foundation/")
     print("=" * 60 + "\n")
 
 

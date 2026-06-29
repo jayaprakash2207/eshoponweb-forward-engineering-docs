@@ -19,7 +19,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-PROMPT_FILE = Path(__file__).parent / "layer3_prompt.md"
+PROMPT_FILE = Path(__file__).parent.parent.parent.parent / "prompts-ready-to-use" / "02_BA_Agent2_DeepAnalyst.md"
 
 
 def _claude_cmd() -> list:
