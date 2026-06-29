@@ -322,7 +322,7 @@ The entire engine is built on **"never invent a fact."**
 - ⚠️ **Layer 1 uses text/regex, not AST** — complex .NET generics/attributes can be missed; Roslyn upgrade would reach ~99%
 - ⚠️ **No true self-healing** — agents self-check (checklists + validation queues) but cannot rerun themselves or execute code to verify findings
 - ⚠️ **Deployment is local-dev-ready, production-incomplete** — containers + compose exist; no production IaC/release automation in evidence
-- ⚠️ **prompt-v2 + Foundation runners partly deferred** — authored and validated but runner wiring not yet implemented
+- ✅ **Foundation runner now wired** — `foundation_runner.py` created and added as final pipeline step
 
 ---
 
