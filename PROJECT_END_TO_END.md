@@ -91,11 +91,16 @@ The entry point is **`run_pipeline.py`** (in `bussiness-architecture 1/bussiness
 - With `--full-run`, drives every LLM layer **sequentially as subprocesses**:
 
 ```
-BA_Agent1_StructuralScout  →  BA_Agent2_DeepAnalyst        (Business)
-DA_Agent1_DataExtractor    →  DA_Agent2_DataReviewer        (Data)
-TA_Agent1_StackScout       →  TA_Agent2_DeepAnalyst         (Technology)
-AA_Agent1_AppExtractor     →  AA_Agent2_QualityReview       (Application)
+layer2_runner  →  layer3_runner          (Business)
+da_agent1      →  da_agent2              (Data)
+ta_agent1      →  ta_agent2              (Technology)
+aa_runner                                (Application)
+foundation_runner                        (Knowledge Graph synthesis)
 ```
+
+> **Two prompt sets, two purposes — keep them separate:**
+> - **Headless pipeline** (above) uses *data-driven* prompts (`layer2/layer2_prompt.md`, `data-architecture/DA_*`, `technology-architecture/TA_*`, `application-architecture/architecture-prompts/*`). They consume Layer 1's extracted JSON and write output files silently — no human needed.
+> - **`prompts-ready-to-use/`** holds the *interactive* v3 prompts for MANUAL use — you paste them into Claude and point at a live codebase. They expect a human and a real source tree, and will stall if run headless. **They are not wired into `run_pipeline.py` by design.**
 
 Each runner: **load prior JSON → build trimmed context → paste prompt + data → call Claude → parse/save outputs.**
 
@@ -119,7 +124,7 @@ Each runner: **load prior JSON → build trimmed context → paste prompt + data
 
 ### 3.3 The 8 ready-to-use prompts (LLM-driven layers)
 
-Located in `prompts-ready-to-use/` — **use these for all new runs.**
+Located in `prompts-ready-to-use/` — **for MANUAL / interactive runs** (paste into Claude, point at a live codebase). These are the highest-quality v3 prompts; use them when you want a hands-on, human-in-the-loop reverse-engineering session. For the fully automated headless pipeline, `run_pipeline.py` uses its own data-driven prompts instead (see §3.1).
 
 Each layer has 2 agents. Agent 1 scans broad and fast. Agent 2 reads deep and produces final documents. Agent 2 always requires Agent 1's output first.
 

@@ -4,6 +4,10 @@ These are the complete, fully working prompts for reverse engineering any legacy
 
 **Paste each prompt directly into Claude. No assembly needed. No missing parts.**
 
+> **⚠️ These are for MANUAL / interactive use** — you paste them into Claude and point Claude at a live codebase (open folder in VS Code, uploaded zip, or pasted tree). They expect a human in the loop and a real source tree.
+>
+> They are **NOT** the prompts the automated `run_pipeline.py` uses. That headless pipeline uses its own data-driven prompts (`layer2/layer2_prompt.md`, `data-architecture/DA_*`, etc.) which consume Layer 1's extracted JSON and write files silently. Do not wire these interactive prompts into the headless runner — they will stall waiting for human input.
+
 ---
 
 ## The 8 Prompts — Run In This Order

@@ -29,8 +29,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-FOUNDATION_PROMPT = Path(__file__).parent.parent.parent.parent / "prompts-ready-to-use" / "00_README.md"
-
 # Output files the Foundation layer must produce
 REQUIRED_OUTPUTS = [
     "ENTERPRISE_KNOWLEDGE_GRAPH.json",

@@ -19,7 +19,11 @@ import subprocess
 import sys
 from pathlib import Path
 
-PROMPT_FILE = Path(__file__).parent.parent.parent.parent / "prompts-ready-to-use" / "02_BA_Agent2_DeepAnalyst.md"
+# Headless runner uses the data-driven prompt (consumes Layer 2 JSON, writes
+#10 BA documents). The interactive v3 prompts in prompts-ready-to-use/ are for
+# MANUAL use only — they expect a live codebase and a human, and will
+# refuse/stall if run headless here.
+PROMPT_FILE = Path(__file__).parent / "layer3_prompt.md"
 
 
 def _claude_cmd() -> list:

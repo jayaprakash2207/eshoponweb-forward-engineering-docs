@@ -22,7 +22,11 @@ import subprocess
 import sys
 from pathlib import Path
 
-PROMPT_FILE = Path(__file__).parent.parent.parent.parent / "prompts-ready-to-use" / "01_BA_Agent1_StructuralScout.md"
+# Headless runner uses the data-driven prompt (consumes Layer 1 JSON, writes
+# structured output). The interactive v3 prompts in prompts-ready-to-use/ are
+# for MANUAL use only — they expect a live codebase and a human, and will
+# refuse/stall if run headless here.
+PROMPT_FILE = Path(__file__).parent / "layer2_prompt.md"
 MAX_METHODS       = 80
 MAX_CONFIG_PARAMS = 60
 
