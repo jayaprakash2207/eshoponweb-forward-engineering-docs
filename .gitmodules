@@ -1,0 +1,3 @@
+[submodule "source/eShopOnWeb"]
+	path = source/eShopOnWeb
+	url = https://github.com/dotnet-architecture/eShopOnWeb.git
