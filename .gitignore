@@ -17,3 +17,27 @@ build/
 
 # Node
 node_modules/
+
+# Compiled binaries and build output
+*.dll
+*.exe
+*.pdb
+*.obj
+bin/
+obj/
+
+# Archives / zips (large binaries, not needed in repo)
+*.zip
+*.tar.gz
+*.rar
+
+# AA pipeline tool-cache (Roslyn compiler binaries — generated at runtime)
+**/tool-cache/
+
+# Raw pipeline intermediate files (task prompts, raw LLM outputs)
+**/source_code.json
+**/database.json
+**/logs.json
+**/extraction_summary.json
+**/*_task.md
+**/*_raw.txt
