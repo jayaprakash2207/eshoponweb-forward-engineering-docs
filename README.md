@@ -55,6 +55,8 @@ eShopOnWeb .NET 8 Source Code
 
 ### `enterprise-foundation-package/` — Evidence Base
 
+The canonical foundation layer. Also mirrored to `bussiness-architecture 1/bussiness-architecture/output/eShopOnWeb/foundation/` as the pipeline output location.
+
 | File | Description |
 |---|---|
 | `ENTERPRISE_KNOWLEDGE_GRAPH.json` | Single source of truth — 274 nodes, 9 sections |
